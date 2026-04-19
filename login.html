@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -102,9 +102,26 @@
             text-align: center;
             font-weight: 600;
         }
+            .home-btn {
+            position: fixed;
+            top: 14px;
+            right: 14px;
+            z-index: 9999;
+            text-decoration: none;
+            background: #0f4c81;
+            color: #ffffff;
+            padding: 8px 12px;
+            border-radius: 8px;
+            font-weight: 700;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+        }
+        .home-btn:hover {
+            background: #0b3a63;
+        }
     </style>
 </head>
 <body>
+    <a class="home-btn" href="home.html" title="Go to Home">Home</a>
     <main class="login-card">
         <h1>NPTEL Practice Login</h1>
         <p class="subtitle">Sign in to open your week pages</p>
@@ -154,3 +171,4 @@
     </script>
 </body>
 </html>
+
