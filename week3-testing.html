@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -38,26 +38,31 @@
             padding: 8px 10px;
             cursor: pointer;
         }
-        .mcq-option input {
-            margin-right: 8px;
-        }
+        
         .mcq-feedback {
             margin-top: 8px;
             font-weight: bold;
             min-height: 20px;
-        }
-        .mcq-feedback.correct {
+        }.mcq-feedback.correct {
             color: #0f7b0f;
         }
         .mcq-feedback.wrong {
             color: #b42318;
         }
-        .score-box {
-            margin-top: 12px;
-            font-weight: bold;
-            color: #0b3f72;
+        .question-submit-btn {
+            margin-top: 10px;
+            padding: 7px 12px;
+            border: none;
+            border-radius: 6px;
+            background: #0f4c81;
+            color: #ffffff;
+            font-weight: 700;
+            cursor: pointer;
         }
-            .home-btn {
+        .question-submit-btn:hover {
+            background: #0b3a63;
+        }
+        .home-btn {
             position: fixed;
             top: 14px;
             right: 14px;
@@ -83,9 +88,7 @@
 <div class="section" style="text-align:center;">
     <button onclick="showAnswers()">Show Answers</button>
     <button onclick="hideAnswers()" style="margin-left:10px;">Hide Answers</button>
-    <button onclick="submitTest()" style="margin-left:10px;">Submit Test</button>
     <button onclick="resetTest()" style="margin-left:10px;">Reset</button>
-    <div id="scoreBox" class="score-box"></div>
     <div style="margin-top:10px;">
         <a href="week3.html">Back to Week 3 Menu</a> |
         <a href="week3-reading.html">Go to Reading Page</a>
@@ -301,6 +304,15 @@ function buildMcq() {
 
         question.appendChild(optionsWrap);
 
+        var submitButton = document.createElement('button');
+        submitButton.type = 'button';
+        submitButton.className = 'question-submit-btn';
+        submitButton.textContent = 'Submit';
+        submitButton.addEventListener('click', function() {
+            submitQuestion(questionIndex);
+        });
+        question.appendChild(submitButton);
+
         var feedback = document.createElement('div');
         feedback.className = 'mcq-feedback';
         feedback.id = 'feedback-' + questionIndex;
@@ -310,53 +322,39 @@ function buildMcq() {
     });
 }
 
-function submitTest() {
-    var questions = document.querySelectorAll('.question');
-    var totalQuestions = questions.length;
-    var totalGradable = 0;
-    var attempted = 0;
-    var score = 0;
-
-    questions.forEach(function(question, questionIndex) {
-        var selected = question.querySelector('input[type="radio"]:checked');
-        var feedback = document.getElementById('feedback-' + questionIndex);
-        var correctIndex = parseInt(question.getAttribute('data-correct-index'), 10);
-
-        if (!feedback) {
-            return;
-        }
-
-        feedback.className = 'mcq-feedback';
-
-        if (selected) {
-            attempted += 1;
-        }
-
-        if (correctIndex >= 0) {
-            totalGradable += 1;
-            if (!selected) {
-                feedback.textContent = 'Not answered';
-                return;
-            }
-
-            if (parseInt(selected.value, 10) === correctIndex) {
-                score += 1;
-                feedback.textContent = 'Correct';
-                feedback.classList.add('correct');
-            } else {
-                feedback.textContent = 'Incorrect';
-                feedback.classList.add('wrong');
-            }
-            return;
-        }
-
-        feedback.textContent = 'Manual check needed (use Show Answers)';
-    });
-
-    var scoreBox = document.getElementById('scoreBox');
-    if (scoreBox) {
-        scoreBox.textContent = 'Score: ' + score + '/' + totalGradable + ' | Attempted: ' + attempted + '/' + totalQuestions;
+function submitQuestion(questionIndex) {
+    var question = document.querySelectorAll('.question')[questionIndex];
+    if (!question) {
+        return;
     }
+
+    var selected = question.querySelector('input[type="radio"]:checked');
+    var feedback = document.getElementById('feedback-' + questionIndex);
+    var correctIndex = parseInt(question.getAttribute('data-correct-index'), 10);
+
+    if (!feedback) {
+        return;
+    }
+
+    feedback.className = 'mcq-feedback';
+
+    if (!selected) {
+        feedback.textContent = 'Not answered';
+        return;
+    }
+
+    if (correctIndex >= 0) {
+        if (parseInt(selected.value, 10) === correctIndex) {
+            feedback.textContent = 'Correct';
+            feedback.classList.add('correct');
+        } else {
+            feedback.textContent = 'Incorrect';
+            feedback.classList.add('wrong');
+        }
+        return;
+    }
+
+    feedback.textContent = 'Manual check needed (use Show Answers)';
 }
 
 function resetTest() {
@@ -368,11 +366,6 @@ function resetTest() {
         feedback.textContent = '';
         feedback.className = 'mcq-feedback';
     });
-
-    var scoreBox = document.getElementById('scoreBox');
-    if (scoreBox) {
-        scoreBox.textContent = '';
-    }
 }
 
 buildMcq();

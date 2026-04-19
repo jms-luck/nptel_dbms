@@ -38,26 +38,31 @@
             padding: 8px 10px;
             cursor: pointer;
         }
-        .mcq-option input {
-            margin-right: 8px;
-        }
+        
         .mcq-feedback {
             margin-top: 8px;
             font-weight: bold;
             min-height: 20px;
-        }
-        .mcq-feedback.correct {
+        }.mcq-feedback.correct {
             color: #0f7b0f;
         }
         .mcq-feedback.wrong {
             color: #b42318;
         }
-        .score-box {
-            margin-top: 12px;
-            font-weight: bold;
-            color: #0b3f72;
+        .question-submit-btn {
+            margin-top: 10px;
+            padding: 7px 12px;
+            border: none;
+            border-radius: 6px;
+            background: #0f4c81;
+            color: #ffffff;
+            font-weight: 700;
+            cursor: pointer;
         }
-            .home-btn {
+        .question-submit-btn:hover {
+            background: #0b3a63;
+        }
+        .home-btn {
             position: fixed;
             top: 14px;
             right: 14px;
@@ -83,9 +88,7 @@
 <div class="section" style="text-align:center;">
     <button onclick="showAnswers()">Show Answers</button>
     <button onclick="hideAnswers()" style="margin-left:10px;">Hide Answers</button>
-    <button onclick="submitTest()" style="margin-left:10px;">Submit Test</button>
     <button onclick="resetTest()" style="margin-left:10px;">Reset</button>
-    <div id="scoreBox" class="score-box"></div>
     <div style="margin-top:10px;">
         <a href="week1.html">Back to Week 1 Menu</a> |
         <a href="week1-reading.html">Go to Reading Page</a>
@@ -93,7 +96,7 @@
 </div>
 
 <div class="question">
-    <p>1. The RDBMS stores data and metadata separately.</p>
+    <p>1. The RDBMS stores data and meta-data separately.</p>
     <p>a) True<br>b) False</p>
     <div class="answer">Answer: True</div>
 </div>
@@ -123,86 +126,86 @@
 </div>
 
 <div class="question">
-    <p>6. One must define the logical schema of the database to design a database.</p>
+    <p>6. One must define the logical scheme of the database to design a database.</p>
     <p>a) True<br>b) False</p>
     <div class="answer">Answer: True</div>
 </div>
 
 <div class="question">
-    <p>7. A database system does not hide storage details from users.</p>
+    <p>7. A database system does not hide "the process of storing and maintaining the data on disks" from the users.</p>
     <p>a) True<br>b) False</p>
     <div class="answer">Answer: False</div>
 </div>
 
 <div class="question">
-    <p>8. The view level abstraction hides the database logical schema.</p>
+    <p>8. The view level abstraction hides the database logical schema from the users.</p>
     <p>a) True<br>b) False</p>
     <div class="answer">Answer: True</div>
 </div>
 
 <div class="question">
-    <p>9. RDBMS can provide concurrent access to users.</p>
+    <p>9. RDBMS can provide concurrent access to its users.</p>
     <p>a) True<br>b) False</p>
     <div class="answer">Answer: True</div>
 </div>
 
 <div class="question">
-    <p>10. A log records all database update operations.</p>
+    <p>10. A log is a record of all the database update operations.</p>
     <p>a) True<br>b) False</p>
     <div class="answer">Answer: True</div>
 </div>
 
 <div class="question">
-    <p>11. Recovery manager restores database after failure.</p>
+    <p>11. The recovery manager is responsible for bringing the database back into a consistent state when a failure occurs.</p>
     <p>a) True<br>b) False</p>
     <div class="answer">Answer: True</div>
 </div>
 
 <div class="question">
-    <p>12. Recovery manager may fail to restore consistency.</p>
+    <p>12. Recovery-manager may sometimes fail to bring the database back into a consistent state.</p>
     <p>a) True<br>b) False</p>
     <div class="answer">Answer: False</div>
 </div>
 
 <div class="question">
-    <p>13. Which are typical database applications?</p>
-    <p>a) Credit card system<br>b) Online reservation<br>c) Chat application<br>d) All</p>
+    <p>13. Which of the following is(are) typical database application(s)?</p>
+    <p>a) Credit card system<br>b) Online reservation system<br>c) Chat application system<br>d) All of the above</p>
     <div class="answer">Answer: All of the above</div>
 </div>
 
 <div class="question">
-    <p>14. Process that stores copies in multiple locations:</p>
+    <p>14. _ _ _ _ process stores copies of the database tables in several different locations simultaneously. Fill in the blank:</p>
     <p>a) Paging<br>b) Query answering<br>c) Buffering<br>d) Replication</p>
     <div class="answer">Answer: Replication</div>
 </div>
 
 <div class="question">
-    <p>15. Conceptual vs Representational schema relation:</p>
-    <p>a) S1 True, S2 False<br>b) S1 True, S2 True<br>c) S1 False, S2 True<br>d) S1 False, S2 False</p>
-    <div class="answer">Answer: S1 False, S2 True</div>
+    <p>15. Consider the statements given below:<br>S1: Conceptual level schema is derived from the Representational-level schema.<br>S2: Representational-level schema is derived from the Conceptual level schema.<br>Choose the correct option:</p>
+    <p>a) S1: True; S2: False<br>b) S1: True; S2: True<br>c) S1: False; S2: True<br>d) S1: False; S2: False</p>
+    <div class="answer">Answer: S1: False; S2: True</div>
 </div>
 
 <div class="question">
-    <p>16. Data Independence:</p>
-    <p>a) Both True<br>b) S1 True only<br>c) S2 True only<br>d) Both False</p>
-    <div class="answer">Answer: Both True</div>
+    <p>16. Consider the statements given below:<br>S1: The Logical Data Independence allows us to modify the logical-level schema without affecting the view-level schema.<br>S2: The Physical Data Independence allows us to modify the physical-level schema without affecting the logical-level schema.<br>Choose the correct option:</p>
+    <p>a) S1: True; S2: True<br>b) S1: True; S2: False<br>c) S1: False; S2: True<br>d) S1: False; S2: False</p>
+    <div class="answer">Answer: S1: True; S2: True</div>
 </div>
 
 <div class="question">
-    <p>17. Level describing actual storage:</p>
-    <p>a) Physical<br>b) Logical<br>c) View<br>d) None</p>
+    <p>17. Which abstraction level of the database system describes how the data is actually stored?</p>
+    <p>a) Physical level<br>b) Logical level<br>c) View level<br>d) None of the above</p>
     <div class="answer">Answer: Physical level</div>
 </div>
 
 <div class="question">
-    <p>18. Match Models:</p>
-    <p>a) ap, bq, cr<br>b) aq, br, cp<br>c) aq, br, cp<br>d) aq, bp, cr</p>
-    <div class="answer">Answer: aq, br, cp</div>
+    <p>18. What is the most appropriate matching between the following sets:<br>S1: {a: ER Model; b: Relational Model}<br>S2: {p: Record-based model; q: Conceptual level model; r: High-level data model; s: Representational level model}</p>
+    <p>a) a--p; b--q; a--r; b--s<br>b) a--p; b--q; a--s; b--r<br>c) a--q; b--p; a--r; b--s<br>d) a--q; b--p; a--s; b--r</p>
+    <div class="answer">Answer: a--q; b--p; a--r; b--s</div>
 </div>
 
 <div class="question">
-    <p>19. DBA is NOT responsible for:</p>
-    <p>a) Authorization<br>b) Security<br>c) Populating records<br>d) Resources</p>
+    <p>19. Typically, a database administrator(DBA) is NOT responsible for:</p>
+    <p>a) Authorizing access to the database<br>b) Identifying database security breaches<br>c) Populating the records<br>d) To acquire required hardware and software resources</p>
     <div class="answer">Answer: Populating the records</div>
 </div>
 
@@ -301,6 +304,15 @@ function buildMcq() {
 
         question.appendChild(optionsWrap);
 
+        var submitButton = document.createElement('button');
+        submitButton.type = 'button';
+        submitButton.className = 'question-submit-btn';
+        submitButton.textContent = 'Submit';
+        submitButton.addEventListener('click', function() {
+            submitQuestion(questionIndex);
+        });
+        question.appendChild(submitButton);
+
         var feedback = document.createElement('div');
         feedback.className = 'mcq-feedback';
         feedback.id = 'feedback-' + questionIndex;
@@ -310,53 +322,39 @@ function buildMcq() {
     });
 }
 
-function submitTest() {
-    var questions = document.querySelectorAll('.question');
-    var totalQuestions = questions.length;
-    var totalGradable = 0;
-    var attempted = 0;
-    var score = 0;
-
-    questions.forEach(function(question, questionIndex) {
-        var selected = question.querySelector('input[type="radio"]:checked');
-        var feedback = document.getElementById('feedback-' + questionIndex);
-        var correctIndex = parseInt(question.getAttribute('data-correct-index'), 10);
-
-        if (!feedback) {
-            return;
-        }
-
-        feedback.className = 'mcq-feedback';
-
-        if (selected) {
-            attempted += 1;
-        }
-
-        if (correctIndex >= 0) {
-            totalGradable += 1;
-            if (!selected) {
-                feedback.textContent = 'Not answered';
-                return;
-            }
-
-            if (parseInt(selected.value, 10) === correctIndex) {
-                score += 1;
-                feedback.textContent = 'Correct';
-                feedback.classList.add('correct');
-            } else {
-                feedback.textContent = 'Incorrect';
-                feedback.classList.add('wrong');
-            }
-            return;
-        }
-
-        feedback.textContent = 'Manual check needed (use Show Answers)';
-    });
-
-    var scoreBox = document.getElementById('scoreBox');
-    if (scoreBox) {
-        scoreBox.textContent = 'Score: ' + score + '/' + totalGradable + ' | Attempted: ' + attempted + '/' + totalQuestions;
+function submitQuestion(questionIndex) {
+    var question = document.querySelectorAll('.question')[questionIndex];
+    if (!question) {
+        return;
     }
+
+    var selected = question.querySelector('input[type="radio"]:checked');
+    var feedback = document.getElementById('feedback-' + questionIndex);
+    var correctIndex = parseInt(question.getAttribute('data-correct-index'), 10);
+
+    if (!feedback) {
+        return;
+    }
+
+    feedback.className = 'mcq-feedback';
+
+    if (!selected) {
+        feedback.textContent = 'Not answered';
+        return;
+    }
+
+    if (correctIndex >= 0) {
+        if (parseInt(selected.value, 10) === correctIndex) {
+            feedback.textContent = 'Correct';
+            feedback.classList.add('correct');
+        } else {
+            feedback.textContent = 'Incorrect';
+            feedback.classList.add('wrong');
+        }
+        return;
+    }
+
+    feedback.textContent = 'Manual check needed (use Show Answers)';
 }
 
 function resetTest() {
@@ -368,11 +366,6 @@ function resetTest() {
         feedback.textContent = '';
         feedback.className = 'mcq-feedback';
     });
-
-    var scoreBox = document.getElementById('scoreBox');
-    if (scoreBox) {
-        scoreBox.textContent = '';
-    }
 }
 
 buildMcq();
