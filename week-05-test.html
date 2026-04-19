@@ -48,7 +48,7 @@
       
       <div class="options">
       <label class="opt"><input type="radio" name="q1" value="0"> create</label>      <label class="opt"><input type="radio" name="q1" value="1"> insert</label>      <label class="opt"><input type="radio" name="q1" value="2"> alter</label>      <label class="opt"><input type="radio" name="q1" value="3"> drop</label>      </div>
-      <button class="submit-btn" type="button" onclick='evaluateQuestion(1, 1, "insert")'>Submit</button>
+      <button class="submit-btn" type="button" onclick='evaluateQuestion(1, [1], "insert")'>Submit</button>
       <p class="result" id="result-1"></p>
     </section>    <section class="card">
       <h3>Q2</h3>
@@ -57,7 +57,7 @@
       
       <div class="options">
       <label class="opt"><input type="radio" name="q2" value="0"> Both can be specified independently</label>      <label class="opt"><input type="radio" name="q2" value="1"> NOT NULL keyword must be specified only if DEFAULT keyword is specified</label>      <label class="opt"><input type="radio" name="q2" value="2"> If NOT NULL keyword is specified then DEFAULT keyword must be specified</label>      <label class="opt"><input type="radio" name="q2" value="3"> NOT NULL keyword must be specified if and only if DEFAULT keyword is specified</label>      </div>
-      <button class="submit-btn" type="button" onclick='evaluateQuestion(2, 0, "Both can be specified independently")'>Submit</button>
+      <button class="submit-btn" type="button" onclick='evaluateQuestion(2, [0], "Both can be specified independently")'>Submit</button>
       <p class="result" id="result-2"></p>
     </section>    <section class="card">
       <h3>Q3</h3>
@@ -66,7 +66,7 @@
       
       <div class="options">
       <label class="opt"><input type="radio" name="q3" value="0"> Only (iii)</label>      <label class="opt"><input type="radio" name="q3" value="1"> Only (i)</label>      <label class="opt"><input type="radio" name="q3" value="2"> Only (i) and (iii)</label>      <label class="opt"><input type="radio" name="q3" value="3"> All (i), (ii) and (iii)</label>      </div>
-      <button class="submit-btn" type="button" onclick='evaluateQuestion(3, 1, "Only (i)")'>Submit</button>
+      <button class="submit-btn" type="button" onclick='evaluateQuestion(3, [1], "Only (i)")'>Submit</button>
       <p class="result" id="result-3"></p>
     </section>    <section class="card">
       <h3>Q4</h3>
@@ -75,7 +75,7 @@
       
       <div class="options">
       <label class="opt"><input type="radio" name="q4" value="0"> &lt;&gt; ALL</label>      <label class="opt"><input type="radio" name="q4" value="1"> NOT ALL</label>      <label class="opt"><input type="radio" name="q4" value="2"> &lt;&gt; ANY</label>      <label class="opt"><input type="radio" name="q4" value="3"> NOT EXISTS</label>      </div>
-      <button class="submit-btn" type="button" onclick='evaluateQuestion(4, 2, "&amp;lt;&amp;gt; ANY")'>Submit</button>
+      <button class="submit-btn" type="button" onclick='evaluateQuestion(4, [2], "&amp;lt;&amp;gt; ANY")'>Submit</button>
       <p class="result" id="result-4"></p>
     </section>    <section class="card">
       <h3>Q5</h3>
@@ -84,7 +84,7 @@
       
       <div class="options">
       <label class="opt"><input type="radio" name="q5" value="0"> The condition should be: c2.courseId &lt;&gt; c1.courseId</label>      <label class="opt"><input type="radio" name="q5" value="1"> The WHERE clause isnt required</label>      <label class="opt"><input type="radio" name="q5" value="2"> The condition should be: c2.credits &gt; c1.credits</label>      <label class="opt"><input type="radio" name="q5" value="3"> It can not be completed to solve the given query</label>      </div>
-      <button class="submit-btn" type="button" onclick='evaluateQuestion(5, 2, "The condition should be: c2.credits &amp;gt; c1.credits")'>Submit</button>
+      <button class="submit-btn" type="button" onclick='evaluateQuestion(5, [2], "The condition should be: c2.credits &amp;gt; c1.credits")'>Submit</button>
       <p class="result" id="result-5"></p>
     </section>    <section class="card">
       <h3>Q6</h3>
@@ -93,7 +93,7 @@
       
       <div class="options">
       <label class="opt"><input type="radio" name="q6" value="0"> SELECT * FROM course c1 WHERE EXISTS (SELECT * FROM prerequisite p1 WHERE p1.courseId = c1.courseId) AND EXISTS (SELECT * FROM prerequisite p2 WHERE p2.courseId = c1.courseId)</label>      <label class="opt"><input type="radio" name="q6" value="1"> SELECT * FROM course c1 WHERE EXISTS (SELECT * FROM prerequisite p1 WHERE p1.courseId = c1.courseId) AND EXISTS (SELECT * FROM prerequisite p2 WHERE p2.courseId = c1.courseId AND p1.preCourseId &lt;&gt; p2.preCourseId)</label>      <label class="opt"><input type="radio" name="q6" value="2"> SELECT * FROM course c1 WHERE EXISTS (SELECT * FROM prerequisite p1, prerequisite p2 WHERE p1.courseId = c1.courseId AND p2.courseId = c1. courseId)</label>      <label class="opt"><input type="radio" name="q6" value="3"> SELECT * FROM course c1 WHERE EXISTS (SELECT * FROM prerequisite p1, prerequisite p2 WHERE p1.courseId = c1.courseId AND p2.courseId = c1. courseId AND p1.preCourseId &lt;&gt; p2.preCourseId)</label>      </div>
-      <button class="submit-btn" type="button" onclick='evaluateQuestion(6, 3, "SELECT * FROM course c1 WHERE EXISTS (SELECT * FROM prerequisite p1, prerequisite p2 WHERE p1.courseId = c1.courseId AND p2.courseId = c1. courseId AND p1.preCourseId &amp;lt;&amp;gt; p2.preCourseId)")'>Submit</button>
+      <button class="submit-btn" type="button" onclick='evaluateQuestion(6, [3], "SELECT * FROM course c1 WHERE EXISTS (SELECT * FROM prerequisite p1, prerequisite p2 WHERE p1.courseId = c1.courseId AND p2.courseId = c1. courseId AND p1.preCourseId &amp;lt;&amp;gt; p2.preCourseId)")'>Submit</button>
       <p class="result" id="result-6"></p>
     </section>    <section class="card">
       <h3>Q7</h3>
@@ -102,7 +102,7 @@
       
       <div class="options">
       <label class="opt"><input type="radio" name="q7" value="0"> SELECT s.name FROM student s WHERE NOT EXISTS (SELECT p1. preCourseId FROM prerequisite p1 WHERE p1.courseId=200 AND NOT EXISTS (SELECT * FROM enrollment e2 WHERE e2.courseId = p1.preCourseId AND e2.grade &lt;&gt; S AND e.rollNo = s.rollNo))</label>      <label class="opt"><input type="radio" name="q7" value="1"> SELECT s.name FROM student s, enrollment e WHERE s.rollNo = e.rollNo AND e.grade = S AND e.courseId = ALL ( SELECT p1.preCourseId FROM prerequisite p1 WHERE p1.courseId=200)</label>      <label class="opt"><input type="radio" name="q7" value="2"> SELECT s.name FROM student s WHERE NOT EXISTS ( SELECT p1. preCourseId FROM prerequisite p1 WHERE p1.courseId=200 AND NOT EXISTS (SELECT * FROM enrollment e2 WHERE e2.courseId = p1.preCourseId AND e2.grade = S AND e.rollNo = s.rollNo))</label>      <label class="opt"><input type="radio" name="q7" value="3"> SELECT s.name FROM student s WHERE EXISTS (SELECT p1. preCourseId FROM prerequisite p1 WHERE p1.courseId=200 AND NOT EXISTS (SELECT * FROM enrollment e2 WHERE e2.courseId = p1.preCourseId AND e2.grade = S AND e.rollNo = s.rollNo))</label>      </div>
-      <button class="submit-btn" type="button" onclick='evaluateQuestion(7, 2, "SELECT s.name FROM student s WHERE NOT EXISTS ( SELECT p1. preCourseId FROM prerequisite p1 WHERE p1.courseId=200 AND NOT EXISTS (SELECT * FROM enrollment e2 WHERE e2.courseId = p1.preCourseId AND e2.grade = S AND e.rollNo = s.rollNo))")'>Submit</button>
+      <button class="submit-btn" type="button" onclick='evaluateQuestion(7, [2], "SELECT s.name FROM student s WHERE NOT EXISTS ( SELECT p1. preCourseId FROM prerequisite p1 WHERE p1.courseId=200 AND NOT EXISTS (SELECT * FROM enrollment e2 WHERE e2.courseId = p1.preCourseId AND e2.grade = S AND e.rollNo = s.rollNo))")'>Submit</button>
       <p class="result" id="result-7"></p>
     </section>    <section class="card">
       <h3>Q8</h3>
@@ -111,7 +111,7 @@
       
       <div class="options">
       <label class="opt"><input type="radio" name="q8" value="0"> It includes all the pairs of professors with same number of years of experience</label>      <label class="opt"><input type="radio" name="q8" value="1"> It doesnt include any of the pairs of professors with same number of years of experience</label>      <label class="opt"><input type="radio" name="q8" value="2"> It includes some of the pairs of professors with same number of years of experience</label>      <label class="opt"><input type="radio" name="q8" value="3"> It doesnt include some of the pairs of professors with same number of years of experience</label>      </div>
-      <button class="submit-btn" type="button" onclick='evaluateQuestion(8, 0, "It includes all the pairs of professors with same number of years of experience")'>Submit</button>
+      <button class="submit-btn" type="button" onclick='evaluateQuestion(8, [0], "It includes all the pairs of professors with same number of years of experience")'>Submit</button>
       <p class="result" id="result-8"></p>
     </section>    <section class="card">
       <h3>Q9</h3>
@@ -120,7 +120,7 @@
       
       <div class="options">
       <label class="opt"><input type="radio" name="q9" value="0"> 0</label>      <label class="opt"><input type="radio" name="q9" value="1"> 10</label>      <label class="opt"><input type="radio" name="q9" value="2"> 90</label>      <label class="opt"><input type="radio" name="q9" value="3"> 100</label>      </div>
-      <button class="submit-btn" type="button" onclick='evaluateQuestion(9, 1, "10")'>Submit</button>
+      <button class="submit-btn" type="button" onclick='evaluateQuestion(9, [1], "10")'>Submit</button>
       <p class="result" id="result-9"></p>
     </section>
   </main>

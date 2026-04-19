@@ -48,7 +48,7 @@
       
       <div class="options">
       <label class="opt"><input type="radio" name="q1" value="0"> True</label>      <label class="opt"><input type="radio" name="q1" value="1"> False</label>      </div>
-      <button class="submit-btn" type="button" onclick='evaluateQuestion(1, 0, "True")'>Submit</button>
+      <button class="submit-btn" type="button" onclick='evaluateQuestion(1, [0], "True")'>Submit</button>
       <p class="result" id="result-1"></p>
     </section>    <section class="card">
       <h3>Q2</h3>
@@ -57,7 +57,7 @@
       
       <div class="options">
       <label class="opt"><input type="radio" name="q2" value="0"> True</label>      <label class="opt"><input type="radio" name="q2" value="1"> False</label>      </div>
-      <button class="submit-btn" type="button" onclick='evaluateQuestion(2, 0, "True")'>Submit</button>
+      <button class="submit-btn" type="button" onclick='evaluateQuestion(2, [0], "True")'>Submit</button>
       <p class="result" id="result-2"></p>
     </section>    <section class="card">
       <h3>Q3</h3>
@@ -66,7 +66,7 @@
       
       <div class="options">
       <label class="opt"><input type="radio" name="q3" value="0"> True</label>      <label class="opt"><input type="radio" name="q3" value="1"> False</label>      </div>
-      <button class="submit-btn" type="button" onclick='evaluateQuestion(3, 0, "True")'>Submit</button>
+      <button class="submit-btn" type="button" onclick='evaluateQuestion(3, [0], "True")'>Submit</button>
       <p class="result" id="result-3"></p>
     </section>    <section class="card">
       <h3>Q4</h3>
@@ -75,7 +75,7 @@
       
       <div class="options">
       <label class="opt"><input type="radio" name="q4" value="0"> True</label>      <label class="opt"><input type="radio" name="q4" value="1"> False</label>      </div>
-      <button class="submit-btn" type="button" onclick='evaluateQuestion(4, 1, "False")'>Submit</button>
+      <button class="submit-btn" type="button" onclick='evaluateQuestion(4, [1], "False")'>Submit</button>
       <p class="result" id="result-4"></p>
     </section>    <section class="card">
       <h3>Q5</h3>
@@ -84,7 +84,7 @@
       
       <div class="options">
       <label class="opt"><input type="radio" name="q5" value="0"> Single valued</label>      <label class="opt"><input type="radio" name="q5" value="1"> Multi valued</label>      <label class="opt"><input type="radio" name="q5" value="2"> Composite</label>      <label class="opt"><input type="radio" name="q5" value="3"> Single-valued and derived</label>      </div>
-      <button class="submit-btn" type="button" onclick='evaluateQuestion(5, 3, "Single-valued and derived")'>Submit</button>
+      <button class="submit-btn" type="button" onclick='evaluateQuestion(5, [3], "Single-valued and derived")'>Submit</button>
       <p class="result" id="result-5"></p>
     </section>    <section class="card">
       <h3>Q6</h3>
@@ -93,7 +93,7 @@
       
       <div class="options">
       <label class="opt"><input type="radio" name="q6" value="0"> 1:1</label>      <label class="opt"><input type="radio" name="q6" value="1"> N:1</label>      <label class="opt"><input type="radio" name="q6" value="2"> 1:N</label>      <label class="opt"><input type="radio" name="q6" value="3"> M:N</label>      </div>
-      <button class="submit-btn" type="button" onclick='evaluateQuestion(6, 1, "N:1")'>Submit</button>
+      <button class="submit-btn" type="button" onclick='evaluateQuestion(6, [1], "N:1")'>Submit</button>
       <p class="result" id="result-6"></p>
     </section>    <section class="card">
       <h3>Q7</h3>
@@ -102,7 +102,7 @@
       
       <div class="options">
       <label class="opt"><input type="radio" name="q7" value="0"> Only P</label>      <label class="opt"><input type="radio" name="q7" value="1"> Only P &amp; Q</label>      <label class="opt"><input type="radio" name="q7" value="2"> Only P, Q &amp; R</label>      <label class="opt"><input type="radio" name="q7" value="3"> All cardinality ratios are possible.</label>      </div>
-      <button class="submit-btn" type="button" onclick='evaluateQuestion(7, 3, "All cardinality ratios are possible.")'>Submit</button>
+      <button class="submit-btn" type="button" onclick='evaluateQuestion(7, [3], "All cardinality ratios are possible.")'>Submit</button>
       <p class="result" id="result-7"></p>
     </section>    <section class="card">
       <h3>Q8</h3>
@@ -111,7 +111,7 @@
       
       <div class="options">
       <label class="opt"><input type="radio" name="q8" value="0"> x = 1, y = 7</label>      <label class="opt"><input type="radio" name="q8" value="1"> x = 1, y = 1</label>      <label class="opt"><input type="radio" name="q8" value="2"> x = 7, y = 1</label>      <label class="opt"><input type="radio" name="q8" value="3"> x = 7, y = 7</label>      </div>
-      <button class="submit-btn" type="button" onclick='evaluateQuestion(8, 1, "x = 1, y = 1")'>Submit</button>
+      <button class="submit-btn" type="button" onclick='evaluateQuestion(8, [1], "x = 1, y = 1")'>Submit</button>
       <p class="result" id="result-8"></p>
     </section>    <section class="card">
       <h3>Q9</h3>
@@ -120,7 +120,7 @@
       
       <div class="options">
       <label class="opt"><input type="radio" name="q9" value="0"> S1:True ; S2: True</label>      <label class="opt"><input type="radio" name="q9" value="1"> S1: True; S2: False</label>      <label class="opt"><input type="radio" name="q9" value="2"> S1: False; S2: True</label>      <label class="opt"><input type="radio" name="q9" value="3"> S1: False; S2: False</label>      </div>
-      <button class="submit-btn" type="button" onclick='evaluateQuestion(9, 3, "S1: False; S2: False")'>Submit</button>
+      <button class="submit-btn" type="button" onclick='evaluateQuestion(9, [3], "S1: False; S2: False")'>Submit</button>
       <p class="result" id="result-9"></p>
     </section>    <section class="card">
       <h3>Q10</h3>
@@ -129,7 +129,7 @@
       
       <div class="options">
       <label class="opt"><input type="radio" name="q10" value="0"> p: w; q: x; r: y; s: z</label>      <label class="opt"><input type="radio" name="q10" value="1"> p: w; q: x; r: z; s: y</label>      <label class="opt"><input type="radio" name="q10" value="2"> p: y; q: w; r: x; s: z</label>      <label class="opt"><input type="radio" name="q10" value="3"> p: y; q: w; r: x; s: x</label>      </div>
-      <button class="submit-btn" type="button" onclick='evaluateQuestion(10, 2, "p: y; q: w; r: x; s: z")'>Submit</button>
+      <button class="submit-btn" type="button" onclick='evaluateQuestion(10, [2], "p: y; q: w; r: x; s: z")'>Submit</button>
       <p class="result" id="result-10"></p>
     </section>    <section class="card">
       <h3>Q11</h3>
@@ -138,7 +138,7 @@
       
       <div class="options">
       <label class="opt"><input type="radio" name="q11" value="0"> Attribute A1 may be a  key  attribute of customer entity</label>      <label class="opt"><input type="radio" name="q11" value="1"> Attribute A2 may be a  key  attribute of customer entity</label>      <label class="opt"><input type="radio" name="q11" value="2"> Attributes A3 may be a  key  attribute of airport entity</label>      <label class="opt"><input type="radio" name="q11" value="3"> Attribute A4 may be a  key  attribute of student entity</label>      </div>
-      <button class="submit-btn" type="button" onclick='evaluateQuestion(11, 1, "Attribute A2 may be a  key  attribute of customer entity")'>Submit</button>
+      <button class="submit-btn" type="button" onclick='evaluateQuestion(11, [1], "Attribute A2 may be a  key  attribute of customer entity")'>Submit</button>
       <p class="result" id="result-11"></p>
     </section>    <section class="card">
       <h3>Q12</h3>
@@ -147,7 +147,7 @@
       
       <div class="options">
       <label class="opt"><input type="radio" name="q12" value="0"> Cardinality ratio of A:B is one-to-many; A participates partially; B participates completely</label>      <label class="opt"><input type="radio" name="q12" value="1"> Cardinality ratio of A:B is many-to-one; A participates completely; B participates completely</label>      <label class="opt"><input type="radio" name="q12" value="2"> Cardinality ratio of A:B is one-to-many; A participates completely; B participates partially</label>      <label class="opt"><input type="radio" name="q12" value="3"> Cardinality ratio of A:B is many-to-many; A participates partially; B participates partially</label>      </div>
-      <button class="submit-btn" type="button" onclick='evaluateQuestion(12, 0, "Cardinality ratio of A:B is one-to-many; A participates partially; B participates completely")'>Submit</button>
+      <button class="submit-btn" type="button" onclick='evaluateQuestion(12, [0], "Cardinality ratio of A:B is one-to-many; A participates partially; B participates completely")'>Submit</button>
       <p class="result" id="result-12"></p>
     </section>    <section class="card">
       <h3>Q13</h3>
@@ -156,7 +156,7 @@
       
       <div class="options">
       <label class="opt"><input type="radio" name="q13" value="0"> Every entity in A is associated with exactly one entity in B</label>      <label class="opt"><input type="radio" name="q13" value="1"> Some entity in A is associated with more than one entity in B</label>      <label class="opt"><input type="radio" name="q13" value="2"> Every entity in B is associated with exactly one entity in A</label>      <label class="opt"><input type="radio" name="q13" value="3"> Every entity in B is associated with at most one entity in A</label>      </div>
-      <button class="submit-btn" type="button" onclick='evaluateQuestion(13, 0, "Every entity in A is associated with exactly one entity in B")'>Submit</button>
+      <button class="submit-btn" type="button" onclick='evaluateQuestion(13, [0], "Every entity in A is associated with exactly one entity in B")'>Submit</button>
       <p class="result" id="result-13"></p>
     </section>
   </main>

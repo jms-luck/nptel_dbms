@@ -48,7 +48,7 @@
       
       <div class="options">
       <label class="opt"><input type="radio" name="q1" value="0"> True</label>      <label class="opt"><input type="radio" name="q1" value="1"> False</label>      </div>
-      <button class="submit-btn" type="button" onclick='evaluateQuestion(1, 0, "True")'>Submit</button>
+      <button class="submit-btn" type="button" onclick='evaluateQuestion(1, [0], "True")'>Submit</button>
       <p class="result" id="result-1"></p>
     </section>    <section class="card">
       <h3>Q2</h3>
@@ -57,7 +57,7 @@
       
       <div class="options">
       <label class="opt"><input type="radio" name="q2" value="0"> True</label>      <label class="opt"><input type="radio" name="q2" value="1"> False</label>      </div>
-      <button class="submit-btn" type="button" onclick='evaluateQuestion(2, 1, "False")'>Submit</button>
+      <button class="submit-btn" type="button" onclick='evaluateQuestion(2, [1], "False")'>Submit</button>
       <p class="result" id="result-2"></p>
     </section>    <section class="card">
       <h3>Q3</h3>
@@ -66,7 +66,7 @@
       
       <div class="options">
       <label class="opt"><input type="radio" name="q3" value="0"> True</label>      <label class="opt"><input type="radio" name="q3" value="1"> False</label>      </div>
-      <button class="submit-btn" type="button" onclick='evaluateQuestion(3, 1, "False")'>Submit</button>
+      <button class="submit-btn" type="button" onclick='evaluateQuestion(3, [1], "False")'>Submit</button>
       <p class="result" id="result-3"></p>
     </section>    <section class="card">
       <h3>Q4</h3>
@@ -75,7 +75,7 @@
       
       <div class="options">
       <label class="opt"><input type="radio" name="q4" value="0"> True</label>      <label class="opt"><input type="radio" name="q4" value="1"> False</label>      </div>
-      <button class="submit-btn" type="button" onclick='evaluateQuestion(4, 1, "False")'>Submit</button>
+      <button class="submit-btn" type="button" onclick='evaluateQuestion(4, [1], "False")'>Submit</button>
       <p class="result" id="result-4"></p>
     </section>    <section class="card">
       <h3>Q5</h3>
@@ -84,7 +84,7 @@
       
       <div class="options">
       <label class="opt"><input type="radio" name="q5" value="0"> True</label>      <label class="opt"><input type="radio" name="q5" value="1"> False</label>      </div>
-      <button class="submit-btn" type="button" onclick='evaluateQuestion(5, 0, "True")'>Submit</button>
+      <button class="submit-btn" type="button" onclick='evaluateQuestion(5, [0], "True")'>Submit</button>
       <p class="result" id="result-5"></p>
     </section>    <section class="card">
       <h3>Q6</h3>
@@ -93,7 +93,7 @@
       
       <div class="options">
       <label class="opt"><input type="radio" name="q6" value="0"> True</label>      <label class="opt"><input type="radio" name="q6" value="1"> False</label>      </div>
-      <button class="submit-btn" type="button" onclick='evaluateQuestion(6, 0, "True")'>Submit</button>
+      <button class="submit-btn" type="button" onclick='evaluateQuestion(6, [0], "True")'>Submit</button>
       <p class="result" id="result-6"></p>
     </section>    <section class="card">
       <h3>Q7</h3>
@@ -102,7 +102,7 @@
       
       <div class="options">
       <label class="opt"><input type="radio" name="q7" value="0"> True</label>      <label class="opt"><input type="radio" name="q7" value="1"> False</label>      </div>
-      <button class="submit-btn" type="button" onclick='evaluateQuestion(7, 1, "False")'>Submit</button>
+      <button class="submit-btn" type="button" onclick='evaluateQuestion(7, [1], "False")'>Submit</button>
       <p class="result" id="result-7"></p>
     </section>    <section class="card">
       <h3>Q8</h3>
@@ -111,7 +111,7 @@
       
       <div class="options">
       <label class="opt"><input type="radio" name="q8" value="0"> True</label>      <label class="opt"><input type="radio" name="q8" value="1"> False</label>      </div>
-      <button class="submit-btn" type="button" onclick='evaluateQuestion(8, 1, "False")'>Submit</button>
+      <button class="submit-btn" type="button" onclick='evaluateQuestion(8, [1], "False")'>Submit</button>
       <p class="result" id="result-8"></p>
     </section>    <section class="card">
       <h3>Q9</h3>
@@ -120,7 +120,7 @@
       
       <div class="options">
       <label class="opt"><input type="radio" name="q9" value="0"> S1: False; S2: False</label>      <label class="opt"><input type="radio" name="q9" value="1"> S1: False; S2: True</label>      <label class="opt"><input type="radio" name="q9" value="2"> S1: True; S2: False</label>      <label class="opt"><input type="radio" name="q9" value="3"> S1: True; S2: True</label>      </div>
-      <button class="submit-btn" type="button" onclick='evaluateQuestion(9, 0, "S1: False; S2: False")'>Submit</button>
+      <button class="submit-btn" type="button" onclick='evaluateQuestion(9, [0], "S1: False; S2: False")'>Submit</button>
       <p class="result" id="result-9"></p>
     </section>    <section class="card">
       <h3>Q10</h3>
@@ -129,7 +129,7 @@
       
       <div class="options">
       <label class="opt"><input type="radio" name="q10" value="0"> 1</label>      <label class="opt"><input type="radio" name="q10" value="1"> 4</label>      <label class="opt"><input type="radio" name="q10" value="2"> 5</label>      <label class="opt"><input type="radio" name="q10" value="3"> 16</label>      </div>
-      <button class="submit-btn" type="button" onclick='evaluateQuestion(10, 3, "16")'>Submit</button>
+      <button class="submit-btn" type="button" onclick='evaluateQuestion(10, [3], "16")'>Submit</button>
       <p class="result" id="result-10"></p>
     </section>    <section class="card">
       <h3>Q11</h3>
@@ -138,7 +138,7 @@
       
       <div class="options">
       <label class="opt"><input type="radio" name="q11" value="0"> S1: True; S2: True; S3: False</label>      <label class="opt"><input type="radio" name="q11" value="1"> S1: True; S2: False; S3: False</label>      <label class="opt"><input type="radio" name="q11" value="2"> S1: False; S2: False; S3: True</label>      <label class="opt"><input type="radio" name="q11" value="3"> S1: False; S2: True; S3: False</label>      </div>
-      <button class="submit-btn" type="button" onclick='evaluateQuestion(11, 3, "S1: False; S2: True; S3: False")'>Submit</button>
+      <button class="submit-btn" type="button" onclick='evaluateQuestion(11, [3], "S1: False; S2: True; S3: False")'>Submit</button>
       <p class="result" id="result-11"></p>
     </section>    <section class="card">
       <h3>Q12</h3>
@@ -147,7 +147,7 @@
       
       <div class="options">
       <label class="opt"><input type="radio" name="q12" value="0"> \displaystyle _{sname} (\, _{sid} ( (\,_{pid} (\,_{color=  red } (P \,arts)) * Catalog) * Suppliers) ) MathJax.Hub.Typeset();</label>      <label class="opt"><input type="radio" name="q12" value="1"> \displaystyle _{sname} (\, _{sid} ( \, (_{pid} (_{color=  red } (P\, arts))  Catalog) * Suppliers) ) MathJax.Hub.Typeset();</label>      <label class="opt"><input type="radio" name="q12" value="2"> \displaystyle _{sname} (\, _{sid} ( \,(_{pid} (_{color=  red } (P\, arts))  Suppliers) * Catalog) ) MathJax.Hub.Typeset();</label>      <label class="opt"><input type="radio" name="q12" value="3"> \displaystyle _{sname} ( (\, _{pid} ( _{color=  red } (P\, arts) )  _{sid} (Suppliers) )* Catalog) MathJax.Hub.Typeset();</label>      </div>
-      <button class="submit-btn" type="button" onclick='evaluateQuestion(12, 0, "\displaystyle _{sname} (\, _{sid} ( (\,_{pid} (\,_{color=  red } (P \,arts)) * Catalog) * Suppliers) )")'>Submit</button>
+      <button class="submit-btn" type="button" onclick='evaluateQuestion(12, [0], "\displaystyle _{sname} (\, _{sid} ( (\,_{pid} (\,_{color=  red } (P \,arts)) * Catalog) * Suppliers) )")'>Submit</button>
       <p class="result" id="result-12"></p>
     </section>    <section class="card">
       <h3>Q13</h3>
@@ -156,7 +156,7 @@
       
       <div class="options">
       <label class="opt"><input type="radio" name="q13" value="0"> The number of attributes in r 3 will be less than m+n.</label>      <label class="opt"><input type="radio" name="q13" value="1"> The minimum number of attributes in r 3 is: max(m,n).</label>      <label class="opt"><input type="radio" name="q13" value="2"> The scheme of r 3 will be: R 1  ( R 2  { a 1 , a 2 , . .., a k }) , where a 1 to a k are common attributes.</label>      <label class="opt"><input type="radio" name="q13" value="3"> The maximum possible number of attributes in r 3 is: m+n-1.</label>      </div>
-      <button class="submit-btn" type="button" onclick='evaluateQuestion(13, 1, "The minimum number of attributes in r 3 is: max(m,n).")'>Submit</button>
+      <button class="submit-btn" type="button" onclick='evaluateQuestion(13, [1], "The minimum number of attributes in r 3 is: max(m,n).")'>Submit</button>
       <p class="result" id="result-13"></p>
     </section>    <section class="card">
       <h3>Q14</h3>
@@ -165,7 +165,7 @@
       
       <div class="options">
       <label class="opt"><input type="radio" name="q14" value="0"> True</label>      <label class="opt"><input type="radio" name="q14" value="1"> False</label>      </div>
-      <button class="submit-btn" type="button" onclick='evaluateQuestion(14, 1, "False")'>Submit</button>
+      <button class="submit-btn" type="button" onclick='evaluateQuestion(14, [1], "False")'>Submit</button>
       <p class="result" id="result-14"></p>
     </section>    <section class="card">
       <h3>Q15</h3>
@@ -174,7 +174,7 @@
       
       <div class="options">
       <label class="opt"><input type="radio" name="q15" value="0"> True</label>      <label class="opt"><input type="radio" name="q15" value="1"> False</label>      </div>
-      <button class="submit-btn" type="button" onclick='evaluateQuestion(15, 0, "True")'>Submit</button>
+      <button class="submit-btn" type="button" onclick='evaluateQuestion(15, [0], "True")'>Submit</button>
       <p class="result" id="result-15"></p>
     </section>    <section class="card">
       <h3>Q16</h3>
@@ -183,7 +183,7 @@
       
       <div class="options">
       <label class="opt"><input type="radio" name="q16" value="0"> True</label>      <label class="opt"><input type="radio" name="q16" value="1"> False</label>      </div>
-      <button class="submit-btn" type="button" onclick='evaluateQuestion(16, 0, "True")'>Submit</button>
+      <button class="submit-btn" type="button" onclick='evaluateQuestion(16, [0], "True")'>Submit</button>
       <p class="result" id="result-16"></p>
     </section>    <section class="card">
       <h3>Q17</h3>
@@ -192,7 +192,7 @@
       
       <div class="options">
       <label class="opt"><input type="radio" name="q17" value="0"> True</label>      <label class="opt"><input type="radio" name="q17" value="1"> False</label>      </div>
-      <button class="submit-btn" type="button" onclick='evaluateQuestion(17, 1, "False")'>Submit</button>
+      <button class="submit-btn" type="button" onclick='evaluateQuestion(17, [1], "False")'>Submit</button>
       <p class="result" id="result-17"></p>
     </section>
   </main>

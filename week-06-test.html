@@ -48,7 +48,7 @@
       
       <div class="options">
       <label class="opt"><input type="radio" name="q1" value="0"> Only (i)</label>      <label class="opt"><input type="radio" name="q1" value="1"> Only (i) and (ii)</label>      <label class="opt"><input type="radio" name="q1" value="2"> Only (i) and (iii)</label>      <label class="opt"><input type="radio" name="q1" value="3"> All (i), (ii) and (iii)</label>      </div>
-      <button class="submit-btn" type="button" onclick='evaluateQuestion(1, 2, "Only (i) and (iii)")'>Submit</button>
+      <button class="submit-btn" type="button" onclick='evaluateQuestion(1, [2], "Only (i) and (iii)")'>Submit</button>
       <p class="result" id="result-1"></p>
     </section>    <section class="card">
       <h3>Q2</h3>
@@ -57,7 +57,7 @@
       
       <div class="options">
       <label class="opt"><input type="radio" name="q2" value="0"> True</label>      <label class="opt"><input type="radio" name="q2" value="1"> False</label>      </div>
-      <button class="submit-btn" type="button" onclick='evaluateQuestion(2, 1, "False")'>Submit</button>
+      <button class="submit-btn" type="button" onclick='evaluateQuestion(2, [1], "False")'>Submit</button>
       <p class="result" id="result-2"></p>
     </section>    <section class="card">
       <h3>Q3</h3>
@@ -66,7 +66,7 @@
       
       <div class="options">
       <label class="opt"><input type="radio" name="q3" value="0"> True</label>      <label class="opt"><input type="radio" name="q3" value="1"> False</label>      </div>
-      <button class="submit-btn" type="button" onclick='evaluateQuestion(3, 1, "False")'>Submit</button>
+      <button class="submit-btn" type="button" onclick='evaluateQuestion(3, [1], "False")'>Submit</button>
       <p class="result" id="result-3"></p>
     </section>    <section class="card">
       <h3>Q4</h3>
@@ -75,7 +75,7 @@
       
       <div class="options">
       <label class="opt"><input type="radio" name="q4" value="0"> True</label>      <label class="opt"><input type="radio" name="q4" value="1"> False</label>      </div>
-      <button class="submit-btn" type="button" onclick='evaluateQuestion(4, 0, "True")'>Submit</button>
+      <button class="submit-btn" type="button" onclick='evaluateQuestion(4, [0], "True")'>Submit</button>
       <p class="result" id="result-4"></p>
     </section>    <section class="card">
       <h3>Q5</h3>
@@ -84,7 +84,7 @@
       
       <div class="options">
       <label class="opt"><input type="radio" name="q5" value="0"> True</label>      <label class="opt"><input type="radio" name="q5" value="1"> False</label>      </div>
-      <button class="submit-btn" type="button" onclick='evaluateQuestion(5, 0, "True")'>Submit</button>
+      <button class="submit-btn" type="button" onclick='evaluateQuestion(5, [0], "True")'>Submit</button>
       <p class="result" id="result-5"></p>
     </section>    <section class="card">
       <h3>Q6</h3>
@@ -93,7 +93,7 @@
       
       <div class="options">
       <label class="opt"><input type="radio" name="q6" value="0"> True</label>      <label class="opt"><input type="radio" name="q6" value="1"> False</label>      </div>
-      <button class="submit-btn" type="button" onclick='evaluateQuestion(6, 1, "False")'>Submit</button>
+      <button class="submit-btn" type="button" onclick='evaluateQuestion(6, [1], "False")'>Submit</button>
       <p class="result" id="result-6"></p>
     </section>    <section class="card">
       <h3>Q7</h3>
@@ -102,7 +102,7 @@
       
       <div class="options">
       <label class="opt"><input type="radio" name="q7" value="0"> True</label>      <label class="opt"><input type="radio" name="q7" value="1"> False</label>      </div>
-      <button class="submit-btn" type="button" onclick='evaluateQuestion(7, 0, "True")'>Submit</button>
+      <button class="submit-btn" type="button" onclick='evaluateQuestion(7, [0], "True")'>Submit</button>
       <p class="result" id="result-7"></p>
     </section>    <section class="card">
       <h3>Q8</h3>
@@ -111,7 +111,7 @@
       
       <div class="options">
       <label class="opt"><input type="radio" name="q8" value="0"> True</label>      <label class="opt"><input type="radio" name="q8" value="1"> False</label>      </div>
-      <button class="submit-btn" type="button" onclick='evaluateQuestion(8, 0, "True")'>Submit</button>
+      <button class="submit-btn" type="button" onclick='evaluateQuestion(8, [0], "True")'>Submit</button>
       <p class="result" id="result-8"></p>
     </section>    <section class="card">
       <h3>Q9</h3>
@@ -120,7 +120,7 @@
       
       <div class="options">
       <label class="opt"><input type="radio" name="q9" value="0"> True</label>      <label class="opt"><input type="radio" name="q9" value="1"> False</label>      </div>
-      <button class="submit-btn" type="button" onclick='evaluateQuestion(9, 1, "False")'>Submit</button>
+      <button class="submit-btn" type="button" onclick='evaluateQuestion(9, [1], "False")'>Submit</button>
       <p class="result" id="result-9"></p>
     </section>    <section class="card">
       <h3>Q10</h3>
@@ -129,7 +129,7 @@
       
       <div class="options">
       <label class="opt"><input type="radio" name="q10" value="0"> SELECT COUNT(C1) FROM stud WHERE C1 IS NOT NULL</label>      <label class="opt"><input type="radio" name="q10" value="1"> SELECT COUNT(*) - COUNT(C1) FROM stud WHERE C1 IS NOT NULL</label>      <label class="opt"><input type="radio" name="q10" value="2"> SELECT COUNT(*) FROM stud WHERE C1 = NULL</label>      <label class="opt"><input type="radio" name="q10" value="3"> SELECT COUNT(*) - COUNT(C1) FROM stud</label>      </div>
-      <button class="submit-btn" type="button" onclick='evaluateQuestion(10, 3, "SELECT COUNT(*) - COUNT(C1) FROM stud")'>Submit</button>
+      <button class="submit-btn" type="button" onclick='evaluateQuestion(10, [3], "SELECT COUNT(*) - COUNT(C1) FROM stud")'>Submit</button>
       <p class="result" id="result-10"></p>
     </section>    <section class="card">
       <h3>Q11</h3>
@@ -138,7 +138,7 @@
       
       <div class="options">
       <label class="opt"><input type="radio" name="q11" value="0"> 0</label>      <label class="opt"><input type="radio" name="q11" value="1"> 98</label>      <label class="opt"><input type="radio" name="q11" value="2"> 80</label>      <label class="opt"><input type="radio" name="q11" value="3"> 18</label>      </div>
-      <button class="submit-btn" type="button" onclick='evaluateQuestion(11, 3, "18")'>Submit</button>
+      <button class="submit-btn" type="button" onclick='evaluateQuestion(11, [3], "18")'>Submit</button>
       <p class="result" id="result-11"></p>
     </section>    <section class="card">
       <h3>Q12</h3>
@@ -147,7 +147,7 @@
       
       <div class="options">
       <label class="opt"><input type="radio" name="q12" value="0"> Only (ii)</label>      <label class="opt"><input type="radio" name="q12" value="1"> Only (iii)</label>      <label class="opt"><input type="radio" name="q12" value="2"> Only (i) and (ii)</label>      <label class="opt"><input type="radio" name="q12" value="3"> All (i), (ii) and (iii)</label>      </div>
-      <button class="submit-btn" type="button" onclick='evaluateQuestion(12, 2, "Only (i) and (ii)")'>Submit</button>
+      <button class="submit-btn" type="button" onclick='evaluateQuestion(12, [2], "Only (i) and (ii)")'>Submit</button>
       <p class="result" id="result-12"></p>
     </section>    <section class="card">
       <h3>Q13</h3>
@@ -156,7 +156,7 @@
       
       <div class="options">
       <label class="opt"><input type="radio" name="q13" value="0"> SELECT p1.empId, p1.name FROM professor p1 WHERE p1.startYear IN ( SELECT min(p.startYear) FROM professor p, department d WHERE p.empId = d.hod)</label>      <label class="opt"><input type="radio" name="q13" value="1"> SELECT p.empId, p.name FROM professor p, department d WHERE p.empId = d.hod AND p.startYear IN ( SELECT min(p1.startYear) FROM professor p1)</label>      <label class="opt"><input type="radio" name="q13" value="2"> SELECT p1.empId, p1.name FROM professor p1, department d1 WHERE p1.empId = d1.hod AND p1.startYear IN ( SELECT min(p.startYear) FROM professor p, department d WHERE p.empId = d.hod)</label>      <label class="opt"><input type="radio" name="q13" value="3"> None of the above</label>      </div>
-      <button class="submit-btn" type="button" onclick='evaluateQuestion(13, 2, "SELECT p1.empId, p1.name FROM professor p1, department d1 WHERE p1.empId = d1.hod AND p1.startYear IN ( SELECT min(p.startYear) FROM professor p, department d WHERE p.empId = d.hod)")'>Submit</button>
+      <button class="submit-btn" type="button" onclick='evaluateQuestion(13, [2], "SELECT p1.empId, p1.name FROM professor p1, department d1 WHERE p1.empId = d1.hod AND p1.startYear IN ( SELECT min(p.startYear) FROM professor p, department d WHERE p.empId = d.hod)")'>Submit</button>
       <p class="result" id="result-13"></p>
     </section>    <section class="card">
       <h3>Q14</h3>
@@ -165,7 +165,7 @@
       
       <div class="options">
       <label class="opt"><input type="radio" name="q14" value="0"> It finds the department(s) with the highest number of total-credits across all the departments.</label>      <label class="opt"><input type="radio" name="q14" value="1"> It finds the department(s) with total-credits greater than or equal to the sum of the total-credits of all the departments.</label>      <label class="opt"><input type="radio" name="q14" value="2"> It finds the department(s) with total-credits greater than or equal to the credits of the course with the highest number of credits across the institute.</label>      <label class="opt"><input type="radio" name="q14" value="3"> It lists all the departments in the institute.</label>      </div>
-      <button class="submit-btn" type="button" onclick='evaluateQuestion(14, 0, "It finds the department(s) with the highest number of total-credits across all the departments.")'>Submit</button>
+      <button class="submit-btn" type="button" onclick='evaluateQuestion(14, [0], "It finds the department(s) with the highest number of total-credits across all the departments.")'>Submit</button>
       <p class="result" id="result-14"></p>
     </section>    <section class="card">
       <h3>Q15</h3>
@@ -174,7 +174,7 @@
       
       <div class="options">
       <label class="opt"><input type="radio" name="q15" value="0"> SELECT p.empId, p.deptId FROM professor p GROUP BY p.empId, p.deptId HAVING p.startYear IN ( SELECT MIN(startYear) FROM professor)</label>      <label class="opt"><input type="radio" name="q15" value="1"> SELECT p.empId, p.deptId FROM professor p WHERE p.startYear IN ( SELECT MIN(p1.startYear) FROM professor p1 WHERE p1.deptId = p.deptId )</label>      <label class="opt"><input type="radio" name="q15" value="2"> SELECT p.empId, p.deptId FROM professor p WHERE p.startYear IN ( SELECT p1.deptId, MIN(p1.startYear) FROM professor p1 GROUP BY p1.deptId)</label>      <label class="opt"><input type="radio" name="q15" value="3"> SELECT p.empId, p.deptId FROM professor p GROUP BY p.empId, p.deptId HAVING MIN(p.startYear) IN ( SELECT MIN(p1.startYear) FROM professor p1 GROUP BY p1.deptId)</label>      </div>
-      <button class="submit-btn" type="button" onclick='evaluateQuestion(15, 1, "SELECT p.empId, p.deptId FROM professor p WHERE p.startYear IN ( SELECT MIN(p1.startYear) FROM professor p1 WHERE p1.deptId = p.deptId )")'>Submit</button>
+      <button class="submit-btn" type="button" onclick='evaluateQuestion(15, [1], "SELECT p.empId, p.deptId FROM professor p WHERE p.startYear IN ( SELECT MIN(p1.startYear) FROM professor p1 WHERE p1.deptId = p.deptId )")'>Submit</button>
       <p class="result" id="result-15"></p>
     </section>    <section class="card">
       <h3>Q16</h3>
@@ -183,7 +183,7 @@
       
       <div class="options">
       <label class="opt"><input type="radio" name="q16" value="0"> 1--p; 2--t; 3--q</label>      <label class="opt"><input type="radio" name="q16" value="1"> 1--t; 2--q; 3--s</label>      <label class="opt"><input type="radio" name="q16" value="2"> 1--s; 2--q; 3--t</label>      <label class="opt"><input type="radio" name="q16" value="3"> 1--p; 2--t; 3--s</label>      </div>
-      <button class="submit-btn" type="button" onclick='evaluateQuestion(16, 3, "1--p; 2--t; 3--s")'>Submit</button>
+      <button class="submit-btn" type="button" onclick='evaluateQuestion(16, [3], "1--p; 2--t; 3--s")'>Submit</button>
       <p class="result" id="result-16"></p>
     </section>
   </main>

@@ -48,7 +48,7 @@
       
       <div class="options">
       <label class="opt"><input type="radio" name="q1" value="0"> S1: True; S2: True</label>      <label class="opt"><input type="radio" name="q1" value="1"> S1: True; S2: False</label>      <label class="opt"><input type="radio" name="q1" value="2"> S1: False; S2: False</label>      <label class="opt"><input type="radio" name="q1" value="3"> S1: False; S2: True</label>      </div>
-      <button class="submit-btn" type="button" onclick='evaluateQuestion(1, 3, "S1: False; S2: True")'>Submit</button>
+      <button class="submit-btn" type="button" onclick='evaluateQuestion(1, [3], "S1: False; S2: True")'>Submit</button>
       <p class="result" id="result-1"></p>
     </section>    <section class="card">
       <h3>Q2</h3>
@@ -57,7 +57,7 @@
       
       <div class="options">
       <label class="opt"><input type="radio" name="q2" value="0"> w--p; x--p; y--q; z--r</label>      <label class="opt"><input type="radio" name="q2" value="1"> w--q; x--q; y--p; z--r</label>      <label class="opt"><input type="radio" name="q2" value="2"> w--q; x--r; y--r; z--p</label>      <label class="opt"><input type="radio" name="q2" value="3"> w--r-; x--r; y--p; z--q</label>      </div>
-      <button class="submit-btn" type="button" onclick='evaluateQuestion(2, 2, "w--q; x--r; y--r; z--p")'>Submit</button>
+      <button class="submit-btn" type="button" onclick='evaluateQuestion(2, [2], "w--q; x--r; y--r; z--p")'>Submit</button>
       <p class="result" id="result-2"></p>
     </section>    <section class="card">
       <h3>Q3</h3>
@@ -66,7 +66,7 @@
       
       <div class="options">
       <label class="opt"><input type="radio" name="q3" value="0"> S1: True; S2: True</label>      <label class="opt"><input type="radio" name="q3" value="1"> S1: True; S2: False</label>      <label class="opt"><input type="radio" name="q3" value="2"> S1: False; S2: False</label>      <label class="opt"><input type="radio" name="q3" value="3"> S1: False; S2: True</label>      </div>
-      <button class="submit-btn" type="button" onclick='evaluateQuestion(3, 2, "S1: False; S2: False")'>Submit</button>
+      <button class="submit-btn" type="button" onclick='evaluateQuestion(3, [2], "S1: False; S2: False")'>Submit</button>
       <p class="result" id="result-3"></p>
     </section>    <section class="card">
       <h3>Q4</h3>
@@ -75,7 +75,7 @@
       <div class="q-images"><img class="q-img" src="../Introduction to Database Systems - - Unit 7 - Week 4_files/W4A4Q4.png" alt="Question image" loading="lazy"></div>
       <div class="options">
       <label class="opt"><input type="radio" name="q4" value="0"> w--s; x--q ; y--r ; z--p</label>      <label class="opt"><input type="radio" name="q4" value="1"> w--s; x--p ; y:--p; z--r</label>      <label class="opt"><input type="radio" name="q4" value="2"> w--q; x--r ; y:--r; z--p</label>      <label class="opt"><input type="radio" name="q4" value="3"> w--q; x-- s; y:--p; z--r</label>      </div>
-      <button class="submit-btn" type="button" onclick='evaluateQuestion(4, 0, "w--s; x--q ; y--r ; z--p")'>Submit</button>
+      <button class="submit-btn" type="button" onclick='evaluateQuestion(4, [0], "w--s; x--q ; y--r ; z--p")'>Submit</button>
       <p class="result" id="result-4"></p>
     </section>    <section class="card">
       <h3>Q5</h3>
@@ -84,7 +84,7 @@
       
       <div class="options">
       <label class="opt"><input type="radio" name="q5" value="0"> Data; Procedural</label>      <label class="opt"><input type="radio" name="q5" value="1"> Description; Procedural</label>      <label class="opt"><input type="radio" name="q5" value="2"> Data; Declarative</label>      <label class="opt"><input type="radio" name="q5" value="3"> Description; Declarative</label>      </div>
-      <button class="submit-btn" type="button" onclick='evaluateQuestion(5, 3, "Description; Declarative")'>Submit</button>
+      <button class="submit-btn" type="button" onclick='evaluateQuestion(5, [3], "Description; Declarative")'>Submit</button>
       <p class="result" id="result-5"></p>
     </section>    <section class="card">
       <h3>Q6</h3>
@@ -93,7 +93,7 @@
       
       <div class="options">
       <label class="opt"><input type="radio" name="q6" value="0"> \{ d.dname | Department(d)  ( (p)(P rof essor(p)  p .sex =  F   p .deptN o = d .did) )\} MathJax.Hub.Typeset();</label>      <label class="opt"><input type="radio" name="q6" value="1"> \{ d.dname | Department(d)  ( (p)(P rof essor(p)  p .sex \neq  F   p .deptN o = d .did) ) \} MathJax.Hub.Typeset();</label>      <label class="opt"><input type="radio" name="q6" value="2"> \{ d.dname | Department(d)  ( (p)(P rof essor(p)  p .sex =  F   p .deptN o = d .did) ) \} MathJax.Hub.Typeset();</label>      <label class="opt"><input type="radio" name="q6" value="3"> \{ d.dname | Department(d)  ( (p)(P rof essor(p)  p .sex \neq  F   p .deptN o = d .did) )\} MathJax.Hub.Typeset();</label>      </div>
-      <button class="submit-btn" type="button" onclick='evaluateQuestion(6, 0, "\{ d.dname | Department(d)  ( (p)(P rof essor(p)  p .sex =  F   p .deptN o = d .did) )\}")'>Submit</button>
+      <button class="submit-btn" type="button" onclick='evaluateQuestion(6, [0], "\{ d.dname | Department(d)  ( (p)(P rof essor(p)  p .sex =  F   p .deptN o = d .did) )\}")'>Submit</button>
       <p class="result" id="result-6"></p>
     </section>
   </main>
