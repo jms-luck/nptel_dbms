@@ -1,0 +1,152 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Week 10 - DBMS Testing Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f5f7fa;
+        }
+        h1 {
+            text-align: center;
+        }
+        .section {
+            margin-bottom: 25px;
+            padding: 15px;
+            background: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 0 5px rgba(0,0,0,0.1);
+        }
+        .question {
+            margin-top: 15px;
+        }
+        .answer {
+            color: green;
+            font-weight: bold;
+            margin-top: 5px;
+            display: none;
+        }
+        pre {
+            background: #272822;
+            color: #f8f8f2;
+            padding: 10px;
+            border-radius: 6px;
+        }
+    </style>
+</head>
+<body>
+
+<h1>Week 10: DBMS Practice (Indexing, B+ Trees & Sorting) - Testing Page</h1>
+
+<div class="section" style="text-align:center;">
+    <button onclick="showAnswers()">Show Answers</button>
+    <button onclick="hideAnswers()" style="margin-left:10px;">Hide Answers</button>
+    <div style="margin-top:10px;">
+        <a href="week10.html">Back to Week 10 Menu</a> |
+        <a href="week10-reading.html">Go to Reading Page</a>
+    </div>
+</div>
+
+<div class="section">
+<h2> Concepts Covered</h2>
+<pre>
+- B+ Tree (insertion, deletion)
+- Index structures
+- RAID techniques
+- Query optimization (index selection)
+- External sorting
+- Nested loop join
+</pre>
+</div>
+
+<div class="section">
+<h2> Questions</h2>
+
+<div class="question">
+<p>1. Order of B+ tree internal node is independent of:</p>
+<p>a) Block size<br>b) Index field size<br>c) Block pointer size<br>d) Record pointer size</p>
+<div class="answer">Answer: Record pointer size</div>
+</div>
+
+<div class="question">
+<p>2. After inserting key 5, valid leaf node is:</p>
+<p>a) (4,5)<br>b) (6,6)<br>c) (6,7)<br>d) (4,6)</p>
+<div class="answer">Answer: (5,6)</div>
+</div>
+
+<div class="question">
+<p>3. After deleting key 4, total nodes:</p>
+<p>a) 8<br>b) 9<br>c) 10<br>d) 7</p>
+<div class="answer">Answer: 10</div>
+</div>
+
+<div class="question">
+<p>4. Technique distributing data across disks with poor reliability:</p>
+<p>a) Striping<br>b) Redundancy<br>c) Mirroring<br>d) Parity</p>
+<div class="answer">Answer: Data striping</div>
+</div>
+
+<div class="question">
+<p>5. Matching RAID techniques:</p>
+<p>a) Mirroring  low reliability<br>
+b) Distributed parity  high reliability<br>
+c) Dedicated parity  uneven usage<br>
+d) All correct</p>
+<div class="answer">Answer: a-2, b-3, c-4</div>
+</div>
+
+<div class="question">
+<p>6. Best index for query filtering:</p>
+<p>a) sex<br>b) rollNo<br>c) deptId<br>d) None</p>
+<div class="answer">Answer: rollNo</div>
+</div>
+
+<div class="question">
+<p>7. External sorting buffer increase:</p>
+<p>S1: block accesses reduce<br>S2: runs reduce</p>
+<p>a) Both True<br>b) Both False<br>c) S1 False, S2 True<br>d) S1 True, S2 False</p>
+<div class="answer">Answer: S1 False, S2 True</div>
+</div>
+
+<div class="question">
+<p>8. Sorting runs:</p>
+<p>a) First pass = 29 runs<br>
+b) Initial runs = 4<br>
+c) Second pass = 4<br>
+d) Merging reduced increases iterations</p>
+<div class="answer">Answer: First pass = 29, Second pass = 4</div>
+</div>
+
+<div class="question">
+<p>9. Total block accesses in sorting:</p>
+<p>a) 2280<br>b) 4096<br>c) 12288<br>d) 16384</p>
+<div class="answer">Answer: 12288</div>
+</div>
+
+<div class="question">
+<p>10. Nested loop join statements:</p>
+<p>S1: Each outer block read once<br>S2: Inner loop reads depend on buffer</p>
+<p>a) Both True<br>b) Both False<br>c) S1 True<br>d) S2 True</p>
+<div class="answer">Answer: Both True</div>
+</div>
+
+</div>
+
+<script>
+function showAnswers() {
+    document.querySelectorAll('.answer').forEach(function(el) {
+        el.style.display = 'block';
+    });
+}
+
+function hideAnswers() {
+    document.querySelectorAll('.answer').forEach(function(el) {
+        el.style.display = 'none';
+    });
+}
+</script>
+</body>
+</html>
+

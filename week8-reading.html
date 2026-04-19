@@ -1,0 +1,171 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Week 8 - DBMS Reading Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f5f7fa;
+        }
+        h1 {
+            text-align: center;
+        }
+        .section {
+            margin-bottom: 25px;
+            padding: 15px;
+            background: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 0 5px rgba(0,0,0,0.1);
+        }
+        .question {
+            margin-top: 15px;
+        }
+        .answer {
+            color: green;
+            font-weight: bold;
+            margin-top: 5px;
+        }
+        pre {
+            background: #272822;
+            color: #f8f8f2;
+            padding: 10px;
+            border-radius: 6px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+        }
+        table, th, td {
+            border: 1px solid #ccc;
+        }
+        th, td {
+            padding: 8px;
+            text-align: center;
+        }
+        th {
+            background: #eee;
+        }
+    </style>
+</head>
+<body>
+
+<h1>Week 8: DBMS Practice (Normalization & FDs) - Reading Page</h1>
+
+<div class="section" style="text-align:center;">
+    <a href="week8.html">Back to Week 8 Menu</a> |
+    <a href="week8-testing.html">Go to Testing Page</a>
+</div>
+
+<div class="section">
+<h2> Schema</h2>
+<pre>
+R(A, B, C, D, E, F, G)
+Functional Dependencies vary per question
+</pre>
+</div>
+
+<div class="section">
+<h2> Questions</h2>
+
+<div class="question">
+<p>1. Statements on normalization:</p>
+<p>S1: All normal forms use FDs<br>S2: Normalization reduces redundancy</p>
+<p>a) Both True<br>b) S1 True<br>c) S2 True<br>d) S1 False, S2 True</p>
+<div class="answer">Answer: S1 False, S2 True</div>
+</div>
+
+<div class="question">
+<p>2. Prime vs Non-prime attribute:</p>
+<p>a) Candidate key<br>b) Super key<br>c) Primary key<br>d) Foreign key</p>
+<div class="answer">Answer: Candidate key (for both blanks)</div>
+</div>
+
+<div class="question">
+<p>3. Closure C contains:</p>
+<p>a) C, F<br>b) C, F, G, E<br>c) C, F, G, E, A<br>d) C, F, G, E, A, D</p>
+<div class="answer">Answer: C, F, G, E, A, D</div>
+</div>
+
+<div class="question">
+<p>4. Incorrect candidate key:</p>
+<p>a) AD<br>b) F<br>c) BC<br>d) CD</p>
+<div class="answer">Answer: CD</div>
+</div>
+
+<div class="question">
+<p>5. Candidate key of relation R(part_no, supplier_id,...):</p>
+<p>a) part_no<br>b) supplier_id<br>c) (supplier_id, part_no)<br>d) None</p>
+<div class="answer">Answer: (supplier_id, part_no)</div>
+</div>
+
+<div class="question">
+<p>6. Highest normal form:</p>
+<p>a) 1NF<br>b) 2NF<br>c) 3NF<br>d) BCNF</p>
+<div class="answer">Answer: 1NF only</div>
+</div>
+
+<div class="question">
+<p>7. Statements on 2NF & 3NF:</p>
+<p>a) Both True<br>b) S1 True<br>c) S2 True<br>d) S1 True, S2 False</p>
+<div class="answer">Answer: S1 True, S2 False</div>
+</div>
+
+<div class="question">
+<p>8. Incorrect FD in minimal cover:</p>
+<p>a) F  D<br>b) DE  F<br>c) FG  CD<br>d) BC  E</p>
+<div class="answer">Answer: BC  E</div>
+</div>
+
+<div class="question">
+<p>9. Normal form of relation:</p>
+<p>a) 2NF<br>b) not in 2NF<br>c) 3NF<br>d) BCNF</p>
+<div class="answer">Answer: not in 2NF</div>
+</div>
+
+</div>
+
+<div class="section">
+<h2> Decomposition Table</h2>
+
+<table>
+<tr><th colspan="3">R</th></tr>
+<tr><td>A</td><td>B</td><td>C</td></tr>
+<tr><td>2</td><td>4</td><td>1</td></tr>
+<tr><td>2</td><td>8</td><td>2</td></tr>
+<tr><td>1</td><td>1</td><td>2</td></tr>
+</table>
+
+<br>
+
+<table>
+<tr><th colspan="2">R1</th></tr>
+<tr><td>A</td><td>B</td></tr>
+<tr><td>2</td><td>4</td></tr>
+<tr><td>2</td><td>8</td></tr>
+<tr><td>1</td><td>1</td></tr>
+</table>
+
+<br>
+
+<table>
+<tr><th colspan="2">R2</th></tr>
+<tr><td>B</td><td>C</td></tr>
+<tr><td>4</td><td>1</td></tr>
+<tr><td>8</td><td>2</td></tr>
+<tr><td>1</td><td>2</td></tr>
+</table>
+
+<div class="question">
+<p>10. Decomposition type:</p>
+<p>a) Lossy<br>b) Lossless<br>c) Not dependency preserving<br>d) Both</p>
+<div class="answer">Answer: Lossless, Dependency preserving</div>
+</div>
+
+</div>
+
+</body>
+</html>
+

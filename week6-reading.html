@@ -1,0 +1,172 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Week 6 - DBMS Reading Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f5f7fa;
+        }
+        h1 {
+            text-align: center;
+        }
+        .section {
+            margin-bottom: 25px;
+            padding: 15px;
+            background: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 0 5px rgba(0,0,0,0.1);
+        }
+        .question {
+            margin-top: 15px;
+        }
+        .answer {
+            color: green;
+            font-weight: bold;
+            margin-top: 5px;
+        }
+        pre {
+            background: #272822;
+            color: #f8f8f2;
+            padding: 10px;
+            border-radius: 6px;
+            overflow-x: auto;
+        }
+    </style>
+</head>
+<body>
+
+<h1>Week 6: DBMS Practice (with Schema) - Reading Page</h1>
+
+<div class="section" style="text-align:center;">
+    <a href="week6.html">Back to Week 6 Menu</a> |
+    <a href="week6-testing.html">Go to Testing Page</a>
+</div>
+
+<div class="section">
+<h2> Given Schema</h2>
+<pre>
+student (rollNo, name, degree, year, sex, deptNo, advisor)
+department (deptNo, deptName, hod, phone)
+professor (empId, name, sex, deptNo, phone)
+course (courseId, cname, credits, deptNo)
+enrollment (rollNo, courseId, sem, grade)
+teaching (empId, courseId, sem, sec)
+prerequisite (preCourseId, courseId)
+</pre>
+
+<p><b>Notes:</b></p>
+<ul>
+<li>deptNo is a foreign key</li>
+<li>advisor  professor.empId</li>
+<li>courseId  course relation</li>
+<li>empId  professor relation</li>
+</ul>
+</div>
+
+<div class="section">
+<h2> Questions</h2>
+
+<div class="question">
+<p>1. Which SQL clauses can have aggregate functions?</p>
+<p>a) GROUP BY<br>b) HAVING<br>c) SELECT<br>d) All</p>
+<div class="answer">Answer: Only (b) and (c)</div>
+</div>
+
+<div class="question">
+<p>2. Views can never be used to update query.</p>
+<p>a) True<br>b) False</p>
+<div class="answer">Answer: False</div>
+</div>
+
+<div class="question">
+<p>3. Views do not maintain data integrity.</p>
+<p>a) True<br>b) False</p>
+<div class="answer">Answer: False</div>
+</div>
+
+<div class="question">
+<p>4. Views can be used in WHERE clause.</p>
+<p>a) True<br>b) False</p>
+<div class="answer">Answer: True</div>
+</div>
+
+<div class="question">
+<p>5. Aggregate operations can be used in views.</p>
+<p>a) True<br>b) False</p>
+<div class="answer">Answer: True</div>
+</div>
+
+<div class="question">
+<p>6. GROUP BY condition correctness:</p>
+<p>a) Valid<br>b) Invalid</p>
+<div class="answer">Answer: Valid</div>
+</div>
+
+<div class="question">
+<p>7. COUNT can be used in WHERE clause directly.</p>
+<p>a) True<br>b) False</p>
+<div class="answer">Answer: False</div>
+</div>
+
+<div class="question">
+<p>8. COUNT can be used in SELECT clause.</p>
+<p>a) True<br>b) False</p>
+<div class="answer">Answer: True</div>
+</div>
+
+<div class="question">
+<p>9. GROUP BY is required with HAVING always.</p>
+<p>a) True<br>b) False</p>
+<div class="answer">Answer: False</div>
+</div>
+
+<div class="question">
+<p>10. Correct HAVING query usage:</p>
+<p>a) COUNT(*) in WHERE<br>b) COUNT(*) in HAVING<br>c) SUM in WHERE<br>d) None</p>
+<div class="answer">Answer: COUNT(*) in HAVING</div>
+</div>
+
+<div class="question">
+<p>11. Maximum number of tuples in R  S:</p>
+<p>a) n + m<br>b) n  m<br>c) n - m<br>d) n / m</p>
+<div class="answer">Answer: n  m</div>
+</div>
+
+<div class="question">
+<p>12. LIKE operator can be used with:</p>
+<p>a) %<br>b) _<br>c) Both<br>d) None</p>
+<div class="answer">Answer: Both</div>
+</div>
+
+<div class="question">
+<p>13. SQL query to find max salary professor:</p>
+<p>a) Using ALL<br>b) Using MAX<br>c) Using subquery<br>d) All</p>
+<div class="answer">Answer: Using subquery with ALL / MAX</div>
+</div>
+
+<div class="question">
+<p>14. Department with highest credits:</p>
+<p>a) MIN<br>b) MAX<br>c) SUM<br>d) COUNT</p>
+<div class="answer">Answer: SUM</div>
+</div>
+
+<div class="question">
+<p>15. Query using NOT EXISTS:</p>
+<p>a) Correct<br>b) Incorrect</p>
+<div class="answer">Answer: Correct</div>
+</div>
+
+<div class="question">
+<p>16. Programming approach vs DBMS:</p>
+<p>a) DBMS better<br>b) Program better<br>c) Same<br>d) Depends</p>
+<div class="answer">Answer: DBMS approach preferred</div>
+</div>
+
+</div>
+
+</body>
+</html>
+

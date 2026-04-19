@@ -1,0 +1,144 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Week 2 - DBMS Testing Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f5f7fa;
+        }
+        h1 {
+            text-align: center;
+        }
+        .question {
+            margin-bottom: 20px;
+            padding: 15px;
+            background: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 0 5px rgba(0,0,0,0.1);
+        }
+        .answer {
+            color: green;
+            font-weight: bold;
+            margin-top: 5px;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+
+<h1>Week 2: DBMS Practice (1 Mark Each) - Testing Page</h1>
+
+<div class="section" style="text-align:center;">
+    <button onclick="showAnswers()">Show Answers</button>
+    <button onclick="hideAnswers()" style="margin-left:10px;">Hide Answers</button>
+    <div style="margin-top:10px;">
+        <a href="week2.html">Back to Week 2 Menu</a> |
+        <a href="week2-reading.html">Go to Reading Page</a>
+    </div>
+</div>
+
+<div class="question">
+<p>1. An entity type may have more than one attribute.</p>
+<p>a) True<br>b) False</p>
+<div class="answer">Answer: True</div>
+</div>
+
+<div class="question">
+<p>2. A relationship type may have more than one attribute.</p>
+<p>a) True<br>b) False</p>
+<div class="answer">Answer: True</div>
+</div>
+
+<div class="question">
+<p>3. A strong entity type always has a key.</p>
+<p>a) True<br>b) False</p>
+<div class="answer">Answer: True</div>
+</div>
+
+<div class="question">
+<p>4. A weak entity type always has a key.</p>
+<p>a) True<br>b) False</p>
+<div class="answer">Answer: False</div>
+</div>
+
+<div class="question">
+<p>5. Total-Salary (Base + HRA + Allowances) is:</p>
+<p>a) Single valued<br>b) Multi valued<br>c) Composite<br>d) Single-valued and derived</p>
+<div class="answer">Answer: Single-valued and derived</div>
+</div>
+
+<div class="question">
+<p>6. Cardinality for WorksFor (Employee  Company):</p>
+<p>a) 1:1<br>b) N:1<br>c) 1:N<br>d) M:N</p>
+<div class="answer">Answer: N:1</div>
+</div>
+
+<div class="question">
+<p>7. Possible cardinalities for BankAccount (Person, Account):</p>
+<p>a) Only P<br>b) Only P & Q<br>c) Only P, Q & R<br>d) All cardinalities</p>
+<div class="answer">Answer: All cardinalities are possible</div>
+</div>
+
+<div class="question">
+<p>8. Assigned (Employee  Department) max-min notation:</p>
+<p>a) (1,7)<br>b) (1,1)<br>c) (7,1<br>d) (7,7)</p>
+<div class="answer">Answer: (1,1)</div>
+</div>
+
+<div class="question">
+<p>9. Statements:</p>
+<p>S1: Owner of weak entity is strong entity<br>
+S2: Entity sets must be disjoint</p>
+<p>a) Both True<br>b) S1 True<br>c) S2 True<br>d) Both False</p>
+<div class="answer">Answer: Both False</div>
+</div>
+
+<div class="question">
+<p>10. Matching sets (ER concepts):</p>
+<p>a) p-w, q-r, r-s, s-z<br>b) p-y, q-w, r-x, s-z<br>c) p-y, q-r, r-x, s-z<br>d) p-y, q-w, r-x, s-x</p>
+<div class="answer">Answer: p-y, q-w, r-x, s-z</div>
+</div>
+
+<div class="question">
+<p>11. FALSE statement:</p>
+<p>a) A1 may be key of customer<br>
+b) A2 may be key of customer<br>
+c) A3 may be key of airport<br>
+d) A4 may be key of student</p>
+<div class="answer">Answer: A2 may be key of customer</div>
+</div>
+
+<div class="question">
+<p>12. Relationship R instances:</p>
+<p>a) 1:1<br>b) 1:N<br>c) N:1<br>d) M:N</p>
+<div class="answer">Answer: N:1 (A partial, B total)</div>
+</div>
+
+<div class="question">
+<p>13. Many-to-one relationship A  B implies:</p>
+<p>a) Each A  exactly one B<br>
+b) Some A  multiple B<br>
+c) Each B  one A<br>
+d) Each B  many A</p>
+<div class="answer">Answer: Every entity in A is associated with exactly one entity in B</div>
+</div>
+
+<script>
+function showAnswers() {
+    document.querySelectorAll('.answer').forEach(function(el) {
+        el.style.display = 'block';
+    });
+}
+
+function hideAnswers() {
+    document.querySelectorAll('.answer').forEach(function(el) {
+        el.style.display = 'none';
+    });
+}
+</script>
+</body>
+</html>
+

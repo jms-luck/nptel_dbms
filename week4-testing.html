@@ -1,0 +1,119 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Week 4 - DBMS Testing Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f5f7fa;
+        }
+        h1 {
+            text-align: center;
+        }
+        .question {
+            margin-bottom: 20px;
+            padding: 15px;
+            background: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 0 5px rgba(0,0,0,0.1);
+        }
+        .answer {
+            color: green;
+            font-weight: bold;
+            margin-top: 5px;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+
+<h1>Week 4: DBMS Practice (1 Mark Each) - Testing Page</h1>
+
+<div class="section" style="text-align:center;">
+    <button onclick="showAnswers()">Show Answers</button>
+    <button onclick="hideAnswers()" style="margin-left:10px;">Hide Answers</button>
+    <div style="margin-top:10px;">
+        <a href="week4.html">Back to Week 4 Menu</a> |
+        <a href="week4-reading.html">Go to Reading Page</a>
+    </div>
+</div>
+
+<div class="question">
+<p>1. TRC statements:</p>
+<p>S1: Every TRC query is safe<br>S2: More than one free variable allowed</p>
+<p>a) Both True<br>b) S1 True<br>c) S2 True<br>d) S1 False, S2 True</p>
+<div class="answer">Answer: S1 False, S2 True</div>
+</div>
+
+<div class="question">
+<p>2. Keys matching (primary, candidate, super, foreign):</p>
+<p>a) Mapping 1<br>b) Mapping 2<br>c) Mapping 3<br>d) Mapping 4</p>
+<div class="answer">Answer: Correct mapping based on constraints (primary=1, candidate1, super1, foreign=0+)</div>
+</div>
+
+<div class="question">
+<p>3. Candidate key vs Primary key:</p>
+<p>a) Both True<br>b) S1 True<br>c) S2 True<br>d) Both False</p>
+<div class="answer">Answer: Both False</div>
+</div>
+
+<div class="question">
+<p>4. Match constraints:</p>
+<p>a) Domain  atomic<br>b) Key  unique<br>c) Entity  non-null<br>d) Referential  valid reference</p>
+<div class="answer">Answer: Correct mapping applied</div>
+</div>
+
+<div class="question">
+<p>5. Incorrect rewriting using relational algebra:</p>
+<p>a) Intersection  <br>b) Join  <br>c) Join   + <br>d) Division  , , </p>
+<div class="answer">Answer: Join using only  is incorrect</div>
+</div>
+
+<div class="question">
+<p>6. TRC query type:</p>
+<p>a) Data Procedural<br>b) Description Procedural<br>c) Data Declarative<br>d) Description Declarative</p>
+<div class="answer">Answer: Description Declarative</div>
+</div>
+
+<div class="question">
+<p>7. Free vs Bound variables:</p>
+<p>a) Free, Free<br>b) Free, Bound<br>c) Bound, Free<br>d) Bound, Bound</p>
+<div class="answer">Answer: Free, Bound</div>
+</div>
+
+<div class="question">
+<p>8. TRC query for departments without female professors:</p>
+<p>a) Option 1<br>b) Option 2<br>c) Option 3<br>d) Option 4</p>
+<div class="answer">Answer: Use NOT EXISTS with female condition</div>
+</div>
+
+<div class="question">
+<p>9. Students enrolled exactly one course:</p>
+<p>a) = and <br>b)  and =<br>c)  and <br>d) = and =</p>
+<div class="answer">Answer: = and </div>
+</div>
+
+<div class="question">
+<p>10. Equivalent TRC query:</p>
+<p>a) Option 1<br>b) Option 2<br>c) Option 3<br>d) Option 4</p>
+<div class="answer">Answer: Correct TRC uses  with join conditions</div>
+</div>
+
+<script>
+function showAnswers() {
+    document.querySelectorAll('.answer').forEach(function(el) {
+        el.style.display = 'block';
+    });
+}
+
+function hideAnswers() {
+    document.querySelectorAll('.answer').forEach(function(el) {
+        el.style.display = 'none';
+    });
+}
+</script>
+</body>
+</html>
+

@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NPTEL Home</title>
+    <style>
+        :root {
+            --bg: #eef6ff;
+            --panel: #ffffff;
+            --text: #1f2937;
+            --muted: #4b5563;
+            --primary: #2c7da0;
+            --primary-2: #014f86;
+            --chip: #d9edff;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(145deg, #e8f3ff 0%, #f8fbff 48%, #e7f8f2 100%);
+            color: var(--text);
+            min-height: 100vh;
+        }
+
+        .container {
+            width: min(1050px, 95vw);
+            margin: 26px auto 36px;
+        }
+
+        .topbar {
+            background: var(--panel);
+            border-radius: 14px;
+            padding: 16px 18px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 12px;
+            box-shadow: 0 8px 22px rgba(0, 0, 0, 0.08);
+            margin-bottom: 18px;
+        }
+
+        .welcome {
+            margin: 0;
+            font-size: 1.02rem;
+        }
+
+        .logout-btn {
+            border: 0;
+            background: #8f1d1d;
+            color: #ffffff;
+            padding: 10px 14px;
+            border-radius: 10px;
+            font-weight: 700;
+            cursor: pointer;
+        }
+
+        .hero {
+            background: var(--panel);
+            border-radius: 14px;
+            padding: 20px;
+            box-shadow: 0 8px 22px rgba(0, 0, 0, 0.08);
+            margin-bottom: 18px;
+        }
+
+        h1 {
+            margin: 0 0 8px;
+            color: var(--primary-2);
+        }
+
+        .hero p {
+            margin: 0;
+            color: var(--muted);
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 14px;
+        }
+
+        .week-card {
+            background: var(--panel);
+            border-radius: 14px;
+            padding: 14px;
+            box-shadow: 0 8px 18px rgba(0, 0, 0, 0.07);
+            border: 1px solid #dbeafe;
+        }
+
+        .week-title {
+            margin: 0 0 10px;
+            font-size: 1.05rem;
+            color: var(--primary-2);
+        }
+
+        .chip {
+            display: inline-block;
+            padding: 4px 8px;
+            border-radius: 999px;
+            background: var(--chip);
+            color: #1d4e89;
+            font-size: 0.8rem;
+            margin-bottom: 10px;
+        }
+
+        .links {
+            display: grid;
+            gap: 6px;
+        }
+
+        .links a {
+            text-decoration: none;
+            color: var(--primary-2);
+            font-weight: 600;
+        }
+
+        .links a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <section class="topbar">
+            <p class="welcome" id="welcomeText">Welcome</p>
+            <button class="logout-btn" id="logoutBtn">Logout</button>
+        </section>
+
+        <section class="hero">
+            <h1>NPTEL DBMS Dashboard</h1>
+            <p>Use this home page to open each week menu, reading page, or testing page directly.</p>
+        </section>
+
+        <section class="grid">
+            <article class="week-card"><h2 class="week-title">Week 1</h2><span class="chip">DBMS Practice</span><div class="links"><a href="week1.html">Week 1 Menu</a><a href="week1-reading.html">Reading Page</a><a href="week1-testing.html">Testing Page</a></div></article>
+            <article class="week-card"><h2 class="week-title">Week 2</h2><span class="chip">DBMS Practice</span><div class="links"><a href="week2.html">Week 2 Menu</a><a href="week2-reading.html">Reading Page</a><a href="week2-testing.html">Testing Page</a></div></article>
+            <article class="week-card"><h2 class="week-title">Week 3</h2><span class="chip">DBMS Practice</span><div class="links"><a href="week3.html">Week 3 Menu</a><a href="week3-reading.html">Reading Page</a><a href="week3-testing.html">Testing Page</a></div></article>
+            <article class="week-card"><h2 class="week-title">Week 4</h2><span class="chip">DBMS Practice</span><div class="links"><a href="week4.html">Week 4 Menu</a><a href="week4-reading.html">Reading Page</a><a href="week4-testing.html">Testing Page</a></div></article>
+            <article class="week-card"><h2 class="week-title">Week 5</h2><span class="chip">DBMS Practice</span><div class="links"><a href="week5.html">Week 5 Menu</a><a href="week5-reading.html">Reading Page</a><a href="week5-testing.html">Testing Page</a></div></article>
+            <article class="week-card"><h2 class="week-title">Week 6</h2><span class="chip">DBMS Practice</span><div class="links"><a href="week6.html">Week 6 Menu</a><a href="week6-reading.html">Reading Page</a><a href="week6-testing.html">Testing Page</a></div></article>
+            <article class="week-card"><h2 class="week-title">Week 7</h2><span class="chip">DBMS Practice</span><div class="links"><a href="week7.html">Week 7 Menu</a><a href="week7-reading.html">Reading Page</a><a href="week7-testing.html">Testing Page</a></div></article>
+            <article class="week-card"><h2 class="week-title">Week 8</h2><span class="chip">DBMS Practice</span><div class="links"><a href="week8.html">Week 8 Menu</a><a href="week8-reading.html">Reading Page</a><a href="week8-testing.html">Testing Page</a></div></article>
+            <article class="week-card"><h2 class="week-title">Week 9</h2><span class="chip">DBMS Practice</span><div class="links"><a href="week9.html">Week 9 Menu</a><a href="week9-reading.html">Reading Page</a><a href="week9-testing.html">Testing Page</a></div></article>
+            <article class="week-card"><h2 class="week-title">Week 10</h2><span class="chip">DBMS Practice</span><div class="links"><a href="week10.html">Week 10 Menu</a><a href="week10-reading.html">Reading Page</a><a href="week10-testing.html">Testing Page</a></div></article>
+            <article class="week-card"><h2 class="week-title">Week 11</h2><span class="chip">DBMS Practice</span><div class="links"><a href="week11.html">Week 11 Menu</a><a href="week11-reading.html">Reading Page</a><a href="week11-testing.html">Testing Page</a></div></article>
+            <article class="week-card"><h2 class="week-title">Week 12</h2><span class="chip">DBMS Practice</span><div class="links"><a href="week12.html">Week 12 Menu</a><a href="week12-reading.html">Reading Page</a><a href="week12-testing.html">Testing Page</a></div></article>
+        </section>
+    </div>
+
+    <script>
+        if (localStorage.getItem("nptelAuth") !== "true") {
+            window.location.href = "login.html";
+        }
+
+        const user = localStorage.getItem("nptelUser") || "student";
+        document.getElementById("welcomeText").textContent = "Welcome, " + user;
+
+        document.getElementById("logoutBtn").addEventListener("click", function () {
+            localStorage.removeItem("nptelAuth");
+            localStorage.removeItem("nptelUser");
+            window.location.href = "login.html";
+        });
+    </script>
+</body>
+</html>
