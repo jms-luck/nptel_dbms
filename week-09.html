@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Database Practice - Week 9</title>
+  <style>
+    :root { --bg:#f5f7fb; --card:#ffffff; --ink:#17212b; --muted:#5a6b7b; --accent:#0f766e; --line:#d7e0ea; }
+    * { box-sizing:border-box; }
+    body { margin:0; font-family:Segoe UI, Tahoma, sans-serif; background:var(--bg); color:var(--ink); }
+    .wrap { max-width:980px; margin:0 auto; padding:24px 16px 40px; }
+    .top { display:flex; justify-content:space-between; align-items:center; gap:12px; flex-wrap:wrap; margin-bottom:16px; }
+    a.btn { text-decoration:none; color:#fff; background:var(--accent); padding:10px 14px; border-radius:10px; font-weight:600; }
+    h1 { margin:0; font-size:1.6rem; }
+    .meta { color:var(--muted); margin:4px 0 0; }
+    .card { background:var(--card); border:1px solid var(--line); border-radius:14px; padding:14px 16px; margin:12px 0; }
+    .card h3 { margin:0 0 8px; font-size:1rem; color:#0b4f6c; }
+    .prereq { margin:0 0 8px; color:#334155; background:#f8fafc; border:1px solid #e2e8f0; padding:8px 10px; border-radius:8px; }
+    .question { margin:0 0 8px; font-weight:600; }
+    .q-images { margin:8px 0 10px; display:grid; gap:8px; }
+    .q-img { max-width:100%; height:auto; border:1px solid #cbd5e1; border-radius:8px; background:#fff; }
+    ul { margin:6px 0 10px 18px; }
+    .answer { margin:0; color:#1b4332; background:#ecfdf5; border:1px solid #bbf7d0; padding:8px 10px; border-radius:8px; }
+  </style>
+</head>
+<body>
+  <main class="wrap">
+    <div class="top">
+      <div>
+        <h1>Week 9 Practice Questions</h1>
+        <p class="meta">12 questions extracted</p>
+      </div>
+      <a class="btn" href="index.html">All Weeks</a>
+    </div>
+    <section class="card">
+      <h3>Q1</h3>
+      <p class="prereq"><strong>Prerequisite / Context:</strong> Use the following in answering the questions: 1KB = 1024Bytes; 1MB = 1024KB</p>
+      <p class="question">The unit of data transfer to and from disks is called block</p>
+      
+      <ul><li>True</li><li>False</li></ul>
+      <p class="answer"><strong>Answer:</strong> True</p>
+    </section>    <section class="card">
+      <h3>Q2</h3>
+      <p class="prereq"><strong>Prerequisite / Context:</strong> Use the following in answering the questions: 1KB = 1024Bytes; 1MB = 1024KB</p>
+      <p class="question">If record length is much less than the block size and  unspanned organization is used, then blocking factor of data file is ceil(B/r), where B is block size and r is record length</p>
+      
+      <ul><li>True</li><li>False</li></ul>
+      <p class="answer"><strong>Answer:</strong> False</p>
+    </section>    <section class="card">
+      <h3>Q3</h3>
+      <p class="prereq"><strong>Prerequisite / Context:</strong> Use the following in answering the questions: 1KB = 1024Bytes; 1MB = 1024KB</p>
+      <p class="question">In the linked allocation of mapping file blocks onto disk blocks, scanning operation is faster compared to the contiguous allocation</p>
+      
+      <ul><li>True</li><li>False</li></ul>
+      <p class="answer"><strong>Answer:</strong> False</p>
+    </section>    <section class="card">
+      <h3>Q4</h3>
+      <p class="prereq"><strong>Prerequisite / Context:</strong> Use the following in answering the questions: 1KB = 1024Bytes; 1MB = 1024KB</p>
+      <p class="question">In an RDBMS both fixed-length and variable-length record types can be used</p>
+      
+      <ul><li>True</li><li>False</li></ul>
+      <p class="answer"><strong>Answer:</strong> True</p>
+    </section>    <section class="card">
+      <h3>Q5</h3>
+      <p class="prereq"><strong>Prerequisite / Context:</strong> Use the following in answering the questions: 1KB = 1024Bytes; 1MB = 1024KB</p>
+      <p class="question">Consider the following parameters of a hard disk: seek time: 12ms, rotational delay: 3ms. Suppose the read/write head of the disk is positioned on block 0 of track 20, then the maximum time taken for the head to move to block 10 on the same track is:</p>
+      
+      <ul><li>3 ms</li><li>12 ms</li><li>15 ms</li><li>30 ms</li></ul>
+      <p class="answer"><strong>Answer:</strong> 3 ms</p>
+    </section>    <section class="card">
+      <h3>Q6</h3>
+      <p class="prereq"><strong>Prerequisite / Context:</strong> Use the following information to answer questions 6 and 7. Suppose extendible hashing is used to organize a file of data records. The size of each bucket is 2 records. The initial global depth value is 0 and the directory entry points to an empty bucket. A sequence of 11 records are to be inserted into the file. When the hash function is applied to the keys of these records, the values 0, 1, 2, ..., 9 and 10 are obtained, respectively, in that order.</p>
+      <p class="question">The number of data buckets in use after all the records are inserted is:</p>
+      
+      <ul><li>6</li><li>7</li><li>8</li><li>11</li></ul>
+      <p class="answer"><strong>Answer:</strong> 7</p>
+    </section>    <section class="card">
+      <h3>Q7</h3>
+      <p class="prereq"><strong>Prerequisite / Context:</strong> Use the following information to answer questions 6 and 7. Suppose extendible hashing is used to organize a file of data records. The size of each bucket is 2 records. The initial global depth value is 0 and the directory entry points to an empty bucket. A sequence of 11 records are to be inserted into the file. When the hash function is applied to the keys of these records, the values 0, 1, 2, ..., 9 and 10 are obtained, respectively, in that order.</p>
+      <p class="question">Choose the correct option for the following statements about the final file structure, after the insertion of all the records. S1. The global depth value is 3 S2. The local depth values of all the data buckets except one is same</p>
+      
+      <ul><li>S1, S2 are both false</li><li>S1, S2 are both true</li><li>S1 is true; S2 is false</li><li>S1 is false; S2 is true</li></ul>
+      <p class="answer"><strong>Answer:</strong> S1, S2 are both true</p>
+    </section>    <section class="card">
+      <h3>Q8</h3>
+      <p class="prereq"><strong>Prerequisite / Context:</strong> Use the following information to answer questions 6 and 7. Suppose extendible hashing is used to organize a file of data records. The size of each bucket is 2 records. The initial global depth value is 0 and the directory entry points to an empty bucket. A sequence of 11 records are to be inserted into the file. When the hash function is applied to the keys of these records, the values 0, 1, 2, ..., 9 and 10 are obtained, respectively, in that order.</p>
+      <p class="question">A 2-level index is built on the primary key field of a data file that uses 10,000 blocks of storage on the disk. The number of blocks in level-1 and level-2 index files are 100 and 10, respectively. None of the index file blocks are in memory buffers. The maximum number of block accesses required to retrieve the record with a particular primary key value is:</p>
+      
+      <ul><li>3</li><li>5</li><li>6</li><li>None of the above</li></ul>
+      <p class="answer"><strong>Answer:</strong> 6</p>
+    </section>    <section class="card">
+      <h3>Q9</h3>
+      <p class="prereq"><strong>Prerequisite / Context:</strong> Use the following information to answer questions 10 and 11. Suppose we want to build a multi-level index on a key field X of a disk file of records. The file is not ordered on X. The file has the following details: Number of records = 13,10,720; record length = 200 bytes; size of X = 13 bytes; size of record pointer = 7 bytes; block size = 2048 bytes. Assume that the block pointer size is the same as the size of the record pointer of the file.</p>
+      <p class="question">The blocking factors for the data file and the index file, respectively, are</p>
+      
+      <ul><li>11, 101</li><li>10, 103</li><li>11, 103</li><li>10, 102</li></ul>
+      <p class="answer"><strong>Answer:</strong> 10, 102</p>
+    </section>    <section class="card">
+      <h3>Q10</h3>
+      <p class="prereq"><strong>Prerequisite / Context:</strong> Use the following information to answer questions 10 and 11. Suppose we want to build a multi-level index on a key field X of a disk file of records. The file is not ordered on X. The file has the following details: Number of records = 13,10,720; record length = 200 bytes; size of X = 13 bytes; size of record pointer = 7 bytes; block size = 2048 bytes. Assume that the block pointer size is the same as the size of the record pointer of the file.</p>
+      <p class="question">The number of blocks in the first and second level index files, respectively, are:</p>
+      
+      <ul><li>131072, 1286</li><li>13111, 126</li><li>13110, 125</li><li>12851, 126</li></ul>
+      <p class="answer"><strong>Answer:</strong> 12851, 126</p>
+    </section>    <section class="card">
+      <h3>Q11</h3>
+      <p class="prereq"><strong>Prerequisite / Context:</strong> Use the following information to answer questions 12 and 13. Consider a large data file ordered on the primary key field F1. It has a (non-ordering) key field F2. Both the fields have the same size. Suppose two multi-level indices L1 and L2 are built on the fields F1 and F2, respectively. Assume that the block pointer length is the same as the length of the record pointer of the file.</p>
+      <p class="question">Let the number of blocks in the level-1 indexes of L1 and L2 be x1 and x2, respectively. The relationship between x1 and x2 is</p>
+      
+      <ul><li>x1 &lt; x2</li><li>x1 = x2</li><li>x1 &gt; x2</li><li>None of the above</li></ul>
+      <p class="answer"><strong>Answer:</strong> x1 &lt; x2</p>
+    </section>    <section class="card">
+      <h3>Q12</h3>
+      <p class="prereq"><strong>Prerequisite / Context:</strong> Use the following information to answer questions 12 and 13. Consider a large data file ordered on the primary key field F1. It has a (non-ordering) key field F2. Both the fields have the same size. Suppose two multi-level indices L1 and L2 are built on the fields F1 and F2, respectively. Assume that the block pointer length is the same as the length of the record pointer of the file.</p>
+      <p class="question">Let the number of blocks in level-2 indexes of L1 and L2 be x1 and x2, respectively. The relation between x1 and x2 is</p>
+      
+      <ul><li>x1 &lt; x2</li><li>x1 = x2</li><li>x1 &gt; x2</li><li>None of the above</li></ul>
+      <p class="answer"><strong>Answer:</strong> x1 &lt; x2</p>
+    </section>
+  </main>
+</body>
+</html>

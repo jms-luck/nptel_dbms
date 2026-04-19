@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Database Practice - Week 11</title>
+  <style>
+    :root { --bg:#f5f7fb; --card:#ffffff; --ink:#17212b; --muted:#5a6b7b; --accent:#0f766e; --line:#d7e0ea; }
+    * { box-sizing:border-box; }
+    body { margin:0; font-family:Segoe UI, Tahoma, sans-serif; background:var(--bg); color:var(--ink); }
+    .wrap { max-width:980px; margin:0 auto; padding:24px 16px 40px; }
+    .top { display:flex; justify-content:space-between; align-items:center; gap:12px; flex-wrap:wrap; margin-bottom:16px; }
+    a.btn { text-decoration:none; color:#fff; background:var(--accent); padding:10px 14px; border-radius:10px; font-weight:600; }
+    h1 { margin:0; font-size:1.6rem; }
+    .meta { color:var(--muted); margin:4px 0 0; }
+    .card { background:var(--card); border:1px solid var(--line); border-radius:14px; padding:14px 16px; margin:12px 0; }
+    .card h3 { margin:0 0 8px; font-size:1rem; color:#0b4f6c; }
+    .prereq { margin:0 0 8px; color:#334155; background:#f8fafc; border:1px solid #e2e8f0; padding:8px 10px; border-radius:8px; }
+    .question { margin:0 0 8px; font-weight:600; }
+    .q-images { margin:8px 0 10px; display:grid; gap:8px; }
+    .q-img { max-width:100%; height:auto; border:1px solid #cbd5e1; border-radius:8px; background:#fff; }
+    ul { margin:6px 0 10px 18px; }
+    .answer { margin:0; color:#1b4332; background:#ecfdf5; border:1px solid #bbf7d0; padding:8px 10px; border-radius:8px; }
+  </style>
+</head>
+<body>
+  <main class="wrap">
+    <div class="top">
+      <div>
+        <h1>Week 11 Practice Questions</h1>
+        <p class="meta">7 questions extracted</p>
+      </div>
+      <a class="btn" href="index.html">All Weeks</a>
+    </div>
+    <section class="card">
+      <h3>Q1</h3>
+      
+      <p class="question">Consider two data files stored on a disk using 5060 and 60 blocks. We need to join these two files using the nested loop join method. The buffer size available is 52 blocks. The number of block accesses required by the method is (Ignore the block accesses required for writing the result):</p>
+      
+      <ul><li>5120</li><li>10110</li><li>10180</li><li>11180</li></ul>
+      <p class="answer"><strong>Answer:</strong> 10180</p>
+    </section>    <section class="card">
+      <h3>Q2</h3>
+      
+      <p class="question">Which of the following relational algebra operators are both commutative and associative? (i) INTERSECTION (ii) PROJECTION (iii) UNION</p>
+      
+      <ul><li>Only (i)</li><li>Only (i) and (iii)</li><li>Only (ii) and (iii)</li><li>All (i), (ii) and (iii)</li></ul>
+      <p class="answer"><strong>Answer:</strong> Only (i) and (iii)</p>
+    </section>    <section class="card">
+      <h3>Q3</h3>
+      
+      <p class="question">Use the following schema of the academic institution relational database for this question. student( rollNo , name, degree, year, sex, deptNo, advisor)</p>
+      
+      <ul><li>2, 4</li><li>4, 4</li><li>2, 2</li><li>4, 2</li></ul>
+      <p class="answer"><strong>Answer:</strong> 4, 2</p>
+    </section>    <section class="card">
+      <h3>Q4</h3>
+      
+      <p class="question">Durability is managed by</p>
+      
+      <ul><li>Query processor of the DBMS</li><li>Application Programmer</li><li>Recovery module of DBMS</li><li>Concurrency module of DBMS</li></ul>
+      <p class="answer"><strong>Answer:</strong> Recovery module of DBMS</p>
+    </section>    <section class="card">
+      <h3>Q5</h3>
+      
+      <p class="question">Consider the following schedule S. S: R 1 (X); W 1 (X); R 2 (X); W 2 (X); R 1 (Y); R 2 (Y); The number of conflicting pairs of operations in the schedule S is</p>
+      
+      <ul><li>2</li><li>3</li><li>4</li><li>5</li></ul>
+      <p class="answer"><strong>Answer:</strong> 3</p>
+    </section>    <section class="card">
+      <h3>Q6</h3>
+      
+      <p class="question">Consider the following schedules. S1: R 1 (X) W 1 (X) R 2 (X) W 2 (X) R 1 (Y) R 2 (Y) S2: R 1 (X) W 1 (X) R 2 (X) R 1 (Y) W 2 (X) R 2 (Y) Identify the schedule(s) that is(are) conflict-serializable?</p>
+      
+      <ul><li>Only S1</li><li>Only S2</li><li>BOTH</li><li>NONE</li></ul>
+      <p class="answer"><strong>Answer:</strong> BOTH</p>
+    </section>    <section class="card">
+      <h3>Q7</h3>
+      
+      <p class="question">If the precedence graph of schedule has no arcs, then the schedule is a __________ schedule</p>
+      
+      <ul><li>serial</li><li>conflict serializable but not serial</li><li>conflict serializable and may be serial</li><li>No valid conclusion can be drawn</li></ul>
+      <p class="answer"><strong>Answer:</strong> conflict serializable and may be serial</p>
+    </section>
+  </main>
+</body>
+</html>

@@ -1,0 +1,152 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Database Practice Test - Week 5</title>
+  <style>
+    :root { --bg:#f3f6fb; --card:#ffffff; --ink:#17212b; --muted:#5a6b7b; --accent:#0f766e; --line:#d7e0ea; }
+    * { box-sizing:border-box; }
+    body { margin:0; font-family:Segoe UI, Tahoma, sans-serif; background:var(--bg); color:var(--ink); }
+    .wrap { max-width:980px; margin:0 auto; padding:24px 16px 40px; }
+    .top { display:flex; justify-content:space-between; align-items:center; gap:12px; flex-wrap:wrap; margin-bottom:16px; }
+    .actions { display:flex; gap:10px; flex-wrap:wrap; }
+    a.btn { text-decoration:none; color:#fff; background:var(--accent); padding:10px 14px; border-radius:10px; font-weight:600; }
+    a.btn.alt { background:#0b4f6c; }
+    h1 { margin:0; font-size:1.6rem; }
+    .meta { color:var(--muted); margin:4px 0 0; }
+    .card { background:var(--card); border:1px solid var(--line); border-radius:14px; padding:14px 16px; margin:12px 0; }
+    .card h3 { margin:0 0 8px; font-size:1rem; color:#0b4f6c; }
+    .prereq { margin:0 0 8px; color:#334155; background:#f8fafc; border:1px solid #e2e8f0; padding:8px 10px; border-radius:8px; }
+    .question { margin:0 0 8px; font-weight:600; }
+    .q-images { margin:8px 0 10px; display:grid; gap:8px; }
+    .q-img { max-width:100%; height:auto; border:1px solid #cbd5e1; border-radius:8px; background:#fff; }
+    .options { display:grid; gap:8px; margin:8px 0 10px; }
+    .opt { display:block; }
+    .submit-btn { border:none; background:#0f766e; color:#fff; padding:8px 12px; border-radius:8px; font-weight:600; cursor:pointer; }
+    .result { margin:8px 0 0; padding:8px 10px; border-radius:8px; display:none; }
+    .result.ok { display:block; background:#ecfdf5; border:1px solid #bbf7d0; color:#14532d; }
+    .result.bad { display:block; background:#fef2f2; border:1px solid #fecaca; color:#7f1d1d; }
+  </style>
+</head>
+<body>
+  <main class="wrap">
+    <div class="top">
+      <div>
+        <h1>Week 5 Test Page</h1>
+        <p class="meta">Choose an answer and click Submit for each question</p>
+      </div>
+      <div class="actions">
+        <a class="btn" href="index.html">All Weeks</a>
+        <a class="btn alt" href="week-05-read.html">Open Read Page</a>
+      </div>
+    </div>
+    <section class="card">
+      <h3>Q1</h3>
+      <p class="prereq"><strong>Prerequisite / Context:</strong> Use the following schema of the academic institution relational database in the following questions wherever required. student( rollNo , name, degree, year, sex, deptNo, advisor) department( deptId , name, hod, phone) professor( empId , name, sex, startYear, deptNo, phone) course( courseId , cname, credits, deptNo) enrollment( rollNo, courseId, sem, year , grade) teaching( empId, courseId, sem, year , classRoom) preRequisite( preCourseId, courseId ) ---------------</p>
+      <p class="question">Which of the following is not a Data Definition Language keyword of SQL?</p>
+      
+      <div class="options">
+      <label class="opt"><input type="radio" name="q1" value="0"> create</label>      <label class="opt"><input type="radio" name="q1" value="1"> insert</label>      <label class="opt"><input type="radio" name="q1" value="2"> alter</label>      <label class="opt"><input type="radio" name="q1" value="3"> drop</label>      </div>
+      <button class="submit-btn" type="button" onclick='evaluateQuestion(1, 1, "insert")'>Submit</button>
+      <p class="result" id="result-1"></p>
+    </section>    <section class="card">
+      <h3>Q2</h3>
+      <p class="prereq"><strong>Prerequisite / Context:</strong> Use the following schema of the academic institution relational database in the following questions wherever required. student( rollNo , name, degree, year, sex, deptNo, advisor) department( deptId , name, hod, phone) professor( empId , name, sex, startYear, deptNo, phone) course( courseId , cname, credits, deptNo) enrollment( rollNo, courseId, sem, year , grade) teaching( empId, courseId, sem, year , classRoom) preRequisite( preCourseId, courseId ) ---------------</p>
+      <p class="question">What is the relation between NOT NULL and DEFAULT keywords in the attributes specification of the relation definitions?</p>
+      
+      <div class="options">
+      <label class="opt"><input type="radio" name="q2" value="0"> Both can be specified independently</label>      <label class="opt"><input type="radio" name="q2" value="1"> NOT NULL keyword must be specified only if DEFAULT keyword is specified</label>      <label class="opt"><input type="radio" name="q2" value="2"> If NOT NULL keyword is specified then DEFAULT keyword must be specified</label>      <label class="opt"><input type="radio" name="q2" value="3"> NOT NULL keyword must be specified if and only if DEFAULT keyword is specified</label>      </div>
+      <button class="submit-btn" type="button" onclick='evaluateQuestion(2, 0, "Both can be specified independently")'>Submit</button>
+      <p class="result" id="result-2"></p>
+    </section>    <section class="card">
+      <h3>Q3</h3>
+      <p class="prereq"><strong>Prerequisite / Context:</strong> Use the following schema of the academic institution relational database in the following questions wherever required. student( rollNo , name, degree, year, sex, deptNo, advisor) department( deptId , name, hod, phone) professor( empId , name, sex, startYear, deptNo, phone) course( courseId , cname, credits, deptNo) enrollment( rollNo, courseId, sem, year , grade) teaching( empId, courseId, sem, year , classRoom) preRequisite( preCourseId, courseId ) ---------------</p>
+      <p class="question">Which of the following key constraints can be specified only once in a relation definition?</p>
+      
+      <div class="options">
+      <label class="opt"><input type="radio" name="q3" value="0"> Only (iii)</label>      <label class="opt"><input type="radio" name="q3" value="1"> Only (i)</label>      <label class="opt"><input type="radio" name="q3" value="2"> Only (i) and (iii)</label>      <label class="opt"><input type="radio" name="q3" value="3"> All (i), (ii) and (iii)</label>      </div>
+      <button class="submit-btn" type="button" onclick='evaluateQuestion(3, 1, "Only (i)")'>Submit</button>
+      <p class="result" id="result-3"></p>
+    </section>    <section class="card">
+      <h3>Q4</h3>
+      <p class="prereq"><strong>Prerequisite / Context:</strong> Use the following schema of the academic institution relational database in the following questions wherever required. student( rollNo , name, degree, year, sex, deptNo, advisor) department( deptId , name, hod, phone) professor( empId , name, sex, startYear, deptNo, phone) course( courseId , cname, credits, deptNo) enrollment( rollNo, courseId, sem, year , grade) teaching( empId, courseId, sem, year , classRoom) preRequisite( preCourseId, courseId ) ---------------</p>
+      <p class="question">Which of the following is the negation of  =ALL  operator of SQL?</p>
+      
+      <div class="options">
+      <label class="opt"><input type="radio" name="q4" value="0"> &lt;&gt; ALL</label>      <label class="opt"><input type="radio" name="q4" value="1"> NOT ALL</label>      <label class="opt"><input type="radio" name="q4" value="2"> &lt;&gt; ANY</label>      <label class="opt"><input type="radio" name="q4" value="3"> NOT EXISTS</label>      </div>
+      <button class="submit-btn" type="button" onclick='evaluateQuestion(4, 2, "&amp;lt;&amp;gt; ANY")'>Submit</button>
+      <p class="result" id="result-4"></p>
+    </section>    <section class="card">
+      <h3>Q5</h3>
+      <p class="prereq"><strong>Prerequisite / Context:</strong> Use the following schema of the academic institution relational database in the following questions wherever required. student( rollNo , name, degree, year, sex, deptNo, advisor) department( deptId , name, hod, phone) professor( empId , name, sex, startYear, deptNo, phone) course( courseId , cname, credits, deptNo) enrollment( rollNo, courseId, sem, year , grade) teaching( empId, courseId, sem, year , classRoom) preRequisite( preCourseId, courseId ) ---------------</p>
+      <p class="question">Consider the following query to retrieve the course(s) with highest number of credits : SELECT c1.courseId</p>
+      
+      <div class="options">
+      <label class="opt"><input type="radio" name="q5" value="0"> The condition should be: c2.courseId &lt;&gt; c1.courseId</label>      <label class="opt"><input type="radio" name="q5" value="1"> The WHERE clause isnt required</label>      <label class="opt"><input type="radio" name="q5" value="2"> The condition should be: c2.credits &gt; c1.credits</label>      <label class="opt"><input type="radio" name="q5" value="3"> It can not be completed to solve the given query</label>      </div>
+      <button class="submit-btn" type="button" onclick='evaluateQuestion(5, 2, "The condition should be: c2.credits &amp;gt; c1.credits")'>Submit</button>
+      <p class="result" id="result-5"></p>
+    </section>    <section class="card">
+      <h3>Q6</h3>
+      <p class="prereq"><strong>Prerequisite / Context:</strong> Use the following schema of the academic institution relational database in the following questions wherever required. student( rollNo , name, degree, year, sex, deptNo, advisor) department( deptId , name, hod, phone) professor( empId , name, sex, startYear, deptNo, phone) course( courseId , cname, credits, deptNo) enrollment( rollNo, courseId, sem, year , grade) teaching( empId, courseId, sem, year , classRoom) preRequisite( preCourseId, courseId ) ---------------</p>
+      <p class="question">Which of the following queries would find the courses with at least two prerequisites?</p>
+      
+      <div class="options">
+      <label class="opt"><input type="radio" name="q6" value="0"> SELECT * FROM course c1 WHERE EXISTS (SELECT * FROM prerequisite p1 WHERE p1.courseId = c1.courseId) AND EXISTS (SELECT * FROM prerequisite p2 WHERE p2.courseId = c1.courseId)</label>      <label class="opt"><input type="radio" name="q6" value="1"> SELECT * FROM course c1 WHERE EXISTS (SELECT * FROM prerequisite p1 WHERE p1.courseId = c1.courseId) AND EXISTS (SELECT * FROM prerequisite p2 WHERE p2.courseId = c1.courseId AND p1.preCourseId &lt;&gt; p2.preCourseId)</label>      <label class="opt"><input type="radio" name="q6" value="2"> SELECT * FROM course c1 WHERE EXISTS (SELECT * FROM prerequisite p1, prerequisite p2 WHERE p1.courseId = c1.courseId AND p2.courseId = c1. courseId)</label>      <label class="opt"><input type="radio" name="q6" value="3"> SELECT * FROM course c1 WHERE EXISTS (SELECT * FROM prerequisite p1, prerequisite p2 WHERE p1.courseId = c1.courseId AND p2.courseId = c1. courseId AND p1.preCourseId &lt;&gt; p2.preCourseId)</label>      </div>
+      <button class="submit-btn" type="button" onclick='evaluateQuestion(6, 3, "SELECT * FROM course c1 WHERE EXISTS (SELECT * FROM prerequisite p1, prerequisite p2 WHERE p1.courseId = c1.courseId AND p2.courseId = c1. courseId AND p1.preCourseId &amp;lt;&amp;gt; p2.preCourseId)")'>Submit</button>
+      <p class="result" id="result-6"></p>
+    </section>    <section class="card">
+      <h3>Q7</h3>
+      <p class="prereq"><strong>Prerequisite / Context:</strong> Use the following schema of the academic institution relational database in the following questions wherever required. student( rollNo , name, degree, year, sex, deptNo, advisor) department( deptId , name, hod, phone) professor( empId , name, sex, startYear, deptNo, phone) course( courseId , cname, credits, deptNo) enrollment( rollNo, courseId, sem, year , grade) teaching( empId, courseId, sem, year , classRoom) preRequisite( preCourseId, courseId ) ---------------</p>
+      <p class="question">Which of the following queries would find the name of the students who got S grade in all the prerequisites of course with id 200?</p>
+      
+      <div class="options">
+      <label class="opt"><input type="radio" name="q7" value="0"> SELECT s.name FROM student s WHERE NOT EXISTS (SELECT p1. preCourseId FROM prerequisite p1 WHERE p1.courseId=200 AND NOT EXISTS (SELECT * FROM enrollment e2 WHERE e2.courseId = p1.preCourseId AND e2.grade &lt;&gt; S AND e.rollNo = s.rollNo))</label>      <label class="opt"><input type="radio" name="q7" value="1"> SELECT s.name FROM student s, enrollment e WHERE s.rollNo = e.rollNo AND e.grade = S AND e.courseId = ALL ( SELECT p1.preCourseId FROM prerequisite p1 WHERE p1.courseId=200)</label>      <label class="opt"><input type="radio" name="q7" value="2"> SELECT s.name FROM student s WHERE NOT EXISTS ( SELECT p1. preCourseId FROM prerequisite p1 WHERE p1.courseId=200 AND NOT EXISTS (SELECT * FROM enrollment e2 WHERE e2.courseId = p1.preCourseId AND e2.grade = S AND e.rollNo = s.rollNo))</label>      <label class="opt"><input type="radio" name="q7" value="3"> SELECT s.name FROM student s WHERE EXISTS (SELECT p1. preCourseId FROM prerequisite p1 WHERE p1.courseId=200 AND NOT EXISTS (SELECT * FROM enrollment e2 WHERE e2.courseId = p1.preCourseId AND e2.grade = S AND e.rollNo = s.rollNo))</label>      </div>
+      <button class="submit-btn" type="button" onclick='evaluateQuestion(7, 2, "SELECT s.name FROM student s WHERE NOT EXISTS ( SELECT p1. preCourseId FROM prerequisite p1 WHERE p1.courseId=200 AND NOT EXISTS (SELECT * FROM enrollment e2 WHERE e2.courseId = p1.preCourseId AND e2.grade = S AND e.rollNo = s.rollNo))")'>Submit</button>
+      <p class="result" id="result-7"></p>
+    </section>    <section class="card">
+      <h3>Q8</h3>
+      <p class="prereq"><strong>Prerequisite / Context:</strong> Use the following schema of the academic institution relational database in the following questions wherever required. student( rollNo , name, degree, year, sex, deptNo, advisor) department( deptId , name, hod, phone) professor( empId , name, sex, startYear, deptNo, phone) course( courseId , cname, credits, deptNo) enrollment( rollNo, courseId, sem, year , grade) teaching( empId, courseId, sem, year , classRoom) preRequisite( preCourseId, courseId ) ---------------</p>
+      <p class="question">Consider the following query SELECT p1.empId, p2.empId</p>
+      
+      <div class="options">
+      <label class="opt"><input type="radio" name="q8" value="0"> It includes all the pairs of professors with same number of years of experience</label>      <label class="opt"><input type="radio" name="q8" value="1"> It doesnt include any of the pairs of professors with same number of years of experience</label>      <label class="opt"><input type="radio" name="q8" value="2"> It includes some of the pairs of professors with same number of years of experience</label>      <label class="opt"><input type="radio" name="q8" value="3"> It doesnt include some of the pairs of professors with same number of years of experience</label>      </div>
+      <button class="submit-btn" type="button" onclick='evaluateQuestion(8, 0, "It includes all the pairs of professors with same number of years of experience")'>Submit</button>
+      <p class="result" id="result-8"></p>
+    </section>    <section class="card">
+      <h3>Q9</h3>
+      <p class="prereq"><strong>Prerequisite / Context:</strong> Use the following schema of the academic institution relational database in the following questions wherever required. student( rollNo , name, degree, year, sex, deptNo, advisor) department( deptId , name, hod, phone) professor( empId , name, sex, startYear, deptNo, phone) course( courseId , cname, credits, deptNo) enrollment( rollNo, courseId, sem, year , grade) teaching( empId, courseId, sem, year , classRoom) preRequisite( preCourseId, courseId ) ---------------</p>
+      <p class="question">Consider the following query:</p>
+      
+      <div class="options">
+      <label class="opt"><input type="radio" name="q9" value="0"> 0</label>      <label class="opt"><input type="radio" name="q9" value="1"> 10</label>      <label class="opt"><input type="radio" name="q9" value="2"> 90</label>      <label class="opt"><input type="radio" name="q9" value="3"> 100</label>      </div>
+      <button class="submit-btn" type="button" onclick='evaluateQuestion(9, 1, "10")'>Submit</button>
+      <p class="result" id="result-9"></p>
+    </section>
+  </main>
+  <script>
+    function evaluateQuestion(qNum, correctIndexes, answerText) {
+      const selected = Array.from(document.querySelectorAll('input[name="q' + qNum + '"]:checked'))
+        .map(el => Number(el.value))
+        .sort((a, b) => a - b);
+      const expected = (correctIndexes || []).slice().sort((a, b) => a - b);
+      const result = document.getElementById('result-' + qNum);
+
+      if (!selected.length) {
+        result.className = 'result bad';
+        result.textContent = 'Please choose at least one option before submitting.';
+        return;
+      }
+
+      const isCorrect = selected.length === expected.length && selected.every((v, i) => v === expected[i]);
+      if (isCorrect) {
+        result.className = 'result ok';
+        result.textContent = 'Correct';
+      } else {
+        result.className = 'result bad';
+        result.textContent = 'Incorrect. Correct answer: ' + answerText;
+      }
+    }
+  </script>
+</body>
+</html>

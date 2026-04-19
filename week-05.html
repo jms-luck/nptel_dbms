@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Database Practice - Week 5</title>
+  <style>
+    :root { --bg:#f5f7fb; --card:#ffffff; --ink:#17212b; --muted:#5a6b7b; --accent:#0f766e; --line:#d7e0ea; }
+    * { box-sizing:border-box; }
+    body { margin:0; font-family:Segoe UI, Tahoma, sans-serif; background:var(--bg); color:var(--ink); }
+    .wrap { max-width:980px; margin:0 auto; padding:24px 16px 40px; }
+    .top { display:flex; justify-content:space-between; align-items:center; gap:12px; flex-wrap:wrap; margin-bottom:16px; }
+    a.btn { text-decoration:none; color:#fff; background:var(--accent); padding:10px 14px; border-radius:10px; font-weight:600; }
+    h1 { margin:0; font-size:1.6rem; }
+    .meta { color:var(--muted); margin:4px 0 0; }
+    .card { background:var(--card); border:1px solid var(--line); border-radius:14px; padding:14px 16px; margin:12px 0; }
+    .card h3 { margin:0 0 8px; font-size:1rem; color:#0b4f6c; }
+    .prereq { margin:0 0 8px; color:#334155; background:#f8fafc; border:1px solid #e2e8f0; padding:8px 10px; border-radius:8px; }
+    .question { margin:0 0 8px; font-weight:600; }
+    .q-images { margin:8px 0 10px; display:grid; gap:8px; }
+    .q-img { max-width:100%; height:auto; border:1px solid #cbd5e1; border-radius:8px; background:#fff; }
+    ul { margin:6px 0 10px 18px; }
+    .answer { margin:0; color:#1b4332; background:#ecfdf5; border:1px solid #bbf7d0; padding:8px 10px; border-radius:8px; }
+  </style>
+</head>
+<body>
+  <main class="wrap">
+    <div class="top">
+      <div>
+        <h1>Week 5 Practice Questions</h1>
+        <p class="meta">9 questions extracted</p>
+      </div>
+      <a class="btn" href="index.html">All Weeks</a>
+    </div>
+    <section class="card">
+      <h3>Q1</h3>
+      <p class="prereq"><strong>Prerequisite / Context:</strong> Use the following schema of the academic institution relational database in the following questions wherever required. student( rollNo , name, degree, year, sex, deptNo, advisor) department( deptId , name, hod, phone) professor( empId , name, sex, startYear, deptNo, phone) course( courseId , cname, credits, deptNo) enrollment( rollNo, courseId, sem, year , grade) teaching( empId, courseId, sem, year , classRoom) preRequisite( preCourseId, courseId ) ---------------</p>
+      <p class="question">Which of the following is not a Data Definition Language keyword of SQL?</p>
+      
+      <ul><li>create</li><li>insert</li><li>alter</li><li>drop</li></ul>
+      <p class="answer"><strong>Answer:</strong> insert</p>
+    </section>    <section class="card">
+      <h3>Q2</h3>
+      <p class="prereq"><strong>Prerequisite / Context:</strong> Use the following schema of the academic institution relational database in the following questions wherever required. student( rollNo , name, degree, year, sex, deptNo, advisor) department( deptId , name, hod, phone) professor( empId , name, sex, startYear, deptNo, phone) course( courseId , cname, credits, deptNo) enrollment( rollNo, courseId, sem, year , grade) teaching( empId, courseId, sem, year , classRoom) preRequisite( preCourseId, courseId ) ---------------</p>
+      <p class="question">What is the relation between NOT NULL and DEFAULT keywords in the attributes specification of the relation definitions?</p>
+      
+      <ul><li>Both can be specified independently</li><li>NOT NULL keyword must be specified only if DEFAULT keyword is specified</li><li>If NOT NULL keyword is specified then DEFAULT keyword must be specified</li><li>NOT NULL keyword must be specified if and only if DEFAULT keyword is specified</li></ul>
+      <p class="answer"><strong>Answer:</strong> Both can be specified independently</p>
+    </section>    <section class="card">
+      <h3>Q3</h3>
+      <p class="prereq"><strong>Prerequisite / Context:</strong> Use the following schema of the academic institution relational database in the following questions wherever required. student( rollNo , name, degree, year, sex, deptNo, advisor) department( deptId , name, hod, phone) professor( empId , name, sex, startYear, deptNo, phone) course( courseId , cname, credits, deptNo) enrollment( rollNo, courseId, sem, year , grade) teaching( empId, courseId, sem, year , classRoom) preRequisite( preCourseId, courseId ) ---------------</p>
+      <p class="question">Which of the following key constraints can be specified only once in a relation definition?</p>
+      
+      <ul><li>Only (iii)</li><li>Only (i)</li><li>Only (i) and (iii)</li><li>All (i), (ii) and (iii)</li></ul>
+      <p class="answer"><strong>Answer:</strong> Only (i)</p>
+    </section>    <section class="card">
+      <h3>Q4</h3>
+      <p class="prereq"><strong>Prerequisite / Context:</strong> Use the following schema of the academic institution relational database in the following questions wherever required. student( rollNo , name, degree, year, sex, deptNo, advisor) department( deptId , name, hod, phone) professor( empId , name, sex, startYear, deptNo, phone) course( courseId , cname, credits, deptNo) enrollment( rollNo, courseId, sem, year , grade) teaching( empId, courseId, sem, year , classRoom) preRequisite( preCourseId, courseId ) ---------------</p>
+      <p class="question">Which of the following is the negation of  =ALL  operator of SQL?</p>
+      
+      <ul><li>&lt;&gt; ALL</li><li>NOT ALL</li><li>&lt;&gt; ANY</li><li>NOT EXISTS</li></ul>
+      <p class="answer"><strong>Answer:</strong> &lt;&gt; ANY</p>
+    </section>    <section class="card">
+      <h3>Q5</h3>
+      <p class="prereq"><strong>Prerequisite / Context:</strong> Use the following schema of the academic institution relational database in the following questions wherever required. student( rollNo , name, degree, year, sex, deptNo, advisor) department( deptId , name, hod, phone) professor( empId , name, sex, startYear, deptNo, phone) course( courseId , cname, credits, deptNo) enrollment( rollNo, courseId, sem, year , grade) teaching( empId, courseId, sem, year , classRoom) preRequisite( preCourseId, courseId ) ---------------</p>
+      <p class="question">Consider the following query to retrieve the course(s) with highest number of credits : SELECT c1.courseId</p>
+      
+      <ul><li>The condition should be: c2.courseId &lt;&gt; c1.courseId</li><li>The WHERE clause isnt required</li><li>The condition should be: c2.credits &gt; c1.credits</li><li>It can not be completed to solve the given query</li></ul>
+      <p class="answer"><strong>Answer:</strong> The condition should be: c2.credits &gt; c1.credits</p>
+    </section>    <section class="card">
+      <h3>Q6</h3>
+      <p class="prereq"><strong>Prerequisite / Context:</strong> Use the following schema of the academic institution relational database in the following questions wherever required. student( rollNo , name, degree, year, sex, deptNo, advisor) department( deptId , name, hod, phone) professor( empId , name, sex, startYear, deptNo, phone) course( courseId , cname, credits, deptNo) enrollment( rollNo, courseId, sem, year , grade) teaching( empId, courseId, sem, year , classRoom) preRequisite( preCourseId, courseId ) ---------------</p>
+      <p class="question">Which of the following queries would find the courses with at least two prerequisites?</p>
+      
+      <ul><li>SELECT * FROM course c1 WHERE EXISTS (SELECT * FROM prerequisite p1 WHERE p1.courseId = c1.courseId) AND EXISTS (SELECT * FROM prerequisite p2 WHERE p2.courseId = c1.courseId)</li><li>SELECT * FROM course c1 WHERE EXISTS (SELECT * FROM prerequisite p1 WHERE p1.courseId = c1.courseId) AND EXISTS (SELECT * FROM prerequisite p2 WHERE p2.courseId = c1.courseId AND p1.preCourseId &lt;&gt; p2.preCourseId)</li><li>SELECT * FROM course c1 WHERE EXISTS (SELECT * FROM prerequisite p1, prerequisite p2 WHERE p1.courseId = c1.courseId AND p2.courseId = c1. courseId)</li><li>SELECT * FROM course c1 WHERE EXISTS (SELECT * FROM prerequisite p1, prerequisite p2 WHERE p1.courseId = c1.courseId AND p2.courseId = c1. courseId AND p1.preCourseId &lt;&gt; p2.preCourseId)</li></ul>
+      <p class="answer"><strong>Answer:</strong> SELECT * FROM course c1 WHERE EXISTS (SELECT * FROM prerequisite p1, prerequisite p2 WHERE p1.courseId = c1.courseId AND p2.courseId = c1. courseId AND p1.preCourseId &lt;&gt; p2.preCourseId)</p>
+    </section>    <section class="card">
+      <h3>Q7</h3>
+      <p class="prereq"><strong>Prerequisite / Context:</strong> Use the following schema of the academic institution relational database in the following questions wherever required. student( rollNo , name, degree, year, sex, deptNo, advisor) department( deptId , name, hod, phone) professor( empId , name, sex, startYear, deptNo, phone) course( courseId , cname, credits, deptNo) enrollment( rollNo, courseId, sem, year , grade) teaching( empId, courseId, sem, year , classRoom) preRequisite( preCourseId, courseId ) ---------------</p>
+      <p class="question">Which of the following queries would find the name of the students who got S grade in all the prerequisites of course with id 200?</p>
+      
+      <ul><li>SELECT s.name FROM student s WHERE NOT EXISTS (SELECT p1. preCourseId FROM prerequisite p1 WHERE p1.courseId=200 AND NOT EXISTS (SELECT * FROM enrollment e2 WHERE e2.courseId = p1.preCourseId AND e2.grade &lt;&gt; S AND e.rollNo = s.rollNo))</li><li>SELECT s.name FROM student s, enrollment e WHERE s.rollNo = e.rollNo AND e.grade = S AND e.courseId = ALL ( SELECT p1.preCourseId FROM prerequisite p1 WHERE p1.courseId=200)</li><li>SELECT s.name FROM student s WHERE NOT EXISTS ( SELECT p1. preCourseId FROM prerequisite p1 WHERE p1.courseId=200 AND NOT EXISTS (SELECT * FROM enrollment e2 WHERE e2.courseId = p1.preCourseId AND e2.grade = S AND e.rollNo = s.rollNo))</li><li>SELECT s.name FROM student s WHERE EXISTS (SELECT p1. preCourseId FROM prerequisite p1 WHERE p1.courseId=200 AND NOT EXISTS (SELECT * FROM enrollment e2 WHERE e2.courseId = p1.preCourseId AND e2.grade = S AND e.rollNo = s.rollNo))</li></ul>
+      <p class="answer"><strong>Answer:</strong> SELECT s.name FROM student s WHERE NOT EXISTS ( SELECT p1. preCourseId FROM prerequisite p1 WHERE p1.courseId=200 AND NOT EXISTS (SELECT * FROM enrollment e2 WHERE e2.courseId = p1.preCourseId AND e2.grade = S AND e.rollNo = s.rollNo))</p>
+    </section>    <section class="card">
+      <h3>Q8</h3>
+      <p class="prereq"><strong>Prerequisite / Context:</strong> Use the following schema of the academic institution relational database in the following questions wherever required. student( rollNo , name, degree, year, sex, deptNo, advisor) department( deptId , name, hod, phone) professor( empId , name, sex, startYear, deptNo, phone) course( courseId , cname, credits, deptNo) enrollment( rollNo, courseId, sem, year , grade) teaching( empId, courseId, sem, year , classRoom) preRequisite( preCourseId, courseId ) ---------------</p>
+      <p class="question">Consider the following query SELECT p1.empId, p2.empId</p>
+      
+      <ul><li>It includes all the pairs of professors with same number of years of experience</li><li>It doesnt include any of the pairs of professors with same number of years of experience</li><li>It includes some of the pairs of professors with same number of years of experience</li><li>It doesnt include some of the pairs of professors with same number of years of experience</li></ul>
+      <p class="answer"><strong>Answer:</strong> It includes all the pairs of professors with same number of years of experience</p>
+    </section>    <section class="card">
+      <h3>Q9</h3>
+      <p class="prereq"><strong>Prerequisite / Context:</strong> Use the following schema of the academic institution relational database in the following questions wherever required. student( rollNo , name, degree, year, sex, deptNo, advisor) department( deptId , name, hod, phone) professor( empId , name, sex, startYear, deptNo, phone) course( courseId , cname, credits, deptNo) enrollment( rollNo, courseId, sem, year , grade) teaching( empId, courseId, sem, year , classRoom) preRequisite( preCourseId, courseId ) ---------------</p>
+      <p class="question">Consider the following query:</p>
+      
+      <ul><li>0</li><li>10</li><li>90</li><li>100</li></ul>
+      <p class="answer"><strong>Answer:</strong> 10</p>
+    </section>
+  </main>
+</body>
+</html>

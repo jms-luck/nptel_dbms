@@ -1,0 +1,161 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Database Practice Test - Week 12</title>
+  <style>
+    :root { --bg:#f3f6fb; --card:#ffffff; --ink:#17212b; --muted:#5a6b7b; --accent:#0f766e; --line:#d7e0ea; }
+    * { box-sizing:border-box; }
+    body { margin:0; font-family:Segoe UI, Tahoma, sans-serif; background:var(--bg); color:var(--ink); }
+    .wrap { max-width:980px; margin:0 auto; padding:24px 16px 40px; }
+    .top { display:flex; justify-content:space-between; align-items:center; gap:12px; flex-wrap:wrap; margin-bottom:16px; }
+    .actions { display:flex; gap:10px; flex-wrap:wrap; }
+    a.btn { text-decoration:none; color:#fff; background:var(--accent); padding:10px 14px; border-radius:10px; font-weight:600; }
+    a.btn.alt { background:#0b4f6c; }
+    h1 { margin:0; font-size:1.6rem; }
+    .meta { color:var(--muted); margin:4px 0 0; }
+    .card { background:var(--card); border:1px solid var(--line); border-radius:14px; padding:14px 16px; margin:12px 0; }
+    .card h3 { margin:0 0 8px; font-size:1rem; color:#0b4f6c; }
+    .prereq { margin:0 0 8px; color:#334155; background:#f8fafc; border:1px solid #e2e8f0; padding:8px 10px; border-radius:8px; }
+    .question { margin:0 0 8px; font-weight:600; }
+    .q-images { margin:8px 0 10px; display:grid; gap:8px; }
+    .q-img { max-width:100%; height:auto; border:1px solid #cbd5e1; border-radius:8px; background:#fff; }
+    .options { display:grid; gap:8px; margin:8px 0 10px; }
+    .opt { display:block; }
+    .submit-btn { border:none; background:#0f766e; color:#fff; padding:8px 12px; border-radius:8px; font-weight:600; cursor:pointer; }
+    .result { margin:8px 0 0; padding:8px 10px; border-radius:8px; display:none; }
+    .result.ok { display:block; background:#ecfdf5; border:1px solid #bbf7d0; color:#14532d; }
+    .result.bad { display:block; background:#fef2f2; border:1px solid #fecaca; color:#7f1d1d; }
+  </style>
+</head>
+<body>
+  <main class="wrap">
+    <div class="top">
+      <div>
+        <h1>Week 12 Test Page</h1>
+        <p class="meta">Choose an answer and click Submit for each question</p>
+      </div>
+      <div class="actions">
+        <a class="btn" href="index.html">All Weeks</a>
+        <a class="btn alt" href="week-12-read.html">Open Read Page</a>
+      </div>
+    </div>
+    <section class="card">
+      <h3>Q1</h3>
+      <p class="prereq"><strong>Prerequisite / Context:</strong> Use the following notation for this assignment.</p>
+      <p class="question">Which of the following schedules follow the principles of Two Phase Locking?</p>
+      
+      <div class="options">
+      <label class="opt"><input type="radio" name="q1" value="0"> L 1 (X), L 1 (Y), L 2 (Z), U 2 (Z), U 1 (Y), U 1 (X)</label>      <label class="opt"><input type="radio" name="q1" value="1"> L 1 (X), U 1 (X), L 1 (Y), L 2 (Z), U 2 (Z), U 1 (Y)</label>      <label class="opt"><input type="radio" name="q1" value="2"> L 1 (X), U 1 (X), L 1 (Y), U 1 (Y), L 2 (Z), U 2 (Z)</label>      <label class="opt"><input type="radio" name="q1" value="3"> L 1 (X), L 1 (Y), L 2 (Z), U 2 (Z), U 1 (Y), U 1 (X), L 2 (X), U 2 (X)</label>      </div>
+      <button class="submit-btn" type="button" onclick='evaluateQuestion(1, 0, "L 1 (X), L 1 (Y), L 2 (Z), U 2 (Z), U 1 (Y), U 1 (X)")'>Submit</button>
+      <p class="result" id="result-1"></p>
+    </section>    <section class="card">
+      <h3>Q2</h3>
+      <p class="prereq"><strong>Prerequisite / Context:</strong> Use the following notation for this assignment.</p>
+      <p class="question">Assuming the system has adopted Two-phase Locking, which of the following schedules will result in a deadlock?</p>
+      
+      <div class="options">
+      <label class="opt"><input type="radio" name="q2" value="0"> Req 1 (X), L 1 (X), Req 1 (Y), Req 2 (X), Req 2 (Y), L 1 (Y)</label>      <label class="opt"><input type="radio" name="q2" value="1"> Req 1 (X), L 1 (X), Req 2 (X), Req 2 (Y), L 2 (Y), Req 1 (Y)</label>      <label class="opt"><input type="radio" name="q2" value="2"> Req 1 (X), Req 2 (X), L 2 (X), Req 1 (Y), Req 2 (Y), L 2 (Y)</label>      <label class="opt"><input type="radio" name="q2" value="3"> Req 1 (X), L 1 (X), Req 2 (Y), L 2 (Y), U 2 (Y), Req 1 (Y), Req 2 (X)</label>      </div>
+      <button class="submit-btn" type="button" onclick='evaluateQuestion(2, 1, "Req 1 (X), L 1 (X), Req 2 (X), Req 2 (Y), L 2 (Y), Req 1 (Y)")'>Submit</button>
+      <p class="result" id="result-2"></p>
+    </section>    <section class="card">
+      <h3>Q3</h3>
+      <p class="prereq"><strong>Prerequisite / Context:</strong> Use the following information to answer Questions 3-5. The following sequence of log records written by two transactions T and U are found on the log upon system restart after a crash: (Before recovery manager starts operating) &lt;Start T&gt;; &lt;T, A, 10&gt;; &lt;Start U&gt;; &lt;U, B, 20&gt;; &lt;T, A, 30&gt;; &lt;U, B, 40&gt;; &lt;Commit U&gt;;</p>
+      <p class="question">Assuming that the recovery manager uses UNDO logging method, the value of A on disk immediately after restart, but before the recovery manager is activated, is</p>
+      
+      <div class="options">
+      <label class="opt"><input type="radio" name="q3" value="0"> 10</label>      <label class="opt"><input type="radio" name="q3" value="1"> 30</label>      <label class="opt"><input type="radio" name="q3" value="2"> cant be determined</label>      <label class="opt"><input type="radio" name="q3" value="3"> 20</label>      </div>
+      <button class="submit-btn" type="button" onclick='evaluateQuestion(3, 1, "30")'>Submit</button>
+      <p class="result" id="result-3"></p>
+    </section>    <section class="card">
+      <h3>Q4</h3>
+      <p class="prereq"><strong>Prerequisite / Context:</strong> Use the following information to answer Questions 3-5. The following sequence of log records written by two transactions T and U are found on the log upon system restart after a crash: (Before recovery manager starts operating) &lt;Start T&gt;; &lt;T, A, 10&gt;; &lt;Start U&gt;; &lt;U, B, 20&gt;; &lt;T, A, 30&gt;; &lt;U, B, 40&gt;; &lt;Commit U&gt;;</p>
+      <p class="question">Again, assuming that the recovery manager uses UNDO logging method, the value of B on disk after the recovery manager completed processing of the log is</p>
+      
+      <div class="options">
+      <label class="opt"><input type="radio" name="q4" value="0"> 20</label>      <label class="opt"><input type="radio" name="q4" value="1"> 40</label>      <label class="opt"><input type="radio" name="q4" value="2"> cant be determined</label>      <label class="opt"><input type="radio" name="q4" value="3"> 10</label>      </div>
+      <button class="submit-btn" type="button" onclick='evaluateQuestion(4, 2, "cant be determined")'>Submit</button>
+      <p class="result" id="result-4"></p>
+    </section>    <section class="card">
+      <h3>Q5</h3>
+      <p class="prereq"><strong>Prerequisite / Context:</strong> Use the following information to answer Questions 3-5. The following sequence of log records written by two transactions T and U are found on the log upon system restart after a crash: (Before recovery manager starts operating) &lt;Start T&gt;; &lt;T, A, 10&gt;; &lt;Start U&gt;; &lt;U, B, 20&gt;; &lt;T, A, 30&gt;; &lt;U, B, 40&gt;; &lt;Commit U&gt;;</p>
+      <p class="question">Assuming that the recovery manager uses REDO logging method, the value of B on disk after the recovery manager completed processing of the log is</p>
+      
+      <div class="options">
+      <label class="opt"><input type="radio" name="q5" value="0"> may be 20</label>      <label class="opt"><input type="radio" name="q5" value="1"> must be 20</label>      <label class="opt"><input type="radio" name="q5" value="2"> may be 40</label>      <label class="opt"><input type="radio" name="q5" value="3"> must be 40</label>      </div>
+      <button class="submit-btn" type="button" onclick='evaluateQuestion(5, 3, "must be 40")'>Submit</button>
+      <p class="result" id="result-5"></p>
+    </section>    <section class="card">
+      <h3>Q6</h3>
+      <p class="prereq"><strong>Prerequisite / Context:</strong> Use the following information to answer Questions 3-5. The following sequence of log records written by two transactions T and U are found on the log upon system restart after a crash: (Before recovery manager starts operating) &lt;Start T&gt;; &lt;T, A, 10&gt;; &lt;Start U&gt;; &lt;U, B, 20&gt;; &lt;T, A, 30&gt;; &lt;U, B, 40&gt;; &lt;Commit U&gt;;</p>
+      <p class="question">Which of the following logging methods ignore(s) incomplete transactions during the recovery process? (i) UNDO (ii) REDO (iii) UNDO-REDO</p>
+      
+      <div class="options">
+      <label class="opt"><input type="radio" name="q6" value="0"> Only (i)</label>      <label class="opt"><input type="radio" name="q6" value="1"> Only (ii)</label>      <label class="opt"><input type="radio" name="q6" value="2"> Both (ii) and (iii)</label>      <label class="opt"><input type="radio" name="q6" value="3"> All (i), (ii) and (iii)</label>      </div>
+      <button class="submit-btn" type="button" onclick='evaluateQuestion(6, 1, "Only (ii)")'>Submit</button>
+      <p class="result" id="result-6"></p>
+    </section>    <section class="card">
+      <h3>Q7</h3>
+      <p class="prereq"><strong>Prerequisite / Context:</strong> Use the following information to answer Question 7. The following sequence of log records written by four transactions R, S, T and U are found on the log upon system restart after a crash: (Before recovery manager starts operating) &lt;Start R&gt;; &lt;Start S&gt;; &lt;Start T&gt;; &lt;Start U&gt;; &lt;R, A, 10, 20&gt;; &lt;S, B, 10, 20&gt;; &lt;T, C, 10, 20&gt;; &lt;U, D, 10, 20&gt;; &lt;Commit U&gt;; &lt;Commit T&gt;;</p>
+      <p class="question">Assuming that the recovery manager uses UNDO-REDO logging method, the order in which transactions are undone and redone are</p>
+      
+      <div class="options">
+      <label class="opt"><input type="radio" name="q7" value="0"> undone order: S followed by R; redone order: U followed by T</label>      <label class="opt"><input type="radio" name="q7" value="1"> undone order: R followed by S; redone order: U followed by T</label>      <label class="opt"><input type="radio" name="q7" value="2"> undone order: S followed by R; redone order: T followed by U</label>      <label class="opt"><input type="radio" name="q7" value="3"> undone order: R followed by S; redone order: T followed by U</label>      </div>
+      <button class="submit-btn" type="button" onclick='evaluateQuestion(7, 2, "undone order: S followed by R; redone order: T followed by U")'>Submit</button>
+      <p class="result" id="result-7"></p>
+    </section>    <section class="card">
+      <h3>Q8</h3>
+      <p class="prereq"><strong>Prerequisite / Context:</strong> Use the following information to answer Question 7. The following sequence of log records written by four transactions R, S, T and U are found on the log upon system restart after a crash: (Before recovery manager starts operating) &lt;Start R&gt;; &lt;Start S&gt;; &lt;Start T&gt;; &lt;Start U&gt;; &lt;R, A, 10, 20&gt;; &lt;S, B, 10, 20&gt;; &lt;T, C, 10, 20&gt;; &lt;U, D, 10, 20&gt;; &lt;Commit U&gt;; &lt;Commit T&gt;;</p>
+      <p class="question">Which of the following statements is FALSE?</p>
+      
+      <div class="options">
+      <label class="opt"><input type="radio" name="q8" value="0"> All strict schedules are cascadeless</label>      <label class="opt"><input type="radio" name="q8" value="1"> All cascadeless schedules are recoverable</label>      <label class="opt"><input type="radio" name="q8" value="2"> All strict schedules are serializable</label>      <label class="opt"><input type="radio" name="q8" value="3"> All recoverable schedules are serializable</label>      </div>
+      <button class="submit-btn" type="button" onclick='evaluateQuestion(8, 3, "All recoverable schedules are serializable")'>Submit</button>
+      <p class="result" id="result-8"></p>
+    </section>    <section class="card">
+      <h3>Q9</h3>
+      <p class="prereq"><strong>Prerequisite / Context:</strong> Use the following information to answer Question 7. The following sequence of log records written by four transactions R, S, T and U are found on the log upon system restart after a crash: (Before recovery manager starts operating) &lt;Start R&gt;; &lt;Start S&gt;; &lt;Start T&gt;; &lt;Start U&gt;; &lt;R, A, 10, 20&gt;; &lt;S, B, 10, 20&gt;; &lt;T, C, 10, 20&gt;; &lt;U, D, 10, 20&gt;; &lt;Commit U&gt;; &lt;Commit T&gt;;</p>
+      <p class="question">Consider the following schedule S. S: r 1 (x); r 2 (z); r 1 (z); r 3 (x); r 3 (y); w 1 (x); c 1 ; w 3 (y); w 2 (y); c 3 ; w 2 (z); c 2 Here r i (a) denotes transaction i reads item a, w i (a) denotes transaction i writes data item a, c i denotes that transaction i is committed. The schedule S is</p>
+      
+      <div class="options">
+      <label class="opt"><input type="radio" name="q9" value="0"> cascadeless and strict</label>      <label class="opt"><input type="radio" name="q9" value="1"> cascadeless and not strict</label>      <label class="opt"><input type="radio" name="q9" value="2"> not strict; cascadeless is irrelevant</label>      <label class="opt"><input type="radio" name="q9" value="3"> None of the above</label>      </div>
+      <button class="submit-btn" type="button" onclick='evaluateQuestion(9, 1, "cascadeless and not strict")'>Submit</button>
+      <p class="result" id="result-9"></p>
+    </section>    <section class="card">
+      <h3>Q10</h3>
+      <p class="prereq"><strong>Prerequisite / Context:</strong> Use the following information to answer Question 7. The following sequence of log records written by four transactions R, S, T and U are found on the log upon system restart after a crash: (Before recovery manager starts operating) &lt;Start R&gt;; &lt;Start S&gt;; &lt;Start T&gt;; &lt;Start U&gt;; &lt;R, A, 10, 20&gt;; &lt;S, B, 10, 20&gt;; &lt;T, C, 10, 20&gt;; &lt;U, D, 10, 20&gt;; &lt;Commit U&gt;; &lt;Commit T&gt;;</p>
+      <p class="question">Consider the following schedule S. S: r 1 (x); r 2 (z); r 3 (y); w 1 (x); w 3 (y); w 2 (z); Here r i (a) denotes transaction i reads item a and w i (a) denotes transaction i writes data item a. The commit operations of the transactions can be added at the end of S in an appropriate order such that S is strict. The number of such orders is</p>
+      
+      <div class="options">
+      <label class="opt"><input type="radio" name="q10" value="0"> 0</label>      <label class="opt"><input type="radio" name="q10" value="1"> 3</label>      <label class="opt"><input type="radio" name="q10" value="2"> 6</label>      <label class="opt"><input type="radio" name="q10" value="3"> 8</label>      </div>
+      <button class="submit-btn" type="button" onclick='evaluateQuestion(10, 2, "6")'>Submit</button>
+      <p class="result" id="result-10"></p>
+    </section>
+  </main>
+  <script>
+    function evaluateQuestion(qNum, correctIndexes, answerText) {
+      const selected = Array.from(document.querySelectorAll('input[name="q' + qNum + '"]:checked'))
+        .map(el => Number(el.value))
+        .sort((a, b) => a - b);
+      const expected = (correctIndexes || []).slice().sort((a, b) => a - b);
+      const result = document.getElementById('result-' + qNum);
+
+      if (!selected.length) {
+        result.className = 'result bad';
+        result.textContent = 'Please choose at least one option before submitting.';
+        return;
+      }
+
+      const isCorrect = selected.length === expected.length && selected.every((v, i) => v === expected[i]);
+      if (isCorrect) {
+        result.className = 'result ok';
+        result.textContent = 'Correct';
+      } else {
+        result.className = 'result bad';
+        result.textContent = 'Incorrect. Correct answer: ' + answerText;
+      }
+    }
+  </script>
+</body>
+</html>

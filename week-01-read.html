@@ -1,0 +1,176 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Database Practice Read - Week 1</title>
+  <style>
+    :root { --bg:#f5f7fb; --card:#ffffff; --ink:#17212b; --muted:#5a6b7b; --accent:#0f766e; --line:#d7e0ea; }
+    * { box-sizing:border-box; }
+    body { margin:0; font-family:Segoe UI, Tahoma, sans-serif; background:var(--bg); color:var(--ink); }
+    .wrap { max-width:980px; margin:0 auto; padding:24px 16px 40px; }
+    .top { display:flex; justify-content:space-between; align-items:center; gap:12px; flex-wrap:wrap; margin-bottom:16px; }
+    .actions { display:flex; gap:10px; flex-wrap:wrap; }
+    a.btn { text-decoration:none; color:#fff; background:var(--accent); padding:10px 14px; border-radius:10px; font-weight:600; }
+    a.btn.alt { background:#0b4f6c; }
+    h1 { margin:0; font-size:1.6rem; }
+    .meta { color:var(--muted); margin:4px 0 0; }
+    .card { background:var(--card); border:1px solid var(--line); border-radius:14px; padding:14px 16px; margin:12px 0; }
+    .card h3 { margin:0 0 8px; font-size:1rem; color:#0b4f6c; }
+    .prereq { margin:0 0 8px; color:#334155; background:#f8fafc; border:1px solid #e2e8f0; padding:8px 10px; border-radius:8px; }
+    .question { margin:0 0 8px; font-weight:600; }
+    .q-images { margin:8px 0 10px; display:grid; gap:8px; }
+    .q-img { max-width:100%; height:auto; border:1px solid #cbd5e1; border-radius:8px; background:#fff; }
+    ul { margin:6px 0 10px 18px; }
+    .answer { margin:0; color:#1b4332; background:#ecfdf5; border:1px solid #bbf7d0; padding:8px 10px; border-radius:8px; }
+  </style>
+</head>
+<body>
+  <main class="wrap">
+    <div class="top">
+      <div>
+        <h1>Week 1 Read Page</h1>
+        <p class="meta">Study mode with questions, context, and answers</p>
+      </div>
+      <div class="actions">
+        <a class="btn" href="index.html">All Weeks</a>
+        <a class="btn alt" href="week-01-test.html">Open Test Page</a>
+      </div>
+    </div>
+    <section class="card">
+      <h3>Q1</h3>
+      
+      <p class="question">The RDBMS stores data and meta-data separately.</p>
+      
+      <ul><li>True</li><li>False</li></ul>
+      <p class="answer"><strong>Answer:</strong> True</p>
+    </section>    <section class="card">
+      <h3>Q2</h3>
+      
+      <p class="question">The  data type  of an attribute is not part of meta-data.</p>
+      
+      <ul><li>True</li><li>False</li></ul>
+      <p class="answer"><strong>Answer:</strong> False</p>
+    </section>    <section class="card">
+      <h3>Q3</h3>
+      
+      <p class="question">A record can have a data element with an undefined type.</p>
+      
+      <ul><li>True</li><li>False</li></ul>
+      <p class="answer"><strong>Answer:</strong> False</p>
+    </section>    <section class="card">
+      <h3>Q4</h3>
+      
+      <p class="question">An RDBMS can not manage more than one database.</p>
+      
+      <ul><li>True</li><li>False</li></ul>
+      <p class="answer"><strong>Answer:</strong> False</p>
+    </section>    <section class="card">
+      <h3>Q5</h3>
+      
+      <p class="question">Schema is the description of the database.</p>
+      
+      <ul><li>True</li><li>False</li></ul>
+      <p class="answer"><strong>Answer:</strong> True</p>
+    </section>    <section class="card">
+      <h3>Q6</h3>
+      
+      <p class="question">One must define the logical scheme of the database to design a database.</p>
+      
+      <ul><li>True</li><li>False</li></ul>
+      <p class="answer"><strong>Answer:</strong> True</p>
+    </section>    <section class="card">
+      <h3>Q7</h3>
+      
+      <p class="question">A database system does not hide the process of storing and maintaining the data on disks from the users.</p>
+      
+      <ul><li>True</li><li>False</li></ul>
+      <p class="answer"><strong>Answer:</strong> False</p>
+    </section>    <section class="card">
+      <h3>Q8</h3>
+      
+      <p class="question">The view level abstraction hides the database logical schema from the users.</p>
+      
+      <ul><li>True</li><li>False</li></ul>
+      <p class="answer"><strong>Answer:</strong> True</p>
+    </section>    <section class="card">
+      <h3>Q9</h3>
+      
+      <p class="question">RDBMS can provide concurrent access to its users.</p>
+      
+      <ul><li>True</li><li>False</li></ul>
+      <p class="answer"><strong>Answer:</strong> True</p>
+    </section>    <section class="card">
+      <h3>Q10</h3>
+      
+      <p class="question">A  log  is a record of all the database update operations.</p>
+      
+      <ul><li>True</li><li>False</li></ul>
+      <p class="answer"><strong>Answer:</strong> True</p>
+    </section>    <section class="card">
+      <h3>Q11</h3>
+      
+      <p class="question">The recovery manager is responsible for bringing the database back into a consistent state when a failure occurs.</p>
+      
+      <ul><li>True</li><li>False</li></ul>
+      <p class="answer"><strong>Answer:</strong> True</p>
+    </section>    <section class="card">
+      <h3>Q12</h3>
+      
+      <p class="question">Recovery-manager may sometimes fail to bring the database back into a consistent state.</p>
+      
+      <ul><li>True</li><li>False</li></ul>
+      <p class="answer"><strong>Answer:</strong> False</p>
+    </section>    <section class="card">
+      <h3>Q13</h3>
+      
+      <p class="question">Which of the following is(are) typical database application(s)?</p>
+      
+      <ul><li>Credit card system</li><li>Online reservation system</li><li>Chat application system</li><li>All of the above</li></ul>
+      <p class="answer"><strong>Answer:</strong> All of the above</p>
+    </section>    <section class="card">
+      <h3>Q14</h3>
+      
+      <p class="question">_ _ _ _ process stores copies of the database tables in several different locations simultaneously. Fill in the blank:</p>
+      
+      <ul><li>Paging</li><li>Query answering</li><li>Buffering</li><li>Replication</li></ul>
+      <p class="answer"><strong>Answer:</strong> Replication</p>
+    </section>    <section class="card">
+      <h3>Q15</h3>
+      
+      <p class="question">Consider the statements given below:</p>
+      
+      <ul><li>S1: True; S2: False</li><li>S1: True; S2: True</li><li>S1: False; S2: True</li><li>S1: False; S2: False</li></ul>
+      <p class="answer"><strong>Answer:</strong> S1: False; S2: True</p>
+    </section>    <section class="card">
+      <h3>Q16</h3>
+      
+      <p class="question">Consider the statements given below: S1: The Logical Data Independence allows us to modify the logical-level schema without affecting the view-level schema. S2: The Physical Data Independence allows us to modify the physical-level schema without affecting the logical-level schema. Choose the correct option:</p>
+      
+      <ul><li>S1: True; S2: True</li><li>S1: True; S2: False</li><li>S1: False; S2: True</li><li>S1: False; S2: False</li></ul>
+      <p class="answer"><strong>Answer:</strong> S1: True; S2: True</p>
+    </section>    <section class="card">
+      <h3>Q17</h3>
+      
+      <p class="question">Which abstraction level of the database system describes  how  the data is actually stored ?</p>
+      
+      <ul><li>Physical level</li><li>Logical level</li><li>View level</li><li>None of the above</li></ul>
+      <p class="answer"><strong>Answer:</strong> Physical level</p>
+    </section>    <section class="card">
+      <h3>Q18</h3>
+      
+      <p class="question">What is the most appropriate matching between the following sets: S1: {a: ER Model; b: Relational Model} S2: {p: Record-based model ; q: Conceptual level model; r: High-level data model; s: Representational level model}</p>
+      
+      <ul><li>a--p; b--q; a--r; b--s</li><li>a--p; b--q; a--s; b--r</li><li>a--q; b--p; a--r; b--s</li><li>a--q; b--p; a--s; b--r</li></ul>
+      <p class="answer"><strong>Answer:</strong> a--q; b--p; a--r; b--s</p>
+    </section>    <section class="card">
+      <h3>Q19</h3>
+      
+      <p class="question">Typically, a database administrator(DBA) is  NOT  responsible for:</p>
+      
+      <ul><li>Authorizing access to the database</li><li>Identifying database security breaches</li><li>Populating the records</li><li>To acquire required hardware and software resources</li></ul>
+      <p class="answer"><strong>Answer:</strong> Populating the records</p>
+    </section>
+  </main>
+</body>
+</html>
