@@ -1,0 +1,161 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Database Practice Test - Week 10</title>
+  <style>
+    :root { --bg:#f3f6fb; --card:#ffffff; --ink:#17212b; --muted:#5a6b7b; --accent:#0f766e; --line:#d7e0ea; }
+    * { box-sizing:border-box; }
+    body { margin:0; font-family:Segoe UI, Tahoma, sans-serif; background:var(--bg); color:var(--ink); }
+    .wrap { max-width:980px; margin:0 auto; padding:24px 16px 40px; }
+    .top { display:flex; justify-content:space-between; align-items:center; gap:12px; flex-wrap:wrap; margin-bottom:16px; }
+    .actions { display:flex; gap:10px; flex-wrap:wrap; }
+    a.btn { text-decoration:none; color:#fff; background:var(--accent); padding:10px 14px; border-radius:10px; font-weight:600; }
+    a.btn.alt { background:#0b4f6c; }
+    h1 { margin:0; font-size:1.6rem; }
+    .meta { color:var(--muted); margin:4px 0 0; }
+    .card { background:var(--card); border:1px solid var(--line); border-radius:14px; padding:14px 16px; margin:12px 0; }
+    .card h3 { margin:0 0 8px; font-size:1rem; color:#0b4f6c; }
+    .prereq { margin:0 0 8px; color:#334155; background:#f8fafc; border:1px solid #e2e8f0; padding:8px 10px; border-radius:8px; }
+    .question { margin:0 0 8px; font-weight:600; }
+    .q-images { margin:8px 0 10px; display:grid; gap:8px; }
+    .q-img { max-width:100%; height:auto; border:1px solid #cbd5e1; border-radius:8px; background:#fff; }
+    .options { display:grid; gap:8px; margin:8px 0 10px; }
+    .opt { display:block; }
+    .submit-btn { border:none; background:#0f766e; color:#fff; padding:8px 12px; border-radius:8px; font-weight:600; cursor:pointer; }
+    .result { margin:8px 0 0; padding:8px 10px; border-radius:8px; display:none; }
+    .result.ok { display:block; background:#ecfdf5; border:1px solid #bbf7d0; color:#14532d; }
+    .result.bad { display:block; background:#fef2f2; border:1px solid #fecaca; color:#7f1d1d; }
+  </style>
+</head>
+<body>
+  <main class="wrap">
+    <div class="top">
+      <div>
+        <h1>Week 10 Test Page</h1>
+        <p class="meta">Choose an answer and click Submit for each question</p>
+      </div>
+      <div class="actions">
+        <a class="btn" href="index.html">All Weeks</a>
+        <a class="btn alt" href="week-10-read.html">Open Read Page</a>
+      </div>
+    </div>
+    <section class="card">
+      <h3>Q1</h3>
+      
+      <p class="question">The calculation of the order of an internal node of a B + - tree is independent of which of the following quantities?</p>
+      
+      <div class="options">
+      <label class="opt"><input type="radio" name="q1" value="0"> Block size</label>      <label class="opt"><input type="radio" name="q1" value="1"> Size of index field</label>      <label class="opt"><input type="radio" name="q1" value="2"> Size of block pointer</label>      <label class="opt"><input type="radio" name="q1" value="3"> Size of record pointer</label>      </div>
+      <button class="submit-btn" type="button" onclick='evaluateQuestion(1, [3], "Size of record pointer")'>Submit</button>
+      <p class="result" id="result-1"></p>
+    </section>    <section class="card">
+      <h3>Q2</h3>
+      <p class="prereq"><strong>Prerequisite / Context:</strong> Use the following information and the conventions taught in the lectures to answer Questions 2 and 3. Consider the B ^+ - tree given below with order 3 and leaf order 2.</p>
+      <p class="question">If we insert a record with key value 5 in the B + - tree, then which of the following is a valid leaf node in the resulting B + - tree?</p>
+      
+      <div class="options">
+      <label class="opt"><input type="radio" name="q2" value="0"> (4,5)</label>      <label class="opt"><input type="radio" name="q2" value="1"> (5,6)</label>      <label class="opt"><input type="radio" name="q2" value="2"> (6,7)</label>      <label class="opt"><input type="radio" name="q2" value="3"> (4,6)</label>      </div>
+      <button class="submit-btn" type="button" onclick='evaluateQuestion(2, [1], "(5,6)")'>Submit</button>
+      <p class="result" id="result-2"></p>
+    </section>    <section class="card">
+      <h3>Q3</h3>
+      <p class="prereq"><strong>Prerequisite / Context:</strong> Use the following information and the conventions taught in the lectures to answer Questions 2 and 3. Consider the B ^+ - tree given below with order 3 and leaf order 2.</p>
+      <p class="question">Instead of inserting a record with key value 5, if we delete the record with key value 4, the total number of nodes in the resulting tree is:</p>
+      
+      <div class="options">
+      <label class="opt"><input type="radio" name="q3" value="0"> 8</label>      <label class="opt"><input type="radio" name="q3" value="1"> 9</label>      <label class="opt"><input type="radio" name="q3" value="2"> 10</label>      <label class="opt"><input type="radio" name="q3" value="3"> 7</label>      </div>
+      <button class="submit-btn" type="button" onclick='evaluateQuestion(3, [2], "10")'>Submit</button>
+      <p class="result" id="result-3"></p>
+    </section>    <section class="card">
+      <h3>Q4</h3>
+      <p class="prereq"><strong>Prerequisite / Context:</strong> Use the following information and the conventions taught in the lectures to answer Questions 2 and 3. Consider the B ^+ - tree given below with order 3 and leaf order 2.</p>
+      <p class="question">Which one of the following techniques has the feature of distributing data on multiple disks that may have poor reliability.</p>
+      
+      <div class="options">
+      <label class="opt"><input type="radio" name="q4" value="0"> Data striping</label>      <label class="opt"><input type="radio" name="q4" value="1"> Data redundancy</label>      <label class="opt"><input type="radio" name="q4" value="2"> Data mirroring</label>      <label class="opt"><input type="radio" name="q4" value="3"> Data parity</label>      </div>
+      <button class="submit-btn" type="button" onclick='evaluateQuestion(4, [0], "Data striping")'>Submit</button>
+      <p class="result" id="result-4"></p>
+    </section>    <section class="card">
+      <h3>Q5</h3>
+      <p class="prereq"><strong>Prerequisite / Context:</strong> Use the following information and the conventions taught in the lectures to answer Questions 2 and 3. Consider the B ^+ - tree given below with order 3 and leaf order 2.</p>
+      <p class="question">Pick the correct matching the following</p>
+      
+      <div class="options">
+      <label class="opt"><input type="radio" name="q5" value="0"> a-1, b-3, c-4</label>      <label class="opt"><input type="radio" name="q5" value="1"> a-2, b-3, c-4</label>      <label class="opt"><input type="radio" name="q5" value="2"> a-1, b-4, c-3</label>      <label class="opt"><input type="radio" name="q5" value="3"> a-2, b-4, c-3</label>      </div>
+      <button class="submit-btn" type="button" onclick='evaluateQuestion(5, [1], "a-2, b-3, c-4")'>Submit</button>
+      <p class="result" id="result-5"></p>
+    </section>    <section class="card">
+      <h3>Q6</h3>
+      <p class="prereq"><strong>Prerequisite / Context:</strong> Use the following information and the conventions taught in the lectures to answer Questions 2 and 3. Consider the B ^+ - tree given below with order 3 and leaf order 2.</p>
+      <p class="question">The following relation is used to store the details of the students studying in an engineering college where both men and women study: student( rollNo  , name, sex, deptId). Consider the following SQL query. SELECT s.name FROM student s WHERE s.sex = Male AND s.rollNo= CS17B038 AND s.deptId = 4; Assume there are three indices, one on each of the attributes: rollNo, sex, and deptId. Under normal conditions, which of the three predicates in the WHERE clause is evaluated first?</p>
+      
+      <div class="options">
+      <label class="opt"><input type="radio" name="q6" value="0"> sex = Male</label>      <label class="opt"><input type="radio" name="q6" value="1"> rollNo = CS17B038</label>      <label class="opt"><input type="radio" name="q6" value="2"> deptId = 4</label>      <label class="opt"><input type="radio" name="q6" value="3"> We cant say</label>      </div>
+      <button class="submit-btn" type="button" onclick='evaluateQuestion(6, [1], "rollNo = CS17B038")'>Submit</button>
+      <p class="result" id="result-6"></p>
+    </section>    <section class="card">
+      <h3>Q7</h3>
+      <p class="prereq"><strong>Prerequisite / Context:</strong> Use the following information and the conventions taught in the lectures to answer Questions 2 and 3. Consider the B ^+ - tree given below with order 3 and leaf order 2.</p>
+      <p class="question">If the number of buffer memory blocks available for external sorting is doubled, then which of the following statements is correct about the sort phase? S1. The total number of block accesses for sorting are reduced S2. The number of runs are reduced</p>
+      
+      <div class="options">
+      <label class="opt"><input type="radio" name="q7" value="0"> S1 &amp; S2 are true</label>      <label class="opt"><input type="radio" name="q7" value="1"> S1 is true; S2 is false</label>      <label class="opt"><input type="radio" name="q7" value="2"> S1 is false; S2 is true</label>      <label class="opt"><input type="radio" name="q7" value="3"> S1 &amp; S2 are false</label>      </div>
+      <button class="submit-btn" type="button" onclick='evaluateQuestion(7, [2], "S1 is false; S2 is true")'>Submit</button>
+      <p class="result" id="result-7"></p>
+    </section>    <section class="card">
+      <h3>Q8</h3>
+      <p class="prereq"><strong>Prerequisite / Context:</strong> Use the following information to answer questions 8 and 9. A file is stored on a disk using 2048 blocks. For this file, we need to perform external sorting in the main memory with buffer size equal to 9 blocks and the degree of merging is 8.</p>
+      <p class="question">Which of the following statements are true regarding the merge phase</p>
+      
+      <div class="options">
+      <label class="opt"><input type="radio" name="q8" value="0"> The number of runs in the result of the first iteration of the merge phase is 29</label>      <label class="opt"><input type="radio" name="q8" value="1"> The total number of iterations in the merge phase is 4</label>      <label class="opt"><input type="radio" name="q8" value="2"> The number of runs in the result of the second iteration of the merge phase is 4</label>      <label class="opt"><input type="radio" name="q8" value="3"> If the degree of merging is reduced, the number of iterations in the merge phase increases</label>      </div>
+      <button class="submit-btn" type="button" onclick='evaluateQuestion(8, [0,2,3], "The number of runs in the result of the first iteration of the merge phase is 29, The number of runs in the result of the second iteration of the merge phase is 4, If the degree of merging is reduced, the number of iterations in the merge phase increases")'>Submit</button>
+      <p class="result" id="result-8"></p>
+    </section>    <section class="card">
+      <h3>Q9</h3>
+      <p class="prereq"><strong>Prerequisite / Context:</strong> Use the following information to answer questions 8 and 9. A file is stored on a disk using 2048 blocks. For this file, we need to perform external sorting in the main memory with buffer size equal to 9 blocks and the degree of merging is 8.</p>
+      <p class="question">The total number of block accesses during the sort and merge phases together is</p>
+      
+      <div class="options">
+      <label class="opt"><input type="radio" name="q9" value="0"> 228</label>      <label class="opt"><input type="radio" name="q9" value="1"> 4096</label>      <label class="opt"><input type="radio" name="q9" value="2"> 12288</label>      <label class="opt"><input type="radio" name="q9" value="3"> 16384</label>      </div>
+      <button class="submit-btn" type="button" onclick='evaluateQuestion(9, [2], "12288")'>Submit</button>
+      <p class="result" id="result-9"></p>
+    </section>    <section class="card">
+      <h3>Q10</h3>
+      <p class="prereq"><strong>Prerequisite / Context:</strong> Use the following information to answer questions 8 and 9. A file is stored on a disk using 2048 blocks. For this file, we need to perform external sorting in the main memory with buffer size equal to 9 blocks and the degree of merging is 8.</p>
+      <p class="question">Consider the following statements about the nested-loop join algorithm taught in the class: S1. Each block of one of the data files is read only once S2. The number of times the data file in the inner loop is read is dependent on the buffer size</p>
+      
+      <div class="options">
+      <label class="opt"><input type="radio" name="q10" value="0"> Both S1, S2 are true</label>      <label class="opt"><input type="radio" name="q10" value="1"> S1 is true; S2 is false</label>      <label class="opt"><input type="radio" name="q10" value="2"> S1 is false; S2 is true</label>      <label class="opt"><input type="radio" name="q10" value="3"> Both S1, S2 are false</label>      </div>
+      <button class="submit-btn" type="button" onclick='evaluateQuestion(10, [0], "Both S1, S2 are true")'>Submit</button>
+      <p class="result" id="result-10"></p>
+    </section>
+  </main>
+  <script>
+    function evaluateQuestion(qNum, correctIndexes, answerText) {
+      const selected = Array.from(document.querySelectorAll('input[name="q' + qNum + '"]:checked'))
+        .map(el => Number(el.value))
+        .sort((a, b) => a - b);
+      const expected = (correctIndexes || []).slice().sort((a, b) => a - b);
+      const result = document.getElementById('result-' + qNum);
+
+      if (!selected.length) {
+        result.className = 'result bad';
+        result.textContent = 'Please choose at least one option before submitting.';
+        return;
+      }
+
+      const isCorrect = selected.length === expected.length && selected.every((v, i) => v === expected[i]);
+      if (isCorrect) {
+        result.className = 'result ok';
+        result.textContent = 'Correct';
+      } else {
+        result.className = 'result bad';
+        result.textContent = 'Incorrect. Correct answer: ' + answerText;
+      }
+    }
+  </script>
+</body>
+</html>

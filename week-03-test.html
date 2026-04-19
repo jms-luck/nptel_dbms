@@ -1,0 +1,224 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Database Practice Test - Week 3</title>
+  <style>
+    :root { --bg:#f3f6fb; --card:#ffffff; --ink:#17212b; --muted:#5a6b7b; --accent:#0f766e; --line:#d7e0ea; }
+    * { box-sizing:border-box; }
+    body { margin:0; font-family:Segoe UI, Tahoma, sans-serif; background:var(--bg); color:var(--ink); }
+    .wrap { max-width:980px; margin:0 auto; padding:24px 16px 40px; }
+    .top { display:flex; justify-content:space-between; align-items:center; gap:12px; flex-wrap:wrap; margin-bottom:16px; }
+    .actions { display:flex; gap:10px; flex-wrap:wrap; }
+    a.btn { text-decoration:none; color:#fff; background:var(--accent); padding:10px 14px; border-radius:10px; font-weight:600; }
+    a.btn.alt { background:#0b4f6c; }
+    h1 { margin:0; font-size:1.6rem; }
+    .meta { color:var(--muted); margin:4px 0 0; }
+    .card { background:var(--card); border:1px solid var(--line); border-radius:14px; padding:14px 16px; margin:12px 0; }
+    .card h3 { margin:0 0 8px; font-size:1rem; color:#0b4f6c; }
+    .prereq { margin:0 0 8px; color:#334155; background:#f8fafc; border:1px solid #e2e8f0; padding:8px 10px; border-radius:8px; }
+    .question { margin:0 0 8px; font-weight:600; }
+    .q-images { margin:8px 0 10px; display:grid; gap:8px; }
+    .q-img { max-width:100%; height:auto; border:1px solid #cbd5e1; border-radius:8px; background:#fff; }
+    .options { display:grid; gap:8px; margin:8px 0 10px; }
+    .opt { display:block; }
+    .submit-btn { border:none; background:#0f766e; color:#fff; padding:8px 12px; border-radius:8px; font-weight:600; cursor:pointer; }
+    .result { margin:8px 0 0; padding:8px 10px; border-radius:8px; display:none; }
+    .result.ok { display:block; background:#ecfdf5; border:1px solid #bbf7d0; color:#14532d; }
+    .result.bad { display:block; background:#fef2f2; border:1px solid #fecaca; color:#7f1d1d; }
+  </style>
+</head>
+<body>
+  <main class="wrap">
+    <div class="top">
+      <div>
+        <h1>Week 3 Test Page</h1>
+        <p class="meta">Choose an answer and click Submit for each question</p>
+      </div>
+      <div class="actions">
+        <a class="btn" href="index.html">All Weeks</a>
+        <a class="btn alt" href="week-03-read.html">Open Read Page</a>
+      </div>
+    </div>
+    <section class="card">
+      <h3>Q1</h3>
+      
+      <p class="question">A relation is a set of tuples.</p>
+      
+      <div class="options">
+      <label class="opt"><input type="radio" name="q1" value="0"> True</label>      <label class="opt"><input type="radio" name="q1" value="1"> False</label>      </div>
+      <button class="submit-btn" type="button" onclick='evaluateQuestion(1, [0], "True")'>Submit</button>
+      <p class="result" id="result-1"></p>
+    </section>    <section class="card">
+      <h3>Q2</h3>
+      
+      <p class="question">Different tuples in a relation may have different numbers of components.</p>
+      
+      <div class="options">
+      <label class="opt"><input type="radio" name="q2" value="0"> True</label>      <label class="opt"><input type="radio" name="q2" value="1"> False</label>      </div>
+      <button class="submit-btn" type="button" onclick='evaluateQuestion(2, [1], "False")'>Submit</button>
+      <p class="result" id="result-2"></p>
+    </section>    <section class="card">
+      <h3>Q3</h3>
+      
+      <p class="question">Each candidate key of a relation is also a primary key.</p>
+      
+      <div class="options">
+      <label class="opt"><input type="radio" name="q3" value="0"> True</label>      <label class="opt"><input type="radio" name="q3" value="1"> False</label>      </div>
+      <button class="submit-btn" type="button" onclick='evaluateQuestion(3, [1], "False")'>Submit</button>
+      <p class="result" id="result-3"></p>
+    </section>    <section class="card">
+      <h3>Q4</h3>
+      
+      <p class="question">The logical schema represents the entity sets of the domain being modeled and their relationships.</p>
+      
+      <div class="options">
+      <label class="opt"><input type="radio" name="q4" value="0"> True</label>      <label class="opt"><input type="radio" name="q4" value="1"> False</label>      </div>
+      <button class="submit-btn" type="button" onclick='evaluateQuestion(4, [1], "False")'>Submit</button>
+      <p class="result" id="result-4"></p>
+    </section>    <section class="card">
+      <h3>Q5</h3>
+      
+      <p class="question">A relation always has a key.</p>
+      
+      <div class="options">
+      <label class="opt"><input type="radio" name="q5" value="0"> True</label>      <label class="opt"><input type="radio" name="q5" value="1"> False</label>      </div>
+      <button class="submit-btn" type="button" onclick='evaluateQuestion(5, [0], "True")'>Submit</button>
+      <p class="result" id="result-5"></p>
+    </section>    <section class="card">
+      <h3>Q6</h3>
+      
+      <p class="question">A relation may have more than one key.</p>
+      
+      <div class="options">
+      <label class="opt"><input type="radio" name="q6" value="0"> True</label>      <label class="opt"><input type="radio" name="q6" value="1"> False</label>      </div>
+      <button class="submit-btn" type="button" onclick='evaluateQuestion(6, [0], "True")'>Submit</button>
+      <p class="result" id="result-6"></p>
+    </section>    <section class="card">
+      <h3>Q7</h3>
+      
+      <p class="question">A Relation can have at most one foreign key.</p>
+      
+      <div class="options">
+      <label class="opt"><input type="radio" name="q7" value="0"> True</label>      <label class="opt"><input type="radio" name="q7" value="1"> False</label>      </div>
+      <button class="submit-btn" type="button" onclick='evaluateQuestion(7, [1], "False")'>Submit</button>
+      <p class="result" id="result-7"></p>
+    </section>    <section class="card">
+      <h3>Q8</h3>
+      
+      <p class="question">A foreign key in a relation is also a key for that relation.</p>
+      
+      <div class="options">
+      <label class="opt"><input type="radio" name="q8" value="0"> True</label>      <label class="opt"><input type="radio" name="q8" value="1"> False</label>      </div>
+      <button class="submit-btn" type="button" onclick='evaluateQuestion(8, [1], "False")'>Submit</button>
+      <p class="result" id="result-8"></p>
+    </section>    <section class="card">
+      <h3>Q9</h3>
+      
+      <p class="question">Consider the following statements:</p>
+      
+      <div class="options">
+      <label class="opt"><input type="radio" name="q9" value="0"> S1: False; S2: False</label>      <label class="opt"><input type="radio" name="q9" value="1"> S1: False; S2: True</label>      <label class="opt"><input type="radio" name="q9" value="2"> S1: True; S2: False</label>      <label class="opt"><input type="radio" name="q9" value="3"> S1: True; S2: True</label>      </div>
+      <button class="submit-btn" type="button" onclick='evaluateQuestion(9, [0], "S1: False; S2: False")'>Submit</button>
+      <p class="result" id="result-9"></p>
+    </section>    <section class="card">
+      <h3>Q10</h3>
+      
+      <p class="question">Consider a relation R( A 1 , A 2 , A 3 , A 4 , A 5 ) where attribute A 1 is the only key . The maximum possible number of super keys for the relation R will be:</p>
+      
+      <div class="options">
+      <label class="opt"><input type="radio" name="q10" value="0"> 1</label>      <label class="opt"><input type="radio" name="q10" value="1"> 4</label>      <label class="opt"><input type="radio" name="q10" value="2"> 5</label>      <label class="opt"><input type="radio" name="q10" value="3"> 16</label>      </div>
+      <button class="submit-btn" type="button" onclick='evaluateQuestion(10, [3], "16")'>Submit</button>
+      <p class="result" id="result-10"></p>
+    </section>    <section class="card">
+      <h3>Q11</h3>
+      
+      <p class="question">Suppose A 1 A 5 is the key for the relation R(A 1 , A 2 , A 3 , A 4 , A 5 ). Consider the statements given below: S1: A 5 may also be a key for the relation R.</p>
+      
+      <div class="options">
+      <label class="opt"><input type="radio" name="q11" value="0"> S1: True; S2: True; S3: False</label>      <label class="opt"><input type="radio" name="q11" value="1"> S1: True; S2: False; S3: False</label>      <label class="opt"><input type="radio" name="q11" value="2"> S1: False; S2: False; S3: True</label>      <label class="opt"><input type="radio" name="q11" value="3"> S1: False; S2: True; S3: False</label>      </div>
+      <button class="submit-btn" type="button" onclick='evaluateQuestion(11, [3], "S1: False; S2: True; S3: False")'>Submit</button>
+      <p class="result" id="result-11"></p>
+    </section>    <section class="card">
+      <h3>Q12</h3>
+      
+      <p class="question">Consider the following schema:</p>
+      
+      <div class="options">
+      <label class="opt"><input type="radio" name="q12" value="0"> \displaystyle _{sname} (\, _{sid} ( (\,_{pid} (\,_{color=  red } (P \,arts)) * Catalog) * Suppliers) ) MathJax.Hub.Typeset();</label>      <label class="opt"><input type="radio" name="q12" value="1"> \displaystyle _{sname} (\, _{sid} ( \, (_{pid} (_{color=  red } (P\, arts))  Catalog) * Suppliers) ) MathJax.Hub.Typeset();</label>      <label class="opt"><input type="radio" name="q12" value="2"> \displaystyle _{sname} (\, _{sid} ( \,(_{pid} (_{color=  red } (P\, arts))  Suppliers) * Catalog) ) MathJax.Hub.Typeset();</label>      <label class="opt"><input type="radio" name="q12" value="3"> \displaystyle _{sname} ( (\, _{pid} ( _{color=  red } (P\, arts) )  _{sid} (Suppliers) )* Catalog) MathJax.Hub.Typeset();</label>      </div>
+      <button class="submit-btn" type="button" onclick='evaluateQuestion(12, [0], "\displaystyle _{sname} (\, _{sid} ( (\,_{pid} (\,_{color=  red } (P \,arts)) * Catalog) * Suppliers) )")'>Submit</button>
+      <p class="result" id="result-12"></p>
+    </section>    <section class="card">
+      <h3>Q13</h3>
+      
+      <p class="question">Consider two relations r 1 and r 2 with schemas R 1 and R 2 , respectively. Here, | R 1 | = m and | R 2 | = n and m &gt;= 2, n &gt;= 2. Relation r 3 is the natural join of r 1 and r 2 ; i.e. r 3 = r 1  r 2 . Suppose r 1 and r 2 share k number of common attributes, where k &gt; 0 and k &lt; min(m,n). Identify the FALSE statement:</p>
+      
+      <div class="options">
+      <label class="opt"><input type="radio" name="q13" value="0"> The number of attributes in r 3 will be less than m+n.</label>      <label class="opt"><input type="radio" name="q13" value="1"> The minimum number of attributes in r 3 is: max(m,n).</label>      <label class="opt"><input type="radio" name="q13" value="2"> The scheme of r 3 will be: R 1  ( R 2  { a 1 , a 2 , . .., a k }) , where a 1 to a k are common attributes.</label>      <label class="opt"><input type="radio" name="q13" value="3"> The maximum possible number of attributes in r 3 is: m+n-1.</label>      </div>
+      <button class="submit-btn" type="button" onclick='evaluateQuestion(13, [1], "The minimum number of attributes in r 3 is: max(m,n).")'>Submit</button>
+      <p class="result" id="result-13"></p>
+    </section>    <section class="card">
+      <h3>Q14</h3>
+      
+      <p class="question">For R1, R2 to be  union-compatible ,  they should have the same attribute names.</p>
+      
+      <div class="options">
+      <label class="opt"><input type="radio" name="q14" value="0"> True</label>      <label class="opt"><input type="radio" name="q14" value="1"> False</label>      </div>
+      <button class="submit-btn" type="button" onclick='evaluateQuestion(14, [1], "False")'>Submit</button>
+      <p class="result" id="result-14"></p>
+    </section>    <section class="card">
+      <h3>Q15</h3>
+      
+      <p class="question">For R1, R2 to be  union-compatible ,  they should have equal number of attributes.</p>
+      
+      <div class="options">
+      <label class="opt"><input type="radio" name="q15" value="0"> True</label>      <label class="opt"><input type="radio" name="q15" value="1"> False</label>      </div>
+      <button class="submit-btn" type="button" onclick='evaluateQuestion(15, [0], "True")'>Submit</button>
+      <p class="result" id="result-15"></p>
+    </section>    <section class="card">
+      <h3>Q16</h3>
+      
+      <p class="question">For R1, R2 to be  union-compatible ,  the domains of the corresponding attributes should be the same.</p>
+      
+      <div class="options">
+      <label class="opt"><input type="radio" name="q16" value="0"> True</label>      <label class="opt"><input type="radio" name="q16" value="1"> False</label>      </div>
+      <button class="submit-btn" type="button" onclick='evaluateQuestion(16, [0], "True")'>Submit</button>
+      <p class="result" id="result-16"></p>
+    </section>    <section class="card">
+      <h3>Q17</h3>
+      
+      <p class="question">The divides operator requires the operands to be  union-compatible  .</p>
+      
+      <div class="options">
+      <label class="opt"><input type="radio" name="q17" value="0"> True</label>      <label class="opt"><input type="radio" name="q17" value="1"> False</label>      </div>
+      <button class="submit-btn" type="button" onclick='evaluateQuestion(17, [1], "False")'>Submit</button>
+      <p class="result" id="result-17"></p>
+    </section>
+  </main>
+  <script>
+    function evaluateQuestion(qNum, correctIndexes, answerText) {
+      const selected = Array.from(document.querySelectorAll('input[name="q' + qNum + '"]:checked'))
+        .map(el => Number(el.value))
+        .sort((a, b) => a - b);
+      const expected = (correctIndexes || []).slice().sort((a, b) => a - b);
+      const result = document.getElementById('result-' + qNum);
+
+      if (!selected.length) {
+        result.className = 'result bad';
+        result.textContent = 'Please choose at least one option before submitting.';
+        return;
+      }
+
+      const isCorrect = selected.length === expected.length && selected.every((v, i) => v === expected[i]);
+      if (isCorrect) {
+        result.className = 'result ok';
+        result.textContent = 'Correct';
+      } else {
+        result.className = 'result bad';
+        result.textContent = 'Incorrect. Correct answer: ' + answerText;
+      }
+    }
+  </script>
+</body>
+</html>

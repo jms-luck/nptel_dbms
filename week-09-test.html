@@ -1,0 +1,179 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Database Practice Test - Week 9</title>
+  <style>
+    :root { --bg:#f3f6fb; --card:#ffffff; --ink:#17212b; --muted:#5a6b7b; --accent:#0f766e; --line:#d7e0ea; }
+    * { box-sizing:border-box; }
+    body { margin:0; font-family:Segoe UI, Tahoma, sans-serif; background:var(--bg); color:var(--ink); }
+    .wrap { max-width:980px; margin:0 auto; padding:24px 16px 40px; }
+    .top { display:flex; justify-content:space-between; align-items:center; gap:12px; flex-wrap:wrap; margin-bottom:16px; }
+    .actions { display:flex; gap:10px; flex-wrap:wrap; }
+    a.btn { text-decoration:none; color:#fff; background:var(--accent); padding:10px 14px; border-radius:10px; font-weight:600; }
+    a.btn.alt { background:#0b4f6c; }
+    h1 { margin:0; font-size:1.6rem; }
+    .meta { color:var(--muted); margin:4px 0 0; }
+    .card { background:var(--card); border:1px solid var(--line); border-radius:14px; padding:14px 16px; margin:12px 0; }
+    .card h3 { margin:0 0 8px; font-size:1rem; color:#0b4f6c; }
+    .prereq { margin:0 0 8px; color:#334155; background:#f8fafc; border:1px solid #e2e8f0; padding:8px 10px; border-radius:8px; }
+    .question { margin:0 0 8px; font-weight:600; }
+    .q-images { margin:8px 0 10px; display:grid; gap:8px; }
+    .q-img { max-width:100%; height:auto; border:1px solid #cbd5e1; border-radius:8px; background:#fff; }
+    .options { display:grid; gap:8px; margin:8px 0 10px; }
+    .opt { display:block; }
+    .submit-btn { border:none; background:#0f766e; color:#fff; padding:8px 12px; border-radius:8px; font-weight:600; cursor:pointer; }
+    .result { margin:8px 0 0; padding:8px 10px; border-radius:8px; display:none; }
+    .result.ok { display:block; background:#ecfdf5; border:1px solid #bbf7d0; color:#14532d; }
+    .result.bad { display:block; background:#fef2f2; border:1px solid #fecaca; color:#7f1d1d; }
+  </style>
+</head>
+<body>
+  <main class="wrap">
+    <div class="top">
+      <div>
+        <h1>Week 9 Test Page</h1>
+        <p class="meta">Choose an answer and click Submit for each question</p>
+      </div>
+      <div class="actions">
+        <a class="btn" href="index.html">All Weeks</a>
+        <a class="btn alt" href="week-09-read.html">Open Read Page</a>
+      </div>
+    </div>
+    <section class="card">
+      <h3>Q1</h3>
+      <p class="prereq"><strong>Prerequisite / Context:</strong> Use the following in answering the questions: 1KB = 1024Bytes; 1MB = 1024KB</p>
+      <p class="question">The unit of data transfer to and from disks is called block</p>
+      
+      <div class="options">
+      <label class="opt"><input type="radio" name="q1" value="0"> True</label>      <label class="opt"><input type="radio" name="q1" value="1"> False</label>      </div>
+      <button class="submit-btn" type="button" onclick='evaluateQuestion(1, [0], "True")'>Submit</button>
+      <p class="result" id="result-1"></p>
+    </section>    <section class="card">
+      <h3>Q2</h3>
+      <p class="prereq"><strong>Prerequisite / Context:</strong> Use the following in answering the questions: 1KB = 1024Bytes; 1MB = 1024KB</p>
+      <p class="question">If record length is much less than the block size and  unspanned organization is used, then blocking factor of data file is ceil(B/r), where B is block size and r is record length</p>
+      
+      <div class="options">
+      <label class="opt"><input type="radio" name="q2" value="0"> True</label>      <label class="opt"><input type="radio" name="q2" value="1"> False</label>      </div>
+      <button class="submit-btn" type="button" onclick='evaluateQuestion(2, [1], "False")'>Submit</button>
+      <p class="result" id="result-2"></p>
+    </section>    <section class="card">
+      <h3>Q3</h3>
+      <p class="prereq"><strong>Prerequisite / Context:</strong> Use the following in answering the questions: 1KB = 1024Bytes; 1MB = 1024KB</p>
+      <p class="question">In the linked allocation of mapping file blocks onto disk blocks, scanning operation is faster compared to the contiguous allocation</p>
+      
+      <div class="options">
+      <label class="opt"><input type="radio" name="q3" value="0"> True</label>      <label class="opt"><input type="radio" name="q3" value="1"> False</label>      </div>
+      <button class="submit-btn" type="button" onclick='evaluateQuestion(3, [1], "False")'>Submit</button>
+      <p class="result" id="result-3"></p>
+    </section>    <section class="card">
+      <h3>Q4</h3>
+      <p class="prereq"><strong>Prerequisite / Context:</strong> Use the following in answering the questions: 1KB = 1024Bytes; 1MB = 1024KB</p>
+      <p class="question">In an RDBMS both fixed-length and variable-length record types can be used</p>
+      
+      <div class="options">
+      <label class="opt"><input type="radio" name="q4" value="0"> True</label>      <label class="opt"><input type="radio" name="q4" value="1"> False</label>      </div>
+      <button class="submit-btn" type="button" onclick='evaluateQuestion(4, [0], "True")'>Submit</button>
+      <p class="result" id="result-4"></p>
+    </section>    <section class="card">
+      <h3>Q5</h3>
+      <p class="prereq"><strong>Prerequisite / Context:</strong> Use the following in answering the questions: 1KB = 1024Bytes; 1MB = 1024KB</p>
+      <p class="question">Consider the following parameters of a hard disk: seek time: 12ms, rotational delay: 3ms. Suppose the read/write head of the disk is positioned on block 0 of track 20, then the maximum time taken for the head to move to block 10 on the same track is:</p>
+      
+      <div class="options">
+      <label class="opt"><input type="radio" name="q5" value="0"> 3 ms</label>      <label class="opt"><input type="radio" name="q5" value="1"> 12 ms</label>      <label class="opt"><input type="radio" name="q5" value="2"> 15 ms</label>      <label class="opt"><input type="radio" name="q5" value="3"> 30 ms</label>      </div>
+      <button class="submit-btn" type="button" onclick='evaluateQuestion(5, [0], "3 ms")'>Submit</button>
+      <p class="result" id="result-5"></p>
+    </section>    <section class="card">
+      <h3>Q6</h3>
+      <p class="prereq"><strong>Prerequisite / Context:</strong> Use the following information to answer questions 6 and 7. Suppose extendible hashing is used to organize a file of data records. The size of each bucket is 2 records. The initial global depth value is 0 and the directory entry points to an empty bucket. A sequence of 11 records are to be inserted into the file. When the hash function is applied to the keys of these records, the values 0, 1, 2, ..., 9 and 10 are obtained, respectively, in that order.</p>
+      <p class="question">The number of data buckets in use after all the records are inserted is:</p>
+      
+      <div class="options">
+      <label class="opt"><input type="radio" name="q6" value="0"> 6</label>      <label class="opt"><input type="radio" name="q6" value="1"> 7</label>      <label class="opt"><input type="radio" name="q6" value="2"> 8</label>      <label class="opt"><input type="radio" name="q6" value="3"> 11</label>      </div>
+      <button class="submit-btn" type="button" onclick='evaluateQuestion(6, [1], "7")'>Submit</button>
+      <p class="result" id="result-6"></p>
+    </section>    <section class="card">
+      <h3>Q7</h3>
+      <p class="prereq"><strong>Prerequisite / Context:</strong> Use the following information to answer questions 6 and 7. Suppose extendible hashing is used to organize a file of data records. The size of each bucket is 2 records. The initial global depth value is 0 and the directory entry points to an empty bucket. A sequence of 11 records are to be inserted into the file. When the hash function is applied to the keys of these records, the values 0, 1, 2, ..., 9 and 10 are obtained, respectively, in that order.</p>
+      <p class="question">Choose the correct option for the following statements about the final file structure, after the insertion of all the records. S1. The global depth value is 3 S2. The local depth values of all the data buckets except one is same</p>
+      
+      <div class="options">
+      <label class="opt"><input type="radio" name="q7" value="0"> S1, S2 are both false</label>      <label class="opt"><input type="radio" name="q7" value="1"> S1, S2 are both true</label>      <label class="opt"><input type="radio" name="q7" value="2"> S1 is true; S2 is false</label>      <label class="opt"><input type="radio" name="q7" value="3"> S1 is false; S2 is true</label>      </div>
+      <button class="submit-btn" type="button" onclick='evaluateQuestion(7, [1], "S1, S2 are both true")'>Submit</button>
+      <p class="result" id="result-7"></p>
+    </section>    <section class="card">
+      <h3>Q8</h3>
+      <p class="prereq"><strong>Prerequisite / Context:</strong> Use the following information to answer questions 6 and 7. Suppose extendible hashing is used to organize a file of data records. The size of each bucket is 2 records. The initial global depth value is 0 and the directory entry points to an empty bucket. A sequence of 11 records are to be inserted into the file. When the hash function is applied to the keys of these records, the values 0, 1, 2, ..., 9 and 10 are obtained, respectively, in that order.</p>
+      <p class="question">A 2-level index is built on the primary key field of a data file that uses 10,000 blocks of storage on the disk. The number of blocks in level-1 and level-2 index files are 100 and 10, respectively. None of the index file blocks are in memory buffers. The maximum number of block accesses required to retrieve the record with a particular primary key value is:</p>
+      
+      <div class="options">
+      <label class="opt"><input type="radio" name="q8" value="0"> 3</label>      <label class="opt"><input type="radio" name="q8" value="1"> 5</label>      <label class="opt"><input type="radio" name="q8" value="2"> 6</label>      <label class="opt"><input type="radio" name="q8" value="3"> None of the above</label>      </div>
+      <button class="submit-btn" type="button" onclick='evaluateQuestion(8, [2], "6")'>Submit</button>
+      <p class="result" id="result-8"></p>
+    </section>    <section class="card">
+      <h3>Q9</h3>
+      <p class="prereq"><strong>Prerequisite / Context:</strong> Use the following information to answer questions 10 and 11. Suppose we want to build a multi-level index on a key field X of a disk file of records. The file is not ordered on X. The file has the following details: Number of records = 13,10,720; record length = 200 bytes; size of X = 13 bytes; size of record pointer = 7 bytes; block size = 2048 bytes. Assume that the block pointer size is the same as the size of the record pointer of the file.</p>
+      <p class="question">The blocking factors for the data file and the index file, respectively, are</p>
+      
+      <div class="options">
+      <label class="opt"><input type="radio" name="q9" value="0"> 11, 101</label>      <label class="opt"><input type="radio" name="q9" value="1"> 10, 103</label>      <label class="opt"><input type="radio" name="q9" value="2"> 11, 103</label>      <label class="opt"><input type="radio" name="q9" value="3"> 10, 102</label>      </div>
+      <button class="submit-btn" type="button" onclick='evaluateQuestion(9, [3], "10, 102")'>Submit</button>
+      <p class="result" id="result-9"></p>
+    </section>    <section class="card">
+      <h3>Q10</h3>
+      <p class="prereq"><strong>Prerequisite / Context:</strong> Use the following information to answer questions 10 and 11. Suppose we want to build a multi-level index on a key field X of a disk file of records. The file is not ordered on X. The file has the following details: Number of records = 13,10,720; record length = 200 bytes; size of X = 13 bytes; size of record pointer = 7 bytes; block size = 2048 bytes. Assume that the block pointer size is the same as the size of the record pointer of the file.</p>
+      <p class="question">The number of blocks in the first and second level index files, respectively, are:</p>
+      
+      <div class="options">
+      <label class="opt"><input type="radio" name="q10" value="0"> 131072, 1286</label>      <label class="opt"><input type="radio" name="q10" value="1"> 13111, 126</label>      <label class="opt"><input type="radio" name="q10" value="2"> 13110, 125</label>      <label class="opt"><input type="radio" name="q10" value="3"> 12851, 126</label>      </div>
+      <button class="submit-btn" type="button" onclick='evaluateQuestion(10, [3], "12851, 126")'>Submit</button>
+      <p class="result" id="result-10"></p>
+    </section>    <section class="card">
+      <h3>Q11</h3>
+      <p class="prereq"><strong>Prerequisite / Context:</strong> Use the following information to answer questions 12 and 13. Consider a large data file ordered on the primary key field F1. It has a (non-ordering) key field F2. Both the fields have the same size. Suppose two multi-level indices L1 and L2 are built on the fields F1 and F2, respectively. Assume that the block pointer length is the same as the length of the record pointer of the file.</p>
+      <p class="question">Let the number of blocks in the level-1 indexes of L1 and L2 be x1 and x2, respectively. The relationship between x1 and x2 is</p>
+      
+      <div class="options">
+      <label class="opt"><input type="radio" name="q11" value="0"> x1 &lt; x2</label>      <label class="opt"><input type="radio" name="q11" value="1"> x1 = x2</label>      <label class="opt"><input type="radio" name="q11" value="2"> x1 &gt; x2</label>      <label class="opt"><input type="radio" name="q11" value="3"> None of the above</label>      </div>
+      <button class="submit-btn" type="button" onclick='evaluateQuestion(11, [0], "x1 &amp;lt; x2")'>Submit</button>
+      <p class="result" id="result-11"></p>
+    </section>    <section class="card">
+      <h3>Q12</h3>
+      <p class="prereq"><strong>Prerequisite / Context:</strong> Use the following information to answer questions 12 and 13. Consider a large data file ordered on the primary key field F1. It has a (non-ordering) key field F2. Both the fields have the same size. Suppose two multi-level indices L1 and L2 are built on the fields F1 and F2, respectively. Assume that the block pointer length is the same as the length of the record pointer of the file.</p>
+      <p class="question">Let the number of blocks in level-2 indexes of L1 and L2 be x1 and x2, respectively. The relation between x1 and x2 is</p>
+      
+      <div class="options">
+      <label class="opt"><input type="radio" name="q12" value="0"> x1 &lt; x2</label>      <label class="opt"><input type="radio" name="q12" value="1"> x1 = x2</label>      <label class="opt"><input type="radio" name="q12" value="2"> x1 &gt; x2</label>      <label class="opt"><input type="radio" name="q12" value="3"> None of the above</label>      </div>
+      <button class="submit-btn" type="button" onclick='evaluateQuestion(12, [0], "x1 &amp;lt; x2")'>Submit</button>
+      <p class="result" id="result-12"></p>
+    </section>
+  </main>
+  <script>
+    function evaluateQuestion(qNum, correctIndexes, answerText) {
+      const selected = Array.from(document.querySelectorAll('input[name="q' + qNum + '"]:checked'))
+        .map(el => Number(el.value))
+        .sort((a, b) => a - b);
+      const expected = (correctIndexes || []).slice().sort((a, b) => a - b);
+      const result = document.getElementById('result-' + qNum);
+
+      if (!selected.length) {
+        result.className = 'result bad';
+        result.textContent = 'Please choose at least one option before submitting.';
+        return;
+      }
+
+      const isCorrect = selected.length === expected.length && selected.every((v, i) => v === expected[i]);
+      if (isCorrect) {
+        result.className = 'result ok';
+        result.textContent = 'Correct';
+      } else {
+        result.className = 'result bad';
+        result.textContent = 'Incorrect. Correct answer: ' + answerText;
+      }
+    }
+  </script>
+</body>
+</html>

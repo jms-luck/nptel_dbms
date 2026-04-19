@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Database Practice Test - Week 4</title>
+  <style>
+    :root { --bg:#f3f6fb; --card:#ffffff; --ink:#17212b; --muted:#5a6b7b; --accent:#0f766e; --line:#d7e0ea; }
+    * { box-sizing:border-box; }
+    body { margin:0; font-family:Segoe UI, Tahoma, sans-serif; background:var(--bg); color:var(--ink); }
+    .wrap { max-width:980px; margin:0 auto; padding:24px 16px 40px; }
+    .top { display:flex; justify-content:space-between; align-items:center; gap:12px; flex-wrap:wrap; margin-bottom:16px; }
+    .actions { display:flex; gap:10px; flex-wrap:wrap; }
+    a.btn { text-decoration:none; color:#fff; background:var(--accent); padding:10px 14px; border-radius:10px; font-weight:600; }
+    a.btn.alt { background:#0b4f6c; }
+    h1 { margin:0; font-size:1.6rem; }
+    .meta { color:var(--muted); margin:4px 0 0; }
+    .card { background:var(--card); border:1px solid var(--line); border-radius:14px; padding:14px 16px; margin:12px 0; }
+    .card h3 { margin:0 0 8px; font-size:1rem; color:#0b4f6c; }
+    .prereq { margin:0 0 8px; color:#334155; background:#f8fafc; border:1px solid #e2e8f0; padding:8px 10px; border-radius:8px; }
+    .question { margin:0 0 8px; font-weight:600; }
+    .q-images { margin:8px 0 10px; display:grid; gap:8px; }
+    .q-img { max-width:100%; height:auto; border:1px solid #cbd5e1; border-radius:8px; background:#fff; }
+    .options { display:grid; gap:8px; margin:8px 0 10px; }
+    .opt { display:block; }
+    .submit-btn { border:none; background:#0f766e; color:#fff; padding:8px 12px; border-radius:8px; font-weight:600; cursor:pointer; }
+    .result { margin:8px 0 0; padding:8px 10px; border-radius:8px; display:none; }
+    .result.ok { display:block; background:#ecfdf5; border:1px solid #bbf7d0; color:#14532d; }
+    .result.bad { display:block; background:#fef2f2; border:1px solid #fecaca; color:#7f1d1d; }
+  </style>
+</head>
+<body>
+  <main class="wrap">
+    <div class="top">
+      <div>
+        <h1>Week 4 Test Page</h1>
+        <p class="meta">Choose an answer and click Submit for each question</p>
+      </div>
+      <div class="actions">
+        <a class="btn" href="index.html">All Weeks</a>
+        <a class="btn alt" href="week-04-read.html">Open Read Page</a>
+      </div>
+    </div>
+    <section class="card">
+      <h3>Q1</h3>
+      
+      <p class="question">Consider the statements given below:</p>
+      
+      <div class="options">
+      <label class="opt"><input type="radio" name="q1" value="0"> S1: True; S2: True</label>      <label class="opt"><input type="radio" name="q1" value="1"> S1: True; S2: False</label>      <label class="opt"><input type="radio" name="q1" value="2"> S1: False; S2: False</label>      <label class="opt"><input type="radio" name="q1" value="3"> S1: False; S2: True</label>      </div>
+      <button class="submit-btn" type="button" onclick='evaluateQuestion(1, [3], "S1: False; S2: True")'>Submit</button>
+      <p class="result" id="result-1"></p>
+    </section>    <section class="card">
+      <h3>Q2</h3>
+      
+      <p class="question">Consider the sets S1 and S2 below. S1 has different types of keys and S2 has possible constraints on the number of such keys in a relation. Choose the correct matching: S1: {w: primary key; x: candidate key; y: super key; z: foreign key} S2: { p: zero or more, q: exactly one, r: one or more } Choose the correct mapping:</p>
+      
+      <div class="options">
+      <label class="opt"><input type="radio" name="q2" value="0"> w--p; x--p; y--q; z--r</label>      <label class="opt"><input type="radio" name="q2" value="1"> w--q; x--q; y--p; z--r</label>      <label class="opt"><input type="radio" name="q2" value="2"> w--q; x--r; y--r; z--p</label>      <label class="opt"><input type="radio" name="q2" value="3"> w--r-; x--r; y--p; z--q</label>      </div>
+      <button class="submit-btn" type="button" onclick='evaluateQuestion(2, [2], "w--q; x--r; y--r; z--p")'>Submit</button>
+      <p class="result" id="result-2"></p>
+    </section>    <section class="card">
+      <h3>Q3</h3>
+      
+      <p class="question">Consider the statements given below: S1: If the  candidate key  consists of  n  attributes for a relation R, then  primary key  attribute-set always has less than  n  attributes for the same relation. S2: If a relation does not have a  candidate key  still it can have a  primary key  . Choose the correct option:</p>
+      
+      <div class="options">
+      <label class="opt"><input type="radio" name="q3" value="0"> S1: True; S2: True</label>      <label class="opt"><input type="radio" name="q3" value="1"> S1: True; S2: False</label>      <label class="opt"><input type="radio" name="q3" value="2"> S1: False; S2: False</label>      <label class="opt"><input type="radio" name="q3" value="3"> S1: False; S2: True</label>      </div>
+      <button class="submit-btn" type="button" onclick='evaluateQuestion(3, [2], "S1: False; S2: False")'>Submit</button>
+      <p class="result" id="result-3"></p>
+    </section>    <section class="card">
+      <h3>Q4</h3>
+      
+      <p class="question">Consider the sets mentioned in the table below: Choose the correct matching:</p>
+      <div class="q-images"><img class="q-img" src="../Introduction to Database Systems - - Unit 7 - Week 4_files/W4A4Q4.png" alt="Question image" loading="lazy"></div>
+      <div class="options">
+      <label class="opt"><input type="radio" name="q4" value="0"> w--s; x--q ; y--r ; z--p</label>      <label class="opt"><input type="radio" name="q4" value="1"> w--s; x--p ; y:--p; z--r</label>      <label class="opt"><input type="radio" name="q4" value="2"> w--q; x--r ; y:--r; z--p</label>      <label class="opt"><input type="radio" name="q4" value="3"> w--q; x-- s; y:--p; z--r</label>      </div>
+      <button class="submit-btn" type="button" onclick='evaluateQuestion(4, [0], "w--s; x--q ; y--r ; z--p")'>Submit</button>
+      <p class="result" id="result-4"></p>
+    </section>    <section class="card">
+      <h3>Q5</h3>
+      
+      <p class="question">In the tuple relational calculus (TRC) query, one can not give _ _ _ _ of how to evaluate a query. Therefore, we write a _ _ _ _ expression to specify the data retrieval requirement. Fill the blanks:</p>
+      
+      <div class="options">
+      <label class="opt"><input type="radio" name="q5" value="0"> Data; Procedural</label>      <label class="opt"><input type="radio" name="q5" value="1"> Description; Procedural</label>      <label class="opt"><input type="radio" name="q5" value="2"> Data; Declarative</label>      <label class="opt"><input type="radio" name="q5" value="3"> Description; Declarative</label>      </div>
+      <button class="submit-btn" type="button" onclick='evaluateQuestion(5, [3], "Description; Declarative")'>Submit</button>
+      <p class="result" id="result-5"></p>
+    </section>    <section class="card">
+      <h3>Q6</h3>
+      
+      <p class="question">Consider the given relational schemas: Professor( pid  , pname, age, sex, deptNo, yearOfJoining) Department( did  , dname, hod, phoneNo) Choose the appropriate TRC query to retrieve the department names that do not have any female professors:</p>
+      
+      <div class="options">
+      <label class="opt"><input type="radio" name="q6" value="0"> \{ d.dname | Department(d)  ( (p)(P rof essor(p)  p .sex =  F   p .deptN o = d .did) )\} MathJax.Hub.Typeset();</label>      <label class="opt"><input type="radio" name="q6" value="1"> \{ d.dname | Department(d)  ( (p)(P rof essor(p)  p .sex \neq  F   p .deptN o = d .did) ) \} MathJax.Hub.Typeset();</label>      <label class="opt"><input type="radio" name="q6" value="2"> \{ d.dname | Department(d)  ( (p)(P rof essor(p)  p .sex =  F   p .deptN o = d .did) ) \} MathJax.Hub.Typeset();</label>      <label class="opt"><input type="radio" name="q6" value="3"> \{ d.dname | Department(d)  ( (p)(P rof essor(p)  p .sex \neq  F   p .deptN o = d .did) )\} MathJax.Hub.Typeset();</label>      </div>
+      <button class="submit-btn" type="button" onclick='evaluateQuestion(6, [0], "\{ d.dname | Department(d)  ( (p)(P rof essor(p)  p .sex =  F   p .deptN o = d .did) )\}")'>Submit</button>
+      <p class="result" id="result-6"></p>
+    </section>
+  </main>
+  <script>
+    function evaluateQuestion(qNum, correctIndexes, answerText) {
+      const selected = Array.from(document.querySelectorAll('input[name="q' + qNum + '"]:checked'))
+        .map(el => Number(el.value))
+        .sort((a, b) => a - b);
+      const expected = (correctIndexes || []).slice().sort((a, b) => a - b);
+      const result = document.getElementById('result-' + qNum);
+
+      if (!selected.length) {
+        result.className = 'result bad';
+        result.textContent = 'Please choose at least one option before submitting.';
+        return;
+      }
+
+      const isCorrect = selected.length === expected.length && selected.every((v, i) => v === expected[i]);
+      if (isCorrect) {
+        result.className = 'result ok';
+        result.textContent = 'Correct';
+      } else {
+        result.className = 'result bad';
+        result.textContent = 'Incorrect. Correct answer: ' + answerText;
+      }
+    }
+  </script>
+</body>
+</html>

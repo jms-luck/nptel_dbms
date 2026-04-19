@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Database Practice Read - Week 10</title>
+  <style>
+    :root { --bg:#f5f7fb; --card:#ffffff; --ink:#17212b; --muted:#5a6b7b; --accent:#0f766e; --line:#d7e0ea; }
+    * { box-sizing:border-box; }
+    body { margin:0; font-family:Segoe UI, Tahoma, sans-serif; background:var(--bg); color:var(--ink); }
+    .wrap { max-width:980px; margin:0 auto; padding:24px 16px 40px; }
+    .top { display:flex; justify-content:space-between; align-items:center; gap:12px; flex-wrap:wrap; margin-bottom:16px; }
+    .actions { display:flex; gap:10px; flex-wrap:wrap; }
+    a.btn { text-decoration:none; color:#fff; background:var(--accent); padding:10px 14px; border-radius:10px; font-weight:600; }
+    a.btn.alt { background:#0b4f6c; }
+    h1 { margin:0; font-size:1.6rem; }
+    .meta { color:var(--muted); margin:4px 0 0; }
+    .card { background:var(--card); border:1px solid var(--line); border-radius:14px; padding:14px 16px; margin:12px 0; }
+    .card h3 { margin:0 0 8px; font-size:1rem; color:#0b4f6c; }
+    .prereq { margin:0 0 8px; color:#334155; background:#f8fafc; border:1px solid #e2e8f0; padding:8px 10px; border-radius:8px; }
+    .question { margin:0 0 8px; font-weight:600; }
+    .q-images { margin:8px 0 10px; display:grid; gap:8px; }
+    .q-img { max-width:100%; height:auto; border:1px solid #cbd5e1; border-radius:8px; background:#fff; }
+    ul { margin:6px 0 10px 18px; }
+    .answer { margin:0; color:#1b4332; background:#ecfdf5; border:1px solid #bbf7d0; padding:8px 10px; border-radius:8px; }
+  </style>
+</head>
+<body>
+  <main class="wrap">
+    <div class="top">
+      <div>
+        <h1>Week 10 Read Page</h1>
+        <p class="meta">Study mode with questions, context, and answers</p>
+      </div>
+      <div class="actions">
+        <a class="btn" href="index.html">All Weeks</a>
+        <a class="btn alt" href="week-10-test.html">Open Test Page</a>
+      </div>
+    </div>
+    <section class="card">
+      <h3>Q1</h3>
+      
+      <p class="question">The calculation of the order of an internal node of a B + - tree is independent of which of the following quantities?</p>
+      
+      <ul><li>Block size</li><li>Size of index field</li><li>Size of block pointer</li><li>Size of record pointer</li></ul>
+      <p class="answer"><strong>Answer:</strong> Size of record pointer</p>
+    </section>    <section class="card">
+      <h3>Q2</h3>
+      <p class="prereq"><strong>Prerequisite / Context:</strong> Use the following information and the conventions taught in the lectures to answer Questions 2 and 3. Consider the B ^+ - tree given below with order 3 and leaf order 2.</p>
+      <p class="question">If we insert a record with key value 5 in the B + - tree, then which of the following is a valid leaf node in the resulting B + - tree?</p>
+      
+      <ul><li>(4,5)</li><li>(5,6)</li><li>(6,7)</li><li>(4,6)</li></ul>
+      <p class="answer"><strong>Answer:</strong> (5,6)</p>
+    </section>    <section class="card">
+      <h3>Q3</h3>
+      <p class="prereq"><strong>Prerequisite / Context:</strong> Use the following information and the conventions taught in the lectures to answer Questions 2 and 3. Consider the B ^+ - tree given below with order 3 and leaf order 2.</p>
+      <p class="question">Instead of inserting a record with key value 5, if we delete the record with key value 4, the total number of nodes in the resulting tree is:</p>
+      
+      <ul><li>8</li><li>9</li><li>10</li><li>7</li></ul>
+      <p class="answer"><strong>Answer:</strong> 10</p>
+    </section>    <section class="card">
+      <h3>Q4</h3>
+      <p class="prereq"><strong>Prerequisite / Context:</strong> Use the following information and the conventions taught in the lectures to answer Questions 2 and 3. Consider the B ^+ - tree given below with order 3 and leaf order 2.</p>
+      <p class="question">Which one of the following techniques has the feature of distributing data on multiple disks that may have poor reliability.</p>
+      
+      <ul><li>Data striping</li><li>Data redundancy</li><li>Data mirroring</li><li>Data parity</li></ul>
+      <p class="answer"><strong>Answer:</strong> Data striping</p>
+    </section>    <section class="card">
+      <h3>Q5</h3>
+      <p class="prereq"><strong>Prerequisite / Context:</strong> Use the following information and the conventions taught in the lectures to answer Questions 2 and 3. Consider the B ^+ - tree given below with order 3 and leaf order 2.</p>
+      <p class="question">Pick the correct matching the following</p>
+      
+      <ul><li>a-1, b-3, c-4</li><li>a-2, b-3, c-4</li><li>a-1, b-4, c-3</li><li>a-2, b-4, c-3</li></ul>
+      <p class="answer"><strong>Answer:</strong> a-2, b-3, c-4</p>
+    </section>    <section class="card">
+      <h3>Q6</h3>
+      <p class="prereq"><strong>Prerequisite / Context:</strong> Use the following information and the conventions taught in the lectures to answer Questions 2 and 3. Consider the B ^+ - tree given below with order 3 and leaf order 2.</p>
+      <p class="question">The following relation is used to store the details of the students studying in an engineering college where both men and women study: student( rollNo  , name, sex, deptId). Consider the following SQL query. SELECT s.name FROM student s WHERE s.sex = Male AND s.rollNo= CS17B038 AND s.deptId = 4; Assume there are three indices, one on each of the attributes: rollNo, sex, and deptId. Under normal conditions, which of the three predicates in the WHERE clause is evaluated first?</p>
+      
+      <ul><li>sex = Male</li><li>rollNo = CS17B038</li><li>deptId = 4</li><li>We cant say</li></ul>
+      <p class="answer"><strong>Answer:</strong> rollNo = CS17B038</p>
+    </section>    <section class="card">
+      <h3>Q7</h3>
+      <p class="prereq"><strong>Prerequisite / Context:</strong> Use the following information and the conventions taught in the lectures to answer Questions 2 and 3. Consider the B ^+ - tree given below with order 3 and leaf order 2.</p>
+      <p class="question">If the number of buffer memory blocks available for external sorting is doubled, then which of the following statements is correct about the sort phase? S1. The total number of block accesses for sorting are reduced S2. The number of runs are reduced</p>
+      
+      <ul><li>S1 &amp; S2 are true</li><li>S1 is true; S2 is false</li><li>S1 is false; S2 is true</li><li>S1 &amp; S2 are false</li></ul>
+      <p class="answer"><strong>Answer:</strong> S1 is false; S2 is true</p>
+    </section>    <section class="card">
+      <h3>Q8</h3>
+      <p class="prereq"><strong>Prerequisite / Context:</strong> Use the following information to answer questions 8 and 9. A file is stored on a disk using 2048 blocks. For this file, we need to perform external sorting in the main memory with buffer size equal to 9 blocks and the degree of merging is 8.</p>
+      <p class="question">Which of the following statements are true regarding the merge phase</p>
+      
+      <ul><li>The number of runs in the result of the first iteration of the merge phase is 29</li><li>The total number of iterations in the merge phase is 4</li><li>The number of runs in the result of the second iteration of the merge phase is 4</li><li>If the degree of merging is reduced, the number of iterations in the merge phase increases</li></ul>
+      <p class="answer"><strong>Answer:</strong> The number of runs in the result of the first iteration of the merge phase is 29, The number of runs in the result of the second iteration of the merge phase is 4, If the degree of merging is reduced, the number of iterations in the merge phase increases</p>
+    </section>    <section class="card">
+      <h3>Q9</h3>
+      <p class="prereq"><strong>Prerequisite / Context:</strong> Use the following information to answer questions 8 and 9. A file is stored on a disk using 2048 blocks. For this file, we need to perform external sorting in the main memory with buffer size equal to 9 blocks and the degree of merging is 8.</p>
+      <p class="question">The total number of block accesses during the sort and merge phases together is</p>
+      
+      <ul><li>228</li><li>4096</li><li>12288</li><li>16384</li></ul>
+      <p class="answer"><strong>Answer:</strong> 12288</p>
+    </section>    <section class="card">
+      <h3>Q10</h3>
+      <p class="prereq"><strong>Prerequisite / Context:</strong> Use the following information to answer questions 8 and 9. A file is stored on a disk using 2048 blocks. For this file, we need to perform external sorting in the main memory with buffer size equal to 9 blocks and the degree of merging is 8.</p>
+      <p class="question">Consider the following statements about the nested-loop join algorithm taught in the class: S1. Each block of one of the data files is read only once S2. The number of times the data file in the inner loop is read is dependent on the buffer size</p>
+      
+      <ul><li>Both S1, S2 are true</li><li>S1 is true; S2 is false</li><li>S1 is false; S2 is true</li><li>Both S1, S2 are false</li></ul>
+      <p class="answer"><strong>Answer:</strong> Both S1, S2 are true</p>
+    </section>
+  </main>
+</body>
+</html>

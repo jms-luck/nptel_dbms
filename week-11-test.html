@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Database Practice Test - Week 11</title>
+  <style>
+    :root { --bg:#f3f6fb; --card:#ffffff; --ink:#17212b; --muted:#5a6b7b; --accent:#0f766e; --line:#d7e0ea; }
+    * { box-sizing:border-box; }
+    body { margin:0; font-family:Segoe UI, Tahoma, sans-serif; background:var(--bg); color:var(--ink); }
+    .wrap { max-width:980px; margin:0 auto; padding:24px 16px 40px; }
+    .top { display:flex; justify-content:space-between; align-items:center; gap:12px; flex-wrap:wrap; margin-bottom:16px; }
+    .actions { display:flex; gap:10px; flex-wrap:wrap; }
+    a.btn { text-decoration:none; color:#fff; background:var(--accent); padding:10px 14px; border-radius:10px; font-weight:600; }
+    a.btn.alt { background:#0b4f6c; }
+    h1 { margin:0; font-size:1.6rem; }
+    .meta { color:var(--muted); margin:4px 0 0; }
+    .card { background:var(--card); border:1px solid var(--line); border-radius:14px; padding:14px 16px; margin:12px 0; }
+    .card h3 { margin:0 0 8px; font-size:1rem; color:#0b4f6c; }
+    .prereq { margin:0 0 8px; color:#334155; background:#f8fafc; border:1px solid #e2e8f0; padding:8px 10px; border-radius:8px; }
+    .question { margin:0 0 8px; font-weight:600; }
+    .q-images { margin:8px 0 10px; display:grid; gap:8px; }
+    .q-img { max-width:100%; height:auto; border:1px solid #cbd5e1; border-radius:8px; background:#fff; }
+    .options { display:grid; gap:8px; margin:8px 0 10px; }
+    .opt { display:block; }
+    .submit-btn { border:none; background:#0f766e; color:#fff; padding:8px 12px; border-radius:8px; font-weight:600; cursor:pointer; }
+    .result { margin:8px 0 0; padding:8px 10px; border-radius:8px; display:none; }
+    .result.ok { display:block; background:#ecfdf5; border:1px solid #bbf7d0; color:#14532d; }
+    .result.bad { display:block; background:#fef2f2; border:1px solid #fecaca; color:#7f1d1d; }
+  </style>
+</head>
+<body>
+  <main class="wrap">
+    <div class="top">
+      <div>
+        <h1>Week 11 Test Page</h1>
+        <p class="meta">Choose an answer and click Submit for each question</p>
+      </div>
+      <div class="actions">
+        <a class="btn" href="index.html">All Weeks</a>
+        <a class="btn alt" href="week-11-read.html">Open Read Page</a>
+      </div>
+    </div>
+    <section class="card">
+      <h3>Q1</h3>
+      
+      <p class="question">Consider two data files stored on a disk using 5060 and 60 blocks. We need to join these two files using the nested loop join method. The buffer size available is 52 blocks. The number of block accesses required by the method is (Ignore the block accesses required for writing the result):</p>
+      
+      <div class="options">
+      <label class="opt"><input type="radio" name="q1" value="0"> 5120</label>      <label class="opt"><input type="radio" name="q1" value="1"> 10110</label>      <label class="opt"><input type="radio" name="q1" value="2"> 10180</label>      <label class="opt"><input type="radio" name="q1" value="3"> 11180</label>      </div>
+      <button class="submit-btn" type="button" onclick='evaluateQuestion(1, [2], "10180")'>Submit</button>
+      <p class="result" id="result-1"></p>
+    </section>    <section class="card">
+      <h3>Q2</h3>
+      
+      <p class="question">Which of the following relational algebra operators are both commutative and associative? (i) INTERSECTION (ii) PROJECTION (iii) UNION</p>
+      
+      <div class="options">
+      <label class="opt"><input type="radio" name="q2" value="0"> Only (i)</label>      <label class="opt"><input type="radio" name="q2" value="1"> Only (i) and (iii)</label>      <label class="opt"><input type="radio" name="q2" value="2"> Only (ii) and (iii)</label>      <label class="opt"><input type="radio" name="q2" value="3"> All (i), (ii) and (iii)</label>      </div>
+      <button class="submit-btn" type="button" onclick='evaluateQuestion(2, [1], "Only (i) and (iii)")'>Submit</button>
+      <p class="result" id="result-2"></p>
+    </section>    <section class="card">
+      <h3>Q3</h3>
+      
+      <p class="question">Use the following schema of the academic institution relational database for this question. student( rollNo , name, degree, year, sex, deptNo, advisor)</p>
+      
+      <div class="options">
+      <label class="opt"><input type="radio" name="q3" value="0"> 2, 4</label>      <label class="opt"><input type="radio" name="q3" value="1"> 4, 4</label>      <label class="opt"><input type="radio" name="q3" value="2"> 2, 2</label>      <label class="opt"><input type="radio" name="q3" value="3"> 4, 2</label>      </div>
+      <button class="submit-btn" type="button" onclick='evaluateQuestion(3, [3], "4, 2")'>Submit</button>
+      <p class="result" id="result-3"></p>
+    </section>    <section class="card">
+      <h3>Q4</h3>
+      
+      <p class="question">Durability is managed by</p>
+      
+      <div class="options">
+      <label class="opt"><input type="radio" name="q4" value="0"> Query processor of the DBMS</label>      <label class="opt"><input type="radio" name="q4" value="1"> Application Programmer</label>      <label class="opt"><input type="radio" name="q4" value="2"> Recovery module of DBMS</label>      <label class="opt"><input type="radio" name="q4" value="3"> Concurrency module of DBMS</label>      </div>
+      <button class="submit-btn" type="button" onclick='evaluateQuestion(4, [2], "Recovery module of DBMS")'>Submit</button>
+      <p class="result" id="result-4"></p>
+    </section>    <section class="card">
+      <h3>Q5</h3>
+      
+      <p class="question">Consider the following schedule S. S: R 1 (X); W 1 (X); R 2 (X); W 2 (X); R 1 (Y); R 2 (Y); The number of conflicting pairs of operations in the schedule S is</p>
+      
+      <div class="options">
+      <label class="opt"><input type="radio" name="q5" value="0"> 2</label>      <label class="opt"><input type="radio" name="q5" value="1"> 3</label>      <label class="opt"><input type="radio" name="q5" value="2"> 4</label>      <label class="opt"><input type="radio" name="q5" value="3"> 5</label>      </div>
+      <button class="submit-btn" type="button" onclick='evaluateQuestion(5, [1], "3")'>Submit</button>
+      <p class="result" id="result-5"></p>
+    </section>    <section class="card">
+      <h3>Q6</h3>
+      
+      <p class="question">Consider the following schedules. S1: R 1 (X) W 1 (X) R 2 (X) W 2 (X) R 1 (Y) R 2 (Y) S2: R 1 (X) W 1 (X) R 2 (X) R 1 (Y) W 2 (X) R 2 (Y) Identify the schedule(s) that is(are) conflict-serializable?</p>
+      
+      <div class="options">
+      <label class="opt"><input type="radio" name="q6" value="0"> Only S1</label>      <label class="opt"><input type="radio" name="q6" value="1"> Only S2</label>      <label class="opt"><input type="radio" name="q6" value="2"> BOTH</label>      <label class="opt"><input type="radio" name="q6" value="3"> NONE</label>      </div>
+      <button class="submit-btn" type="button" onclick='evaluateQuestion(6, [2], "BOTH")'>Submit</button>
+      <p class="result" id="result-6"></p>
+    </section>    <section class="card">
+      <h3>Q7</h3>
+      
+      <p class="question">If the precedence graph of schedule has no arcs, then the schedule is a __________ schedule</p>
+      
+      <div class="options">
+      <label class="opt"><input type="radio" name="q7" value="0"> serial</label>      <label class="opt"><input type="radio" name="q7" value="1"> conflict serializable but not serial</label>      <label class="opt"><input type="radio" name="q7" value="2"> conflict serializable and may be serial</label>      <label class="opt"><input type="radio" name="q7" value="3"> No valid conclusion can be drawn</label>      </div>
+      <button class="submit-btn" type="button" onclick='evaluateQuestion(7, [2], "conflict serializable and may be serial")'>Submit</button>
+      <p class="result" id="result-7"></p>
+    </section>
+  </main>
+  <script>
+    function evaluateQuestion(qNum, correctIndexes, answerText) {
+      const selected = Array.from(document.querySelectorAll('input[name="q' + qNum + '"]:checked'))
+        .map(el => Number(el.value))
+        .sort((a, b) => a - b);
+      const expected = (correctIndexes || []).slice().sort((a, b) => a - b);
+      const result = document.getElementById('result-' + qNum);
+
+      if (!selected.length) {
+        result.className = 'result bad';
+        result.textContent = 'Please choose at least one option before submitting.';
+        return;
+      }
+
+      const isCorrect = selected.length === expected.length && selected.every((v, i) => v === expected[i]);
+      if (isCorrect) {
+        result.className = 'result ok';
+        result.textContent = 'Correct';
+      } else {
+        result.className = 'result bad';
+        result.textContent = 'Incorrect. Correct answer: ' + answerText;
+      }
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Database Practice - Week 4</title>
+  <style>
+    :root { --bg:#f5f7fb; --card:#ffffff; --ink:#17212b; --muted:#5a6b7b; --accent:#0f766e; --line:#d7e0ea; }
+    * { box-sizing:border-box; }
+    body { margin:0; font-family:Segoe UI, Tahoma, sans-serif; background:var(--bg); color:var(--ink); }
+    .wrap { max-width:980px; margin:0 auto; padding:24px 16px 40px; }
+    .top { display:flex; justify-content:space-between; align-items:center; gap:12px; flex-wrap:wrap; margin-bottom:16px; }
+    a.btn { text-decoration:none; color:#fff; background:var(--accent); padding:10px 14px; border-radius:10px; font-weight:600; }
+    h1 { margin:0; font-size:1.6rem; }
+    .meta { color:var(--muted); margin:4px 0 0; }
+    .card { background:var(--card); border:1px solid var(--line); border-radius:14px; padding:14px 16px; margin:12px 0; }
+    .card h3 { margin:0 0 8px; font-size:1rem; color:#0b4f6c; }
+    .prereq { margin:0 0 8px; color:#334155; background:#f8fafc; border:1px solid #e2e8f0; padding:8px 10px; border-radius:8px; }
+    .question { margin:0 0 8px; font-weight:600; }
+    .q-images { margin:8px 0 10px; display:grid; gap:8px; }
+    .q-img { max-width:100%; height:auto; border:1px solid #cbd5e1; border-radius:8px; background:#fff; }
+    ul { margin:6px 0 10px 18px; }
+    .answer { margin:0; color:#1b4332; background:#ecfdf5; border:1px solid #bbf7d0; padding:8px 10px; border-radius:8px; }
+  </style>
+</head>
+<body>
+  <main class="wrap">
+    <div class="top">
+      <div>
+        <h1>Week 4 Practice Questions</h1>
+        <p class="meta">6 questions extracted</p>
+      </div>
+      <a class="btn" href="index.html">All Weeks</a>
+    </div>
+    <section class="card">
+      <h3>Q1</h3>
+      
+      <p class="question">Consider the statements given below:</p>
+      
+      <ul><li>S1: True; S2: True</li><li>S1: True; S2: False</li><li>S1: False; S2: False</li><li>S1: False; S2: True</li></ul>
+      <p class="answer"><strong>Answer:</strong> S1: False; S2: True</p>
+    </section>    <section class="card">
+      <h3>Q2</h3>
+      
+      <p class="question">Consider the sets S1 and S2 below. S1 has different types of keys and S2 has possible constraints on the number of such keys in a relation. Choose the correct matching: S1: {w: primary key; x: candidate key; y: super key; z: foreign key} S2: { p: zero or more, q: exactly one, r: one or more } Choose the correct mapping:</p>
+      
+      <ul><li>w--p; x--p; y--q; z--r</li><li>w--q; x--q; y--p; z--r</li><li>w--q; x--r; y--r; z--p</li><li>w--r-; x--r; y--p; z--q</li></ul>
+      <p class="answer"><strong>Answer:</strong> w--q; x--r; y--r; z--p</p>
+    </section>    <section class="card">
+      <h3>Q3</h3>
+      
+      <p class="question">Consider the statements given below: S1: If the  candidate key  consists of  n  attributes for a relation R, then  primary key  attribute-set always has less than  n  attributes for the same relation. S2: If a relation does not have a  candidate key  still it can have a  primary key  . Choose the correct option:</p>
+      
+      <ul><li>S1: True; S2: True</li><li>S1: True; S2: False</li><li>S1: False; S2: False</li><li>S1: False; S2: True</li></ul>
+      <p class="answer"><strong>Answer:</strong> S1: False; S2: False</p>
+    </section>    <section class="card">
+      <h3>Q4</h3>
+      
+      <p class="question">Consider the sets mentioned in the table below: Choose the correct matching:</p>
+      <div class="q-images"><img class="q-img" src="../Introduction to Database Systems - - Unit 7 - Week 4_files/W4A4Q4.png" alt="Question image" loading="lazy"></div>
+      <ul><li>w--s; x--q ; y--r ; z--p</li><li>w--s; x--p ; y:--p; z--r</li><li>w--q; x--r ; y:--r; z--p</li><li>w--q; x-- s; y:--p; z--r</li></ul>
+      <p class="answer"><strong>Answer:</strong> w--s; x--q ; y--r ; z--p</p>
+    </section>    <section class="card">
+      <h3>Q5</h3>
+      
+      <p class="question">In the tuple relational calculus (TRC) query, one can not give _ _ _ _ of how to evaluate a query. Therefore, we write a _ _ _ _ expression to specify the data retrieval requirement. Fill the blanks:</p>
+      
+      <ul><li>Data; Procedural</li><li>Description; Procedural</li><li>Data; Declarative</li><li>Description; Declarative</li></ul>
+      <p class="answer"><strong>Answer:</strong> Description; Declarative</p>
+    </section>    <section class="card">
+      <h3>Q6</h3>
+      
+      <p class="question">Consider the given relational schemas: Professor( pid  , pname, age, sex, deptNo, yearOfJoining) Department( did  , dname, hod, phoneNo) Choose the appropriate TRC query to retrieve the department names that do not have any female professors:</p>
+      
+      <ul><li>\{ d.dname | Department(d)  ( (p)(P rof essor(p)  p .sex =  F   p .deptN o = d .did) )\} MathJax.Hub.Typeset();</li><li>\{ d.dname | Department(d)  ( (p)(P rof essor(p)  p .sex \neq  F   p .deptN o = d .did) ) \} MathJax.Hub.Typeset();</li><li>\{ d.dname | Department(d)  ( (p)(P rof essor(p)  p .sex =  F   p .deptN o = d .did) ) \} MathJax.Hub.Typeset();</li><li>\{ d.dname | Department(d)  ( (p)(P rof essor(p)  p .sex \neq  F   p .deptN o = d .did) )\} MathJax.Hub.Typeset();</li></ul>
+      <p class="answer"><strong>Answer:</strong> \{ d.dname | Department(d)  ( (p)(P rof essor(p)  p .sex =  F   p .deptN o = d .did) )\}</p>
+    </section>
+  </main>
+</body>
+</html>

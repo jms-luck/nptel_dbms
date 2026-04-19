@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Database Practice Read - Week 8</title>
+  <style>
+    :root { --bg:#f5f7fb; --card:#ffffff; --ink:#17212b; --muted:#5a6b7b; --accent:#0f766e; --line:#d7e0ea; }
+    * { box-sizing:border-box; }
+    body { margin:0; font-family:Segoe UI, Tahoma, sans-serif; background:var(--bg); color:var(--ink); }
+    .wrap { max-width:980px; margin:0 auto; padding:24px 16px 40px; }
+    .top { display:flex; justify-content:space-between; align-items:center; gap:12px; flex-wrap:wrap; margin-bottom:16px; }
+    .actions { display:flex; gap:10px; flex-wrap:wrap; }
+    a.btn { text-decoration:none; color:#fff; background:var(--accent); padding:10px 14px; border-radius:10px; font-weight:600; }
+    a.btn.alt { background:#0b4f6c; }
+    h1 { margin:0; font-size:1.6rem; }
+    .meta { color:var(--muted); margin:4px 0 0; }
+    .card { background:var(--card); border:1px solid var(--line); border-radius:14px; padding:14px 16px; margin:12px 0; }
+    .card h3 { margin:0 0 8px; font-size:1rem; color:#0b4f6c; }
+    .prereq { margin:0 0 8px; color:#334155; background:#f8fafc; border:1px solid #e2e8f0; padding:8px 10px; border-radius:8px; }
+    .question { margin:0 0 8px; font-weight:600; }
+    .q-images { margin:8px 0 10px; display:grid; gap:8px; }
+    .q-img { max-width:100%; height:auto; border:1px solid #cbd5e1; border-radius:8px; background:#fff; }
+    ul { margin:6px 0 10px 18px; }
+    .answer { margin:0; color:#1b4332; background:#ecfdf5; border:1px solid #bbf7d0; padding:8px 10px; border-radius:8px; }
+  </style>
+</head>
+<body>
+  <main class="wrap">
+    <div class="top">
+      <div>
+        <h1>Week 8 Read Page</h1>
+        <p class="meta">Study mode with questions, context, and answers</p>
+      </div>
+      <div class="actions">
+        <a class="btn" href="index.html">All Weeks</a>
+        <a class="btn alt" href="week-08-test.html">Open Test Page</a>
+      </div>
+    </div>
+    <section class="card">
+      <h3>Q1</h3>
+      
+      <p class="question">Consider the following statements: S1: All normal-forms are defined using functional dependencies. S2: Normalization is a top-down process to deal with redundancy in data representation. Choose the correct option:</p>
+      
+      <ul><li>S1: True; S2: True</li><li>S1: True; S2: False</li><li>S1: False; S2: False</li><li>S1: False; S2: True</li></ul>
+      <p class="answer"><strong>Answer:</strong> S1: False; S2: True</p>
+    </section>    <section class="card">
+      <h3>Q2</h3>
+      
+      <p class="question">Fill in the blanks: S1: An attribute of a relation schema R is called a prime-attribute of R if it is a member of some _ _ _ _ _ of R. S2: An attribute of a relation schema R is called a non-prime-attribute of R if it is NOT a member of any _ _ _ _ of R</p>
+      
+      <ul><li>S1: Candidate-key; S2: Candidate-key</li><li>S1: Candidate-key; S2: Super-key</li><li>S1: Super-key; S2: Candidate-key</li><li>S1: Super-key; S2: Super-key</li></ul>
+      <p class="answer"><strong>Answer:</strong> S1: Candidate-key; S2: Candidate-key</p>
+    </section>    <section class="card">
+      <h3>Q3</h3>
+      
+      <p class="question">Consider a relation R(A, B, C, D, E, F, G) and the following FDs: {AB  CD, AF  D, DE  F, C  G, F  E, G  A}. Find out {C , F } + :</p>
+      
+      <ul><li>{C, F}</li><li>{C, F, G, E}</li><li>{C, F, G, E, A}</li><li>{C, F, G, E, A, D}</li></ul>
+      <p class="answer"><strong>Answer:</strong> {C, F, G, E, A, D}</p>
+    </section>    <section class="card">
+      <h3>Q4</h3>
+      
+      <p class="question">Consider a relation R(A, B, C, D, E, F) and the given FDs {AB  C, C  D, B  E, DE  F, F  AB}. Choose the incorrect option:</p>
+      
+      <ul><li>AB is a candidate key of R</li><li>F is a candidate key of R</li><li>BC is a candidate key of R</li><li>CD is a candidate key of R</li></ul>
+      <p class="answer"><strong>Answer:</strong> CD is a candidate key of R</p>
+    </section>    <section class="card">
+      <h3>Q5</h3>
+      
+      <p class="question">Consider a relation R(part_no, part_description, part_price, supplier_id, supplier_address).</p>
+      
+      <ul><li>part_no</li><li>supplier_id</li><li>{supplier_id, part_no}</li><li>None of the above</li></ul>
+      <p class="answer"><strong>Answer:</strong> {supplier_id, part_no}</p>
+    </section>    <section class="card">
+      <h3>Q6</h3>
+      
+      <p class="question">Consider the relation given in the Question 5, and find out which of the following statement is TRUE about R:</p>
+      
+      <ul><li>R is in 1NF only</li><li>R is in 2NF but not in 3NF</li><li>R is in 3NF but not in BCNF</li><li>R is in BCNF</li></ul>
+      <p class="answer"><strong>Answer:</strong> R is in 1NF only</p>
+    </section>    <section class="card">
+      <h3>Q7</h3>
+      
+      <p class="question">Consider the following statements:</p>
+      
+      <ul><li>S1: True; S2: True</li><li>S1: False; S2: True</li><li>S1: False; S2: False</li><li>S1: True; S2: False</li></ul>
+      <p class="answer"><strong>Answer:</strong> S1: True; S2: False</p>
+    </section>    <section class="card">
+      <h3>Q8</h3>
+      
+      <p class="question">Consider a relation R(A, B, C, D, E, F, G) and the FD set</p>
+      
+      <ul><li>F contains F  D</li><li>F does not contain DE  F</li><li>F does not contain EG  CD</li><li>F does not contain BG  E</li></ul>
+      <p class="answer"><strong>Answer:</strong> F does not contain BG  E</p>
+    </section>    <section class="card">
+      <h3>Q9</h3>
+      
+      <p class="question">Consider a relation R(A, B, C, D, E, F) and the FD set given below F 1 = { AB  C, B  D, D  E, AE  F, C  A } Choose the correct option:</p>
+      
+      <ul><li>R is in 2NF, but not in 3NF</li><li>R is not in 2NF</li><li>R is in 3NF, but not in BCNF</li><li>R is in BCNF</li></ul>
+      <p class="answer"><strong>Answer:</strong> R is not in 2NF</p>
+    </section>    <section class="card">
+      <h3>Q10</h3>
+      
+      <p class="question">Consider the decomposition of a relation R(A, B, C) into two relations R1(A, B) and R2(B, C) and the given instances of R, R1, and R2. Suppose FD set for R is :{B  A, B  C}.What is TRUE with respect to the decomposition:</p>
+      <div class="q-images"><img class="q-img" src="../Introduction to Database Systems - - Unit 11 - Week 8_files/W8A8Q10.png" alt="Question image" loading="lazy"></div>
+      <ul><li>Lossy; Dependency preserving</li><li>Lossless; Dependency preserving</li><li>Lossy; Not Dependency preserving</li><li>Lossless; Not Dependency preserving</li></ul>
+      <p class="answer"><strong>Answer:</strong> Lossless; Dependency preserving</p>
+    </section>
+  </main>
+</body>
+</html>

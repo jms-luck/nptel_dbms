@@ -1,0 +1,161 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Database Practice Test - Week 8</title>
+  <style>
+    :root { --bg:#f3f6fb; --card:#ffffff; --ink:#17212b; --muted:#5a6b7b; --accent:#0f766e; --line:#d7e0ea; }
+    * { box-sizing:border-box; }
+    body { margin:0; font-family:Segoe UI, Tahoma, sans-serif; background:var(--bg); color:var(--ink); }
+    .wrap { max-width:980px; margin:0 auto; padding:24px 16px 40px; }
+    .top { display:flex; justify-content:space-between; align-items:center; gap:12px; flex-wrap:wrap; margin-bottom:16px; }
+    .actions { display:flex; gap:10px; flex-wrap:wrap; }
+    a.btn { text-decoration:none; color:#fff; background:var(--accent); padding:10px 14px; border-radius:10px; font-weight:600; }
+    a.btn.alt { background:#0b4f6c; }
+    h1 { margin:0; font-size:1.6rem; }
+    .meta { color:var(--muted); margin:4px 0 0; }
+    .card { background:var(--card); border:1px solid var(--line); border-radius:14px; padding:14px 16px; margin:12px 0; }
+    .card h3 { margin:0 0 8px; font-size:1rem; color:#0b4f6c; }
+    .prereq { margin:0 0 8px; color:#334155; background:#f8fafc; border:1px solid #e2e8f0; padding:8px 10px; border-radius:8px; }
+    .question { margin:0 0 8px; font-weight:600; }
+    .q-images { margin:8px 0 10px; display:grid; gap:8px; }
+    .q-img { max-width:100%; height:auto; border:1px solid #cbd5e1; border-radius:8px; background:#fff; }
+    .options { display:grid; gap:8px; margin:8px 0 10px; }
+    .opt { display:block; }
+    .submit-btn { border:none; background:#0f766e; color:#fff; padding:8px 12px; border-radius:8px; font-weight:600; cursor:pointer; }
+    .result { margin:8px 0 0; padding:8px 10px; border-radius:8px; display:none; }
+    .result.ok { display:block; background:#ecfdf5; border:1px solid #bbf7d0; color:#14532d; }
+    .result.bad { display:block; background:#fef2f2; border:1px solid #fecaca; color:#7f1d1d; }
+  </style>
+</head>
+<body>
+  <main class="wrap">
+    <div class="top">
+      <div>
+        <h1>Week 8 Test Page</h1>
+        <p class="meta">Choose an answer and click Submit for each question</p>
+      </div>
+      <div class="actions">
+        <a class="btn" href="index.html">All Weeks</a>
+        <a class="btn alt" href="week-08-read.html">Open Read Page</a>
+      </div>
+    </div>
+    <section class="card">
+      <h3>Q1</h3>
+      
+      <p class="question">Consider the following statements: S1: All normal-forms are defined using functional dependencies. S2: Normalization is a top-down process to deal with redundancy in data representation. Choose the correct option:</p>
+      
+      <div class="options">
+      <label class="opt"><input type="radio" name="q1" value="0"> S1: True; S2: True</label>      <label class="opt"><input type="radio" name="q1" value="1"> S1: True; S2: False</label>      <label class="opt"><input type="radio" name="q1" value="2"> S1: False; S2: False</label>      <label class="opt"><input type="radio" name="q1" value="3"> S1: False; S2: True</label>      </div>
+      <button class="submit-btn" type="button" onclick='evaluateQuestion(1, [3], "S1: False; S2: True")'>Submit</button>
+      <p class="result" id="result-1"></p>
+    </section>    <section class="card">
+      <h3>Q2</h3>
+      
+      <p class="question">Fill in the blanks: S1: An attribute of a relation schema R is called a prime-attribute of R if it is a member of some _ _ _ _ _ of R. S2: An attribute of a relation schema R is called a non-prime-attribute of R if it is NOT a member of any _ _ _ _ of R</p>
+      
+      <div class="options">
+      <label class="opt"><input type="radio" name="q2" value="0"> S1: Candidate-key; S2: Candidate-key</label>      <label class="opt"><input type="radio" name="q2" value="1"> S1: Candidate-key; S2: Super-key</label>      <label class="opt"><input type="radio" name="q2" value="2"> S1: Super-key; S2: Candidate-key</label>      <label class="opt"><input type="radio" name="q2" value="3"> S1: Super-key; S2: Super-key</label>      </div>
+      <button class="submit-btn" type="button" onclick='evaluateQuestion(2, [0], "S1: Candidate-key; S2: Candidate-key")'>Submit</button>
+      <p class="result" id="result-2"></p>
+    </section>    <section class="card">
+      <h3>Q3</h3>
+      
+      <p class="question">Consider a relation R(A, B, C, D, E, F, G) and the following FDs: {AB  CD, AF  D, DE  F, C  G, F  E, G  A}. Find out {C , F } + :</p>
+      
+      <div class="options">
+      <label class="opt"><input type="radio" name="q3" value="0"> {C, F}</label>      <label class="opt"><input type="radio" name="q3" value="1"> {C, F, G, E}</label>      <label class="opt"><input type="radio" name="q3" value="2"> {C, F, G, E, A}</label>      <label class="opt"><input type="radio" name="q3" value="3"> {C, F, G, E, A, D}</label>      </div>
+      <button class="submit-btn" type="button" onclick='evaluateQuestion(3, [3], "{C, F, G, E, A, D}")'>Submit</button>
+      <p class="result" id="result-3"></p>
+    </section>    <section class="card">
+      <h3>Q4</h3>
+      
+      <p class="question">Consider a relation R(A, B, C, D, E, F) and the given FDs {AB  C, C  D, B  E, DE  F, F  AB}. Choose the incorrect option:</p>
+      
+      <div class="options">
+      <label class="opt"><input type="radio" name="q4" value="0"> AB is a candidate key of R</label>      <label class="opt"><input type="radio" name="q4" value="1"> F is a candidate key of R</label>      <label class="opt"><input type="radio" name="q4" value="2"> BC is a candidate key of R</label>      <label class="opt"><input type="radio" name="q4" value="3"> CD is a candidate key of R</label>      </div>
+      <button class="submit-btn" type="button" onclick='evaluateQuestion(4, [3], "CD is a candidate key of R")'>Submit</button>
+      <p class="result" id="result-4"></p>
+    </section>    <section class="card">
+      <h3>Q5</h3>
+      
+      <p class="question">Consider a relation R(part_no, part_description, part_price, supplier_id, supplier_address).</p>
+      
+      <div class="options">
+      <label class="opt"><input type="radio" name="q5" value="0"> part_no</label>      <label class="opt"><input type="radio" name="q5" value="1"> supplier_id</label>      <label class="opt"><input type="radio" name="q5" value="2"> {supplier_id, part_no}</label>      <label class="opt"><input type="radio" name="q5" value="3"> None of the above</label>      </div>
+      <button class="submit-btn" type="button" onclick='evaluateQuestion(5, [2], "{supplier_id, part_no}")'>Submit</button>
+      <p class="result" id="result-5"></p>
+    </section>    <section class="card">
+      <h3>Q6</h3>
+      
+      <p class="question">Consider the relation given in the Question 5, and find out which of the following statement is TRUE about R:</p>
+      
+      <div class="options">
+      <label class="opt"><input type="radio" name="q6" value="0"> R is in 1NF only</label>      <label class="opt"><input type="radio" name="q6" value="1"> R is in 2NF but not in 3NF</label>      <label class="opt"><input type="radio" name="q6" value="2"> R is in 3NF but not in BCNF</label>      <label class="opt"><input type="radio" name="q6" value="3"> R is in BCNF</label>      </div>
+      <button class="submit-btn" type="button" onclick='evaluateQuestion(6, [0], "R is in 1NF only")'>Submit</button>
+      <p class="result" id="result-6"></p>
+    </section>    <section class="card">
+      <h3>Q7</h3>
+      
+      <p class="question">Consider the following statements:</p>
+      
+      <div class="options">
+      <label class="opt"><input type="radio" name="q7" value="0"> S1: True; S2: True</label>      <label class="opt"><input type="radio" name="q7" value="1"> S1: False; S2: True</label>      <label class="opt"><input type="radio" name="q7" value="2"> S1: False; S2: False</label>      <label class="opt"><input type="radio" name="q7" value="3"> S1: True; S2: False</label>      </div>
+      <button class="submit-btn" type="button" onclick='evaluateQuestion(7, [3], "S1: True; S2: False")'>Submit</button>
+      <p class="result" id="result-7"></p>
+    </section>    <section class="card">
+      <h3>Q8</h3>
+      
+      <p class="question">Consider a relation R(A, B, C, D, E, F, G) and the FD set</p>
+      
+      <div class="options">
+      <label class="opt"><input type="radio" name="q8" value="0"> F contains F  D</label>      <label class="opt"><input type="radio" name="q8" value="1"> F does not contain DE  F</label>      <label class="opt"><input type="radio" name="q8" value="2"> F does not contain EG  CD</label>      <label class="opt"><input type="radio" name="q8" value="3"> F does not contain BG  E</label>      </div>
+      <button class="submit-btn" type="button" onclick='evaluateQuestion(8, [3], "F does not contain BG  E")'>Submit</button>
+      <p class="result" id="result-8"></p>
+    </section>    <section class="card">
+      <h3>Q9</h3>
+      
+      <p class="question">Consider a relation R(A, B, C, D, E, F) and the FD set given below F 1 = { AB  C, B  D, D  E, AE  F, C  A } Choose the correct option:</p>
+      
+      <div class="options">
+      <label class="opt"><input type="radio" name="q9" value="0"> R is in 2NF, but not in 3NF</label>      <label class="opt"><input type="radio" name="q9" value="1"> R is not in 2NF</label>      <label class="opt"><input type="radio" name="q9" value="2"> R is in 3NF, but not in BCNF</label>      <label class="opt"><input type="radio" name="q9" value="3"> R is in BCNF</label>      </div>
+      <button class="submit-btn" type="button" onclick='evaluateQuestion(9, [1], "R is not in 2NF")'>Submit</button>
+      <p class="result" id="result-9"></p>
+    </section>    <section class="card">
+      <h3>Q10</h3>
+      
+      <p class="question">Consider the decomposition of a relation R(A, B, C) into two relations R1(A, B) and R2(B, C) and the given instances of R, R1, and R2. Suppose FD set for R is :{B  A, B  C}.What is TRUE with respect to the decomposition:</p>
+      <div class="q-images"><img class="q-img" src="../Introduction to Database Systems - - Unit 11 - Week 8_files/W8A8Q10.png" alt="Question image" loading="lazy"></div>
+      <div class="options">
+      <label class="opt"><input type="radio" name="q10" value="0"> Lossy; Dependency preserving</label>      <label class="opt"><input type="radio" name="q10" value="1"> Lossless; Dependency preserving</label>      <label class="opt"><input type="radio" name="q10" value="2"> Lossy; Not Dependency preserving</label>      <label class="opt"><input type="radio" name="q10" value="3"> Lossless; Not Dependency preserving</label>      </div>
+      <button class="submit-btn" type="button" onclick='evaluateQuestion(10, [1], "Lossless; Dependency preserving")'>Submit</button>
+      <p class="result" id="result-10"></p>
+    </section>
+  </main>
+  <script>
+    function evaluateQuestion(qNum, correctIndexes, answerText) {
+      const selected = Array.from(document.querySelectorAll('input[name="q' + qNum + '"]:checked'))
+        .map(el => Number(el.value))
+        .sort((a, b) => a - b);
+      const expected = (correctIndexes || []).slice().sort((a, b) => a - b);
+      const result = document.getElementById('result-' + qNum);
+
+      if (!selected.length) {
+        result.className = 'result bad';
+        result.textContent = 'Please choose at least one option before submitting.';
+        return;
+      }
+
+      const isCorrect = selected.length === expected.length && selected.every((v, i) => v === expected[i]);
+      if (isCorrect) {
+        result.className = 'result ok';
+        result.textContent = 'Correct';
+      } else {
+        result.className = 'result bad';
+        result.textContent = 'Incorrect. Correct answer: ' + answerText;
+      }
+    }
+  </script>
+</body>
+</html>
